@@ -25,7 +25,7 @@ jobs:
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy FRONT with rsync
-        run: rsync -avz ./front/out ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/data/sites/web/devatelierdesignbe/www/BERTONE
+        run: rsync -avz ./front/out/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/data/sites/web/devatelierdesignbe/www/BERTONE
       
       - name: Deploy API with rsync
         run: rsync -avz ./admin/themes/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/data/sites/web/devatelierdesignbe/www/BERTONE/admin/wp-content/themes/bertone
