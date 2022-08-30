@@ -1,0 +1,6 @@
+.attachment-alt-text,
+span[data-setting="alt"],
+span.alt-text,
+#alt-text-description {
+	display: none !important;
+}
