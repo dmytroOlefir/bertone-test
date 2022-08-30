@@ -18,8 +18,8 @@ services:
     image: wordpress:latest
     volumes:
       - wordpress_data:/var/www/html
-      - ./admin/plugins:/var/www/html/wp-content/plugins
-      - ./admin/themes:/var/www/html/wp-content/themes/bertone
+      - ./plugins:/var/www/html/wp-content/plugins
+      - ./themes:/var/www/html/wp-content/themes/bertone
     ports:
       - "8000:80"
     restart: always
