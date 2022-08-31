@@ -3,4 +3,10 @@
 @import './grid.scss';
 @import './global.scss';
 
-// COMPONENTS
+// PARTIALS
+@import './partials/footer';
+@import './partials/header';
+
+// BLOCK
+@import './blocks/banner';
+

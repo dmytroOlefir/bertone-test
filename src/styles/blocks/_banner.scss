@@ -1,0 +1,18 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: black ;
+  text-align: center;
+  color: white;
+
+  h1 {
+    font-size: rem(75);
+    line-height: 1;
+    letter-spacing: rem(-0.7);
+    font-weight: 400;
+    font-family: $fontTitle;
+    text-transform: uppercase;
+  }
+}
