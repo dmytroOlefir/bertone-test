@@ -1,3 +1,6 @@
-body {
-  background: blue;
-}
+@import './core.scss';
+@import './mixins.scss';
+@import './grid.scss';
+@import './global.scss';
+
+// COMPONENTS

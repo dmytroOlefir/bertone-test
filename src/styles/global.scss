@@ -1,0 +1,62 @@
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: $font;
+  max-width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.sr-only {
+  @include sr-only;
+}
+
+.container {
+  @include container;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+svg {
+  fill: currentColor;
+}
+.hidden {
+  display: none;
+}
+
+.only-desktop {
+  @include tablet {
+    display: none;
+  }
+}
+
+.only-tablet {
+  display: none;
+
+  @include tablet {
+    display: block;
+  }
+
+  @include mobile {
+    display: none
+  }
+}
+
+.only-mobile {
+  @include minTablet {
+    display: none;
+  }
+}

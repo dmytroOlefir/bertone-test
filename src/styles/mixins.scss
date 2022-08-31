@@ -1,0 +1,86 @@
+@use "sass:math";
+
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  pointer-events: none;
+}
+
+@function rem($value) {
+  @if getUnit($value)==pt {
+    @return $value;
+  }
+
+  $valRem: math.div($value, 16);
+  @return $valRem+rem;
+}
+
+// MAx Mobile ------
+@mixin mobile {
+  @media(max-width: $mobile) {
+    @content;
+  }
+}
+
+// Max tablet
+@mixin tablet {
+  @media(max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media(max-width: $laptop) {
+    @content;
+  }
+}
+
+// Min mobile
+@mixin minMobile {
+  $val: $mobile +1px;
+  @debug $val;
+
+  @media(min-width: $val) {
+    @content;
+  }
+}
+
+// Min Tablet
+@mixin minTablet {
+  $val: $tablet +1px;
+  @debug $val;
+
+  @media(min-width: $val) {
+    @content;
+  }
+}
+
+// Min Laptop
+@mixin minLaptop {
+  $val: $laptop +1px;
+  @debug $val;
+
+  @media(min-width: $val) {
+    @content;
+  }
+}
+
+// Add container + gap
+@mixin container {
+  width: 100%;
+  max-width: toRem(1465);
+  padding: 0px $gap;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Reset IMG Spaces
+@mixin resetImg {
+  font-size: 0;
+  letter-spacing: 0;
+}
