@@ -1,37 +1,18 @@
-</main>
-<footer class="footer" js-appear>
-  <div class="container">
-    <div class="grid--tablet">
-      <div class="footer_logo grid_1_3" js-appear-item>
-        <a href="<?=get_site_url()?>">
-          <!-- SVG -->
-  	      <svg>
-            <use xlink:href="#logo-icon" />
-          </svg>
-        </a>
-      </div>
-      <div class="grid_8_24 footer_right">
-        <!-- NAV -->
-        <div class="footer_nav">
-          <?php echo get_template_part('partials/footer-menu'); ?>
-          <?php echo get_template_part('partials/footer-contact'); ?>
-        </div>
-        <?php echo get_template_part('partials/footer-newsletter') ?>
-      </div>
-    </div>
-
-    <!-- BOTTOM -->
-    <div class="footer_bottom">
-      <!-- <?php if(get_field('copyright', 'option')) {?><p><?=get_field('copyright', 'option')?></p><?php } ?> -->
-      <?php echo get_template_part('partials/footer-bottom'); ?>
-    </div>
-  </div>
-</footer>
-
-
 <?php
-wp_footer();
-?>
-</body>
+/**
+ * Third party plugins that hijack the theme will call wp_footer() to get the footer template.
+ * We use this to end our output buffer (started in header.php) and render into the view/page-plugin.twig template.
+ *
+ * If you're not using a plugin that requries this behavior (ones that do include Events Calendar Pro and
+ * WooCommerce) you can delete this file and header.php
+ *
+ * @package  WordPress
+ * @subpackage  Timber
+ * @since   Timber 0.1
+ */
 
-</html>
+$timberContext = $GLOBALS['timberContext']; // @codingStandardsIgnoreFile
+if ( ! isset( $timberContext ) ) {
+	throw new \Exception( 'Timber context not set in footer.' );
+}
+ob_end_clean();
