@@ -6,7 +6,8 @@
   background: black ;
   text-align: center;
   color: white;
-
+  background-size: cover;
+  
   h1 {
     font-size: rem(75);
     line-height: 1;
@@ -15,4 +16,5 @@
     font-family: $fontTitle;
     text-transform: uppercase;
   }
+
 }
