@@ -1,3 +1,15 @@
 .header {
+  &_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
 
+  &_tag {
+    font-size: rem(59);
+    transform: rotate(3deg);
+    line-height: rem(48);
+    font-weight: 400;
+  }
 }

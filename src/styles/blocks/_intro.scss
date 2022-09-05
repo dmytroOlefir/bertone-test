@@ -1,0 +1,34 @@
+.intro {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: black;
+  max-width: 100%;
+  overflow: hidden;
+
+  &_text {
+    position: relative;
+    z-index: 2;
+    font-size: rem(75);
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: $font;
+    color: white;
+    margin-left: 50%;
+    max-width: 50%;
+
+  }
+
+  &_bkg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-160px);
+    z-index: 0;
+    height: auto;
+    width: 50vw;
+  }
+}

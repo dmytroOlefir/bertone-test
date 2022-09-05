@@ -28,6 +28,10 @@
       display: flex;
       align-items: center;
 
+      li:not(:last-child) {
+        margin-right: rem(10);
+      }
+
       a {
         font-family: $font;
         font-size: rem(15);

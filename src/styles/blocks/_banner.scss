@@ -12,9 +12,13 @@
     font-size: rem(75);
     line-height: 1;
     letter-spacing: rem(-0.7);
+    font-family: $font;
     font-weight: 400;
-    font-family: $fontTitle;
     text-transform: uppercase;
+
+    span {
+      font-weight: 400;
+    }
   }
 
 }
