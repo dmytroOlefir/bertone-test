@@ -23,6 +23,7 @@ body {
 }
 
 .container {
+  position: relative;
   @include container;
 }
 

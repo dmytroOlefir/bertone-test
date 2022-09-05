@@ -1,0 +1,24 @@
+.encart {
+  position: relative;
+  padding: rem(140) 0;
+  background: black;
+  color: white;
+  
+  h2 {
+    position: relative;
+    font-size: rem(82);
+    line-height: rem(92);
+    font-weight: 300;
+    z-index: 1;
+    font-family: $font;
+    max-width: rem(750);
+  }
+
+  &_bkg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+  }
+}
