@@ -69,6 +69,7 @@ svg {
 }
 
 .font {
+  &--tag,
   &--true {
     font-family: $fontTag;
   }
@@ -76,6 +77,10 @@ svg {
   &--title {
     font-family: $fontTitle;
     font-weight: bold;
+  }
+
+  &--up {
+    text-transform: uppercase;
   }
 }
 

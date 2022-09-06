@@ -1,3 +1,29 @@
 .heritage {
-  
+  padding: rem(110) 0;
+
+  &_tag {
+    color: $orange;
+    font-size: rem(75);
+    line-height: rem(42);
+    margin-bottom: rem(42);
+  }
+ 
+  &_content {
+    max-width: rem(506);
+    text-align: center;
+
+    h2 {
+      font-size: rem(65);
+      line-height: rem(70);
+      margin-bottom: rem(40);
+      font-family: $fontTitle;
+      font-weight: 500;
+    }
+
+    .content p{
+      line-height: rem(28);
+      font-size: rem(15);
+      font-weight: 400;
+    }
+  }
 }

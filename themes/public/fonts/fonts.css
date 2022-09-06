@@ -52,3 +52,10 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'true_blueregular';
+    src: url('true_blue_2-webfont.woff2') format('woff2'),
+        url('true_blue_2-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

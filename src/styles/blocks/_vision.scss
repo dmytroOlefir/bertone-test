@@ -3,26 +3,27 @@
   background: black;
   min-height: 100vh;
   color: white;
+  padding: rem(120) 0;
+  display: flex;
+  align-items: center;
 
   h2 {
       position: relative;
       font-size: rem(90);
       line-height: rem(100);
       font-family: $fontTitle;
-      margin-left: 50%;
-      max-width: rem(360);
+      max-width: rem(420);
       z-index: 2;
-      max-width: rem(578);
-      margin-right: 0;
-      margin-left: auto;
       color: white;
+      transform: translateX(-50px);
+      margin: 0;
   }
 
   p {
     margin-top: rem(38);
     margin-bottom: 0;
     margin-right: auto;
-    margin-left: 0px;;
+    margin-left: auto;;
     position: relative;
     max-width: rem(254);
     font-size: rem(15);
@@ -49,7 +50,10 @@
     background: transparent;
     z-index: 10;
     border: 0;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 120px) translateX(100px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
     &:after {
       content: "";
@@ -76,11 +80,12 @@
       font-size: rem(18);
       margin-top: rem(22);
       display: flex;
+      font-family: $font;
     }
   }
 
   .vision_illu1 {
-    transform: translateY(100px);
+    transform: translateY(150px);
     margin-right: 50px;
   }
 
@@ -91,12 +96,15 @@
 
   &_diapo {
     position: relative;
-    width: calc(100% - 354px);
+    width: 746px;
     display: flex;
     align-items: flex-start;
   }
 
   &_content {
-    width: rem(354);
+    width: calc(100% - 746px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

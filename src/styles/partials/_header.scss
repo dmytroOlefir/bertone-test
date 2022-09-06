@@ -1,4 +1,14 @@
 .header {
+  height: 120px;
+  overflow: hidden;
+
+  &_logo {
+    padding: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
   &_wrap {
     display: flex;
     flex-wrap: wrap;
@@ -6,10 +16,11 @@
     justify-content: space-between;
   }
 
-  &_tag {
+  &_tagline{
     font-size: rem(59);
     transform: rotate(3deg);
     line-height: rem(48);
     font-weight: 400;
+    font-family: $fontTag;
   }
 }
