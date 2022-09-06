@@ -11,12 +11,14 @@
   background-position: center;
   
   h1 {
-    font-size: rem(75);
+    font-size: 5vw;
     line-height: 1;
     letter-spacing: rem(-0.7);
     font-family: $font;
-    font-weight: 400;
+    font-weight: 300;
     text-transform: uppercase;
+    width: 50vw;
+    margin: 0px auto;
 
     span {
       font-weight: 400;

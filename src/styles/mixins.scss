@@ -73,7 +73,7 @@
 // Add container + gap
 @mixin container {
   width: 100%;
-  max-width: rem(1340);
+  // max-width: rem(1340);
   padding: 0px $gap;
   margin-left: auto;
   margin-right: auto;
