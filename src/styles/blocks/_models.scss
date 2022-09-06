@@ -1,0 +1,70 @@
+.models {
+  position: relative;
+
+  &:after {
+    content:"";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: rem(200);
+    background: black;
+    z-index: 0;
+  }
+
+  &-slider {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  h2 {
+    color: $orange;
+    font-size: rem(128);
+    margin: 0;
+    font-family: $font;
+    font-weight: 400;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transform: translate(-50%, 0%);
+    z-index: 10;
+  }
+
+  &-slide {
+    position: relative;
+    width: rem(400);
+    height: rem(546);
+    padding: 40px;
+    display: flex;
+    align-items: flex-end;
+    margin: 0 rem(12);
+    background: black;
+    overflow: hidden;
+
+    h3 {
+      position: relative;
+      z-index: 1;
+      color: white;
+      font-size: rem(36);
+      line-height: rem(38);
+      margin: 0;
+      font-family: $font;
+      font-weight: 400;
+    }
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: auto;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+  }
+}

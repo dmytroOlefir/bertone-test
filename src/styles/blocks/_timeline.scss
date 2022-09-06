@@ -1,0 +1,60 @@
+.timeline {
+  background: black;
+  color: white;
+  min-height: 100vh;
+  padding: 120px 0px;
+  display: flex;
+  align-items: center;
+
+  &_scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  &_content {
+    width: rem(500);
+
+    h2{
+      color: $orange;
+      font-family: $fontTitle;
+      font-size: rem(65);
+      line-height: 1.2;
+      font-weight: 600;
+      margin-bottom: 35px;
+    }
+
+    p {
+      position: relative;
+      font-size: rem(15);
+      line-height: rem(28);
+      position: relative;
+      width: rem(292);
+      margin-left: 100px;
+      
+      &:before {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 0;
+        width: 50px;
+        height: 1px;
+        background: white;
+        transform: translateX(-100%) translateX(-40px);
+      }
+    }
+  }
+
+  &_discover {
+    color: $orange;
+    font-size: 22px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 1px solid $orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 rem(250);
+  }
+}

@@ -1,8 +1,0 @@
-export default {
-      id: "logo-usage",
-      viewBox: "0 0 184 62",
-      url: __webpack_public_path__ + "/Users/dimitribertin/Sites/ATELIER-DESIGN/bertone-official-website/src/icons/logo.svg",
-      toString: function () {
-        return this.url;
-      }
-    }

@@ -1,6 +1,4 @@
 .header {
-  height: 120px;
-  overflow: hidden;
 
   &_logo {
     padding: 0;
@@ -14,6 +12,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    height: 120px;
   }
 
   &_tagline{
