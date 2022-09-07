@@ -1,7 +1,7 @@
 .models {
   position: relative;
   overflow:  hidden;
-  
+
   &:after {
     content:"";
     position: absolute;
@@ -23,7 +23,8 @@
 
   h2 {
     color: $orange;
-    font-size: rem(128);
+    // font-size: rem(128);
+    font-size: 8vw;
     margin: 0;
     font-family: $font;
     font-weight: 400;

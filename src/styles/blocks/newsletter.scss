@@ -14,7 +14,7 @@
     background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
-
+    
      &:after {
       content: "";
       position: absolute;
@@ -38,9 +38,9 @@
   }
 
   &_title {
-    max-width: rem(880);
+    max-width: 50vw;
     margin-bottom: rem(100);
-    font-size: 4vw;
+    font-size: 3.5vw;
     font-weight: 400;
     line-height: rem(72);
     text-transform: uppercase;
