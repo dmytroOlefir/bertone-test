@@ -4,6 +4,8 @@
   background: black;
   padding: 4vw 0 8vw;
   color: white;
+  z-index:  2;
+  overflow: visible;
 
   h2{
     position: relative;
@@ -14,6 +16,7 @@
     max-width: 28vw;
     padding-left: 3vw;
     z-index: 2;
+    font-weight: 400;
 
     &:before {
       content: "";
@@ -59,10 +62,15 @@
 
   &_bkg {
     position: absolute;
-    top: 40%;
-    left: 30%;
+    top: 0%;
+    left: 35%;
+    transform: translateY(-30%);
     z-index: 0;
-    width: 70vw;
+    width: 60vw;
     height: auto;
+    max-width: none;
+    max-height: none;
+    height: auto;
+    object-fit: none;
   }
 }
