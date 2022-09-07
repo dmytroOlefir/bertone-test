@@ -17,6 +17,7 @@
     position: relative;
     display: flex;
     flex-wrap: nowrap;
+    width: 100vw;
     justify-content: center;
     z-index: 1;
   }
@@ -40,7 +41,7 @@
   &-slide {
     position: relative;
     width: rem(400);
-    height: rem(546);
+    height: rem(468);
     padding: 40px;
     display: flex;
     align-items: flex-end;
@@ -48,12 +49,16 @@
     background: black;
     overflow: hidden;
 
+    &:nth-child(2n) {
+      height: rem(546)
+    }
+
     h3 {
       position: relative;
       z-index: 1;
       color: white;
-      font-size: rem(36);
-      line-height: rem(38);
+      font-size: 1.5vw;
+      line-height: 1.2;
       margin: 0;
       font-family: $font;
       font-weight: 400;

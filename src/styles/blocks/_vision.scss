@@ -1,11 +1,15 @@
 .vision {
   position: relative;
   background: black;
-  min-height: 100vh;
+  // min-height: 100vh;
   color: white;
-  padding: 10vw 0;
+  padding: 10vw 0 20vw;
   display: flex;
   align-items: center;
+
+  @media(min-width: 1440px) {
+    padding: 10vw 0 10vw;
+  }
 
   h2 {
       position: relative;

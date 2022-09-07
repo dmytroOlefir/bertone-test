@@ -5,11 +5,19 @@
   padding: 10vw 0px;
   display: flex;
   align-items: center;
+  background-size: 70vw;
+  background-position: center;
+  background-repeat: no-repeat;
 
   &_scroll {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    justify-content: space-between;
+  }
+
+  &_slider {
+    transform: translateX(2vw);
   }
 
   &_content {
@@ -48,14 +56,18 @@
 
   &_discover {
     color: $orange;
-    font-size: 22px;
-    width: 200px;
-    height: 200px;
+    font-size: 1.2vw;
+    width: 10vw;
+    height: 10vw;
     border-radius: 50%;
     border: 1px solid $orange;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 rem(250);
+
+    &:after {
+      content: "";
+      
+    }
   }
 }

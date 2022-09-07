@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: space-between;
     // height: 120px;
-    padding: 5vh 0;
+    padding: 2vh 5vw;
   }
 
   &_tagline{
@@ -23,5 +23,6 @@
     font-weight: 400;
     font-family: $fontTag;
     padding-top: 20px; 
+    margin: 0;
   }
 }
