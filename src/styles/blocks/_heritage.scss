@@ -1,35 +1,78 @@
 .heritage {
-  padding: rem(110) 0;
+  padding: 12vw 0;
+  overflow: hidden;
+
+  &_grid {
+    display: grid;
+    grid-template-columns:  repeat(2, 1fr);
+  }
 
   &_tag {
     color: $orange;
-    font-size: rem(75);
+    font-size: 4.5vw;
     line-height: rem(42);
     margin-bottom: rem(0);
     margin-top: 0;
+    transform: rotate(6deg);
+    font-weight: 100;
   }
  
   &_content {
-    max-width: rem(506);
+    margin: 0px auto;
+    max-width: 22vw;
     text-align: center;
 
     h2 {
-      font-size: rem(65);
-      line-height: rem(70);
+      font-size: 4vw;
+      line-height: 1;
       margin-bottom: rem(40);
       font-family: $fontTitle;
       font-weight: 500;
     }
 
     .content p{
-      line-height: rem(28);
-      font-size: rem(15);
+      line-height: 1.5;
+      font-size: 0.8vw;
       font-weight: 400;
     }
   }
 
-  &_diaporama {
+  &_diapo {
     position: relative;
+    width: 100%;
+    padding-top: 10vw;
+    padding-bottom: 8vw;
     
+    &_1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      transform: translateY(-5vw);
+    }
+
+    &_2 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      transform: translate(1vw, 50%);
+    }
+
+    &_3 {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(40px, -50%);
+      z-index: 0;
+    }
+
+    &_4 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      transform: translate(40px, -50%);
+    }
   }
 }

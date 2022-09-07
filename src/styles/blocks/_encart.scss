@@ -1,17 +1,23 @@
 .encart {
   position: relative;
-  padding: rem(140) 0;
+  padding: 6vw 0;
   background: black;
   color: white;
   
   h2 {
     position: relative;
-    font-size: rem(82);
-    line-height: rem(92);
-    font-weight: 300;
+    font-size: 4vw;
+    line-height: 1;
     z-index: 1;
     font-family: $font;
-    max-width: rem(750);
+    max-width: 36vw;
+    margin: 0;
+    margin-left: 15vw;
+    font-weight: 300;
+
+    span.color--red {
+      text-transform: uppercase;
+    }
   }
 
   &_bkg {

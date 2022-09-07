@@ -1,6 +1,7 @@
 .models {
   position: relative;
-
+  overflow:  hidden;
+  
   &:after {
     content:"";
     position: absolute;
@@ -15,7 +16,7 @@
   &-slider {
     position: relative;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     z-index: 1;
   }

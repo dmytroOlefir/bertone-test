@@ -40,7 +40,7 @@
   &_title {
     max-width: rem(880);
     margin-bottom: rem(100);
-    font-size: rem(65);
+    font-size: 4vw;
     font-weight: 400;
     line-height: rem(72);
     text-transform: uppercase;
@@ -51,10 +51,11 @@
 
   &_tag {
     font-family: $font;
+    font-size: .7vw;
     letter-spacing: 0.7em;
     text-transform: uppercase;
     margin-bottom: rem(32);
-      text-align: center; 
+    text-align: center;
   }
 
   &_form {
