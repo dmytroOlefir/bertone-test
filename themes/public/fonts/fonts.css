@@ -1,28 +1,9 @@
 @font-face {
     font-family: 'Noctis';
-    src: url('Noctis-ThinItalic.woff2') format('woff2'),
-        url('Noctis-ThinItalic.woff') format('woff');
-    font-weight: 100;
-    font-style: italic;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Noctis Texturae';
-    src: url('NoctisTexturae-Thin.woff2') format('woff2'),
-        url('NoctisTexturae-Thin.woff') format('woff');
-    font-weight: 100;
+    src: url('noctis-regular-webfont.woff2') format('woff2'),
+        url('noctis-regular-webfont.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Noctis';
-    src: url('Noctis-Thin.woff2') format('woff2'),
-        url('Noctis-Thin.woff') format('woff');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
 }
 
 @font-face {
