@@ -4,7 +4,7 @@
   background: black;
   padding: 4vw 0 8vw;
   color: white;
-  z-index:  2;
+  z-index: 1;
   overflow: visible;
 
   h2{
@@ -72,5 +72,6 @@
     max-height: none;
     height: auto;
     object-fit: none;
+    z-index: -1;
   }
 }
