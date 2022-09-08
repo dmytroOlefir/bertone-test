@@ -31,7 +31,7 @@
     font-family: $font;
     font-weight: 400;
     position: absolute;
-    top: 60px;
+    top: 0px;
     left: 50%;
     text-transform: uppercase;
     white-space: nowrap;
@@ -41,8 +41,12 @@
 
   &-slide {
     position: relative;
-    width: rem(400);
-    height: rem(468);
+    width: 20vw;
+    max-width: rem(400);
+    min-width: rem(280);
+    height: 30vw;
+    max-height: rem(600);
+    min-height: rem(400);
     padding: 40px;
     display: flex;
     align-items: flex-end;
@@ -51,7 +55,9 @@
     overflow: hidden;
 
     &:nth-child(2n) {
-      height: rem(546)
+      height: 36vw;
+      max-height: rem(746);
+      min-height: rem(500);
     }
 
     h3 {
@@ -69,8 +75,8 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 100%;
-      height: auto;
+      width: auto;
+      height: 100%;
       transform: translate(-50%, -50%);
       z-index: 0;
     }
