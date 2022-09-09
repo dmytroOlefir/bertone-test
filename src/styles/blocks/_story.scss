@@ -9,14 +9,20 @@
 
   h2{
     position: relative;
-    font-size: 2.5vw;
+    font-size: 26px;
     line-height: 1.2;
     font-family: $fontTitle;
-    margin-left: 40vw;
-    max-width: 28vw;
     padding-left: 3vw;
     z-index: 2;
     font-weight: 400;
+    margin-left: 5vw;
+    max-width: 90vw;
+
+    @media (min-width: 1280px) {
+      font-size: 2.5vw;
+      margin-left: 40vw;
+      max-width: 28vw;
+    }
 
     &:before {
       content: "";
@@ -30,34 +36,47 @@
   }
 
   &_description {
-    font-size: 1.4vw;
+    font-size: 22px;
     line-height: 1.5;
     font-family: $fontTitle;
     margin: 0;
+
+    @media (min-width: 1024px) {
+      font-size: 1.4vw;
+    }
   }
 
   &_tag {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform-origin: right top;
-    transform: translateX(-100%) rotate(-90deg) translateY(-5vw) translateX(-0.5vw);
     font-family: $font;
     font-weight: bold;
-    font-size: 0.6vw;
+    font-size: 14px;
     letter-spacing: 0.7em;
     text-transform: uppercase;
     margin: 0;
+    text-align: center;
+
+    @media (min-width: 1024px) {
+      font-size: 0.6vw;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: right top;
+      transform: translateX(-100%) rotate(-90deg) translateY(-5vw) translateX(-0.5vw);
+      text-align: left;
+    }
   }
 
   &_content {
     position: relative;
     width: 100%;
-    max-width: 50vw;
+    max-width: 90vw;
     margin: 0px auto;
 
     margin-top: 5vw;
     z-index: 2;
+    // @media (min-width: 1024px) {
+    //   max-width: 50vw;
+    // }
   }
 
   &_bkg {

@@ -1,13 +1,18 @@
 const { merge } = require('webpack-merge')
 const common = require('./webpack.config')
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   watch: true,
+  devServer: {
+    open: true,
+    hot: false,
+    liveReload: true,
+  },
   module: {
     rules: [
-      // CSS
       {
         test: /\.(sa|sc|c)ss$/,
         use: ['style-loader', 'css-loader', {
@@ -18,9 +23,6 @@ module.exports = merge(common, {
                 [
                   'postcss-preset-env',
                   'autoprefixer',
-                  {
-                    // Options
-                  }
                 ]
               ]
             }
@@ -28,5 +30,22 @@ module.exports = merge(common, {
         }, 'sass-loader']
       }
     ]
-  }
+  },
+  plugins: [
+    new BrowserSyncPlugin(
+      {
+        host: 'localhost',
+        proxy: 'http://localhost:8000',
+        injectChanges: false,
+        injectCss: true,
+        reloadDelay: 1000,
+        files: [
+          './themes/**/*.php',
+          './themes/**/*.twig',
+          './themes/public/*.css',
+          './themes/public/*.js',
+        ],
+      },
+    ),
+  ]
 })

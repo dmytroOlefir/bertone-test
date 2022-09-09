@@ -2,16 +2,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background: black ;
+  // min-height: 100vh;
+  padding: 10vh 0;
+  background: black;
   text-align: center;
-  color: white;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  
+
+  @media (min-width: 1024px) {
+    min-height: 100vh;
+  }
+
   h1 {
-    font-size: 4.5vw;
+    font-size: 35px;
     line-height: 1;
     letter-spacing: rem(-0.7);
     font-family: $font;
@@ -19,10 +23,14 @@
     text-transform: uppercase;
     width: 40vw;
     margin: 0px auto;
+    color: white;
+
+    @media (min-width: 1024px) {
+      font-size: 4.5vw;
+    }
 
     span {
       font-weight: 400;
     }
   }
-
 }
