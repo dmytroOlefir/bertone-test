@@ -4,7 +4,7 @@ import {SplitText} from "../inc/_SplitText";
 const opening = () => {
 	const curtain = document.querySelector('[data-curtain]'),
 		title = document.querySelector('[data-banner-title]'),
-		// filmBars = document.querySelectorAll('[data-film-bar]'),
+		filmBars = document.querySelectorAll('[data-film-bar]'),
 		emptyBg = document.querySelector('[data-banner-bg="empty"]'),
 		bg = document.querySelectorAll('[data-banner-bg]');
 
@@ -14,8 +14,8 @@ const opening = () => {
 		.to(curtain, {autoAlpha: 0, duration: 1.2}, "+=0.5")
 		.to(bg, {scale: 1, duration: 4}, "-=0.7")
 		.from(title, {opacity: 0, ease: "power3.in", duration: 1.5}, "-=2.8")
-		// .to(filmBars, {scaleY: 0, duration: 0.8}, "-=0.75")
-		.to(emptyBg, {clip: 'rect(auto auto 0vw auto)', ease: "expo.in", duration: 1.2}, "=-3.5")
+		.to(filmBars, {scaleY: 0, duration: 2.15, ease: "power3.in"}, "-=2.9")
+		.to(emptyBg, {clip: 'rect(auto auto 0vw auto)', ease: "power3.out", duration: 1.2}, "=-1.6")
 
 }
 
@@ -89,7 +89,7 @@ const revealSimple = () => {
 
 		tl.from(el, {
 			opacity: 0,
-			duration: 1.2,
+			duration: 1,
 			ease: "power3.in",
 		}, "+=0.1")
 	});
@@ -117,4 +117,46 @@ const revealImage = () => {
 	});
 }
 
-export {opening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage};
+const bgZoom = () => {
+	const bg = document.querySelectorAll('[data-bg-zoom]');
+
+	bg.forEach((block, i) => {
+
+		let image = block.querySelector('.zoom');
+
+		let tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: block,
+			}
+		});
+
+		tl.from(image, {
+			duration: 8,
+			scale: 1.3,
+			ease: "power1.out",
+		}, "+=0");
+	});
+}
+
+const lineLeft = () => {
+	const lines = document.querySelectorAll('[data-line]');
+
+	lines.forEach((line, i) => {
+		let direction = line.dataset.line;
+
+		let tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: line,
+			}
+		});
+
+		tl.from(line, {
+			duration: 0.8,
+			scale: 0,
+			transformOrigin: direction,
+			ease: "power3.out",
+		}, "+=0.2");
+	});
+}
+
+export {opening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, };

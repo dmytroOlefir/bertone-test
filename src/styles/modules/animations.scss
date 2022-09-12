@@ -2,6 +2,10 @@
   position: fixed;
 }
 
+[data-bg-zoom] {
+  overflow: hidden;
+}
+
 [data-line-reveal] {
   > div {
 	overflow: hidden;
@@ -10,7 +14,6 @@
 
 .the-image {
   position: relative;
-  overflow: hidden;
   &__curtain {
 	position: absolute;
 	top: 0;

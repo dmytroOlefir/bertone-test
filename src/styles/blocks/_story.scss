@@ -17,6 +17,9 @@
     font-weight: 400;
     margin-left: 5vw;
     max-width: 90vw;
+    &:before {
+      content: none;
+    }
 
     @media (min-width: 1280px) {
       font-size: 2.5vw;
@@ -24,8 +27,7 @@
       max-width: 28vw;
     }
 
-    &:before {
-      content: "";
+    .line {
       position: absolute;
       top: 0;
       left: 0;
