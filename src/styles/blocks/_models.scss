@@ -1,7 +1,7 @@
 .models {
   position: relative;
   overflow:  hidden;
-
+  background: #fff;
   &:after {
     content:"";
     position: absolute;
@@ -23,20 +23,29 @@
     z-index: 1;
   }
 
-  h2 {
+  &_rail {
+    position: absolute;
+    display: flex;
+    animation: rail 40s linear infinite;
+  }
+
+  &_title {
     color: $orange;
     // font-size: rem(128);
     font-size: 8vw;
     margin: 0;
     font-family: $font;
     font-weight: 400;
-    position: absolute;
-    top: 0px;
-    left: 50%;
+    position: relative;
+    top: auto;
+    left: auto;
     text-transform: uppercase;
     white-space: nowrap;
-    transform: translate(-50%, 0%);
     z-index: 10;
+    h2 {
+      position: static;
+      transform: none;
+    }
   }
 
   &-slide {
@@ -81,4 +90,9 @@
       z-index: 0;
     }
   }
+}
+
+@keyframes rail {
+  from {transform: translateX(0)}
+  to {transform: translateX(-75%)}
 }

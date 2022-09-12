@@ -1,7 +1,9 @@
 <div class="newsletter">
   <div class="container">
     <p class="newsletter_tag">ON THE HORIZON</p>
-    <h2 class="newsletter_title">Be the first to know what's new at Bertone </h2>
+    <h2 class="newsletter_title" data-line-reveal>
+      <span>Be the first to know what's new at Bertone</span>
+    </h2>
     <form class="newsletter_form">
       <input type="email" placeholder="Enter your address" />
       <button type="submit">
@@ -12,5 +14,5 @@
     </form>
   </div>
 
-  <div class="newsletter_bkg" style="background-image: url('{{ site.theme.link }}/public/newsletter.jpg')"></div>
+  <div class="newsletter_bkg" data-scroll data-scroll-speed="-1" style="background-image: url('{{ site.theme.link }}/public/newsletter.jpg')"></div>
 </div>

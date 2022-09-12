@@ -1,6 +1,6 @@
 .vision {
   position: relative;
-  background: black;
+  background: transparent;
   color: white;
   padding: 10vw 0 20vw;
   display: flex;
@@ -116,5 +116,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  &_illu2 {
+    position: relative;
+    z-index: 1;
   }
 }

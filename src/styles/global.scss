@@ -1,13 +1,13 @@
 html,
 body {
   width: 100%;
-  min-height: 100vh;
+  //min-height: 100vh;
   margin: 0;
   padding: 0;
 }
 
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-family: $font;
@@ -80,6 +80,7 @@ svg {
   }
 
   &--title {
+    font-style: normal;
     font-family: $fontTitle;
     // font-weight: bold;
   }
@@ -93,4 +94,19 @@ img {
   max-width: 100%;
   max-height: 100%;
   object-fit: cover;
+}
+
+body.home {
+  background: #000000;
+}
+
+.curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999999;
+  background: #000000;
+  overflow: hidden;
 }

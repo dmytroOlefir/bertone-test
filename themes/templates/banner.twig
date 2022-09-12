@@ -1,5 +1,17 @@
-<div id="banner" class="banner" style="background-image: url({{ site.theme.link }}/public/banner.jpg) ">
+<div id="banner" class="banner">
+  <div class="banner_bg" data-banner-wrap data-scroll data-scroll-speed="-3">
+{#    <div class="banner_bg--top" data-film-bar></div>#}
+    <div class="banner_bg--red" data-banner-bg="red" style="background-image: url({{ site.theme.link }}/public/banner.jpg) "></div>
+    <div class="banner_bg--empty" data-banner-bg="empty" style="background-image: url({{ site.theme.link }}/public/banner-empty.jpg) "></div>
+{#    <div class="banner_bg--bottom" data-film-bar></div>#}
+  </div>
   <div class="container">
-    <h1>the <span class="font--title">TIMELESS</span> ICON is reborn</h1>
+    <h1 data-banner-title>
+      <div>the&nbsp;</div>
+      <div class="special-text" data-special-text>
+        <em class="font--title" data-text="TIMELESS">TIMELESS</em>
+      </div>
+      <div> ICON is reborn</div>
+    </h1>
   </div>
 </div>
