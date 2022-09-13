@@ -1,11 +1,12 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	{% include '/banner.twig' %}
-	{% include '/header.twig' %}
-	{% include './block/intro.twig' %}
-	{% include './block/story.twig' %}
-	{% include './block/vision.twig' %}
+{# First DIV not appear WTF -  #}
+	<div class="wrap-black">
+		{% include './block/intro.twig' %}
+		{% include './block/story.twig' %}
+		{% include './block/vision.twig' %}
+	</div>
 	{% include './block/heritage.twig' %}
 	{% include './block/encart.twig' %}
 	{% include './block/excellence.twig' %}

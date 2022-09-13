@@ -1,7 +1,9 @@
 .models {
   position: relative;
   overflow:  hidden;
+  width: 100%;
   background: #fff;
+
   &:after {
     content:"";
     position: absolute;
@@ -18,9 +20,14 @@
     display: flex;
     flex-wrap: nowrap;
     width: 100vw;
-    min-width: 1600px;
+    overflow: hidden;
+    min-width: 800px;
     justify-content: center;
     z-index: 1;
+
+    @include minTablet {
+      min-width: 1600px;
+    }
   }
 
   &_rail {
@@ -31,8 +38,7 @@
 
   &_title {
     color: $orange;
-    // font-size: rem(128);
-    font-size: 8vw;
+    font-size: rem(68);
     margin: 0;
     font-family: $font;
     font-weight: 400;
@@ -42,42 +48,63 @@
     text-transform: uppercase;
     white-space: nowrap;
     z-index: 10;
+
     h2 {
       position: static;
       transform: none;
+    }
+
+    @include minTablet {
+      font-size: 8vw;
     }
   }
 
   &-slide {
     position: relative;
-    width: 20vw;
-    max-width: rem(400);
-    min-width: rem(280);
-    height: 30vw;
-    max-height: rem(600);
-    min-height: rem(400);
-    padding: 40px;
+    padding: 20px;
     display: flex;
     align-items: flex-end;
     margin: 0 rem(12);
     background: black;
     overflow: hidden;
+    width: 224px;
+    height: 280px;
 
-    &:nth-child(2n) {
-      height: 36vw;
-      max-height: rem(746);
-      min-height: rem(500);
+    &:nth-child(2) {
+      height: 380px;
     }
+
+    @include minTablet {
+        position: relative;
+        width: 20vw;
+        max-width: rem(400);
+        min-width: rem(280);
+        height: 30vw;
+        max-height: rem(600);
+        min-height: rem(400);
+        padding: 40px;
+
+        &:nth-child(2n) {
+          height: 36vw;
+          max-height: rem(746);
+          min-height: rem(500);
+        }
+    }
+  
 
     h3 {
       position: relative;
       z-index: 1;
       color: white;
-      font-size: 1.5vw;
+      font-size: 17px;
       line-height: 1.2;
       margin: 0;
       font-family: $font;
       font-weight: 400;
+
+      @include minTablet {
+        font-size: 1.5vw;
+      }
     }
 
     img {

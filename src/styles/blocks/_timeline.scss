@@ -3,37 +3,73 @@
   overflow: hidden;
   background: black;
   color: white;
-  // min-height: 100vh;
-  padding: 10vw 0;
+
+  padding: 10vw 0px;
   display: flex;
   align-items: center;
+  background-size: 180vw;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  overflow: hidden;
+
+  @include minTablet {
+    background-size: 70vw;
+    background-position: center;
+  }
+
   &_bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    > div {
-      width: 100%;
-      height: 100%;
-      background-size: 70vw;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      >div {
+        width: 100%;
+        height: 100%;
+        background-size: 70vw;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
   }
 
   &_scroll {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
+
+    @include minTablet {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &_bottom {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      
+      @include minTablet {
+        width: 50%;
+      }
+    }
   }
 
   &_slider {
-    transform: translateX(2vw);
+    width: 60px;
+    transform: translateX(95%);
+
+    @include minTablet {
+      width: auto;
+      transform: translateX(10%);
+    }
 
     img {
-      width: 20vw;
+      height: 400px;
+      width: auto;
+
+      @include minTablet{
+        height: 70vh;
+      }
     }
   }
 
@@ -51,40 +87,63 @@
   }
 
   &_content {
-    width: 28vw;
-    margin-left: 10vw;
+    @include minTablet {
+      width: 28vw;
+      margin-left: 10vw;
+    }
 
     h2{
       color: $orange;
       font-family: $fontTitle;
-      font-size: 4vw;
+      font-size: 44px;
       line-height: 1.2;
       font-weight: 400;
       margin-bottom: 35px;
+      margin-left: 5vw;
+
+      @include minTablet {
+        font-size: 4vw;
+        margin-left: 0;
+      }
     }
 
     p {
+      padding-top: 20px;
       position: relative;
-      font-size: 1vw;
+      font-size: 15px;
       line-height: 1.5;
       width: 20vw;
       margin-left: 100px;
-      &:before {
-        content: none;
+      position: relative;
+      width: 90vw;
+      margin-left: 5vw;
+
+      @include minTablet {
+        font-size: 1vw;
+        padding-top: 0;
+        width: auto;
       }
+
     }
   }
 
   &_discover {
     color: $orange;
-    font-size: 1.2vw;
-    width: 10vw;
-    height: 10vw;
+    width: 112px;
+    height: 112px;
+    font-size: 14px;
     border-radius: 50%;
     border: 1px solid $orange;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 50px;
+
+    @include minTablet {
+      font-size: 1.2vw;
+      width: 10vw;
+      height: 10vw;
+    }
 
     &:after {
       content: "";

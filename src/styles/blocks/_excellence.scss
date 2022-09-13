@@ -4,13 +4,14 @@
   text-align: center;
   overflow: visible;
   background: #ffffff;
+
   &_bkg {
     position: absolute;
     top: 0;
     bottom: 0;
     width: 100%;
     height: 100%;
-    opacity: 1;
+    opacity: 0.7;
     z-index: 0;
     overflow: hidden;
     transform: translateY(10vw);
@@ -21,8 +22,8 @@
       top: 0px;
       left: 0px;
       width: 100%;
-      height: 50vh;
-      z-index: 1;
+      height: 400px;
+      z-index: 0;
       background: linear-gradient(180deg, #FFFFFF 40%, rgba(255, 255, 255, 0) 100%);
     }
   
@@ -32,8 +33,8 @@
       bottom: 0px;
       left: 0px;
       width: 100%;
-      height: 400px;
-      z-index: 1;
+      height: 200px;
+      z-index: 0;
       transform: scaleY(-1);
       background: linear-gradient(#FFFFFF 40%, rgba(255, 255, 255, 0) 100%);
     }
@@ -52,12 +53,16 @@
   }
 
   h2 {
-    font-size: rem(65);
+    font-size: 44px;
     line-height: rem(70);
     font-weight: 400;
     font-family: $fontTitle;
     margin-bottom: rem(25);
     color: $orange;
+
+    @include minTablet {
+      font-size: 4.5vw;
+    }
   }
 
   &_tag {
@@ -67,6 +72,7 @@
     margin-top: rem(38);
     font-size: rem(14);
     font-family: $font;
+    font-weight: 600;
   }
 
   &_content {
@@ -76,5 +82,9 @@
     font-weight: 400;
     max-width: rem(506);
     margin: 0 auto;
+  
+    @include minTablet {
+      font-size: .8vw;
+    }
   }
 }
