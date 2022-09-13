@@ -2,7 +2,6 @@
   position: relative;
   overflow:  hidden;
   width: 100%;
-  background: #fff;
 
   &:after {
     content:"";
@@ -68,10 +67,10 @@
     background: black;
     overflow: hidden;
     width: 224px;
-    height: 280px;
+    height: 280px !important;
 
     &:nth-child(2) {
-      height: 380px;
+      height: 380px !important;
     }
 
     @include minTablet {
@@ -79,15 +78,15 @@
         width: 20vw;
         max-width: rem(400);
         min-width: rem(280);
-        height: 30vw;
-        max-height: rem(600);
-        min-height: rem(400);
+        height: 30vw !important;
+        max-height: rem(600) !important;
+        min-height: rem(400) !important;
         padding: 40px;
 
         &:nth-child(2n) {
-          height: 36vw;
-          max-height: rem(746);
-          min-height: rem(500);
+          height: 36vw !important;
+          max-height: rem(746) !important;
+          min-height: rem(500) !important;
         }
     }
   

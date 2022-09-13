@@ -7,6 +7,10 @@ import {ScrollTrigger} from './scripts/inc/_ScrollTrigger'
 import {SplitText} from './scripts/inc/_SplitText'
 import CSSPlugin from './scripts/inc/_CSSPlugin'
 
+import Swiper from 'swiper'
+import 'swiper/css'
+
+
 const gsapWithCSS = gsap.registerPlugin(CSSPlugin, ScrollTrigger, SplitText) || gsap, // to protect from tree shaking
 	TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
@@ -59,3 +63,19 @@ revealSimple()
 revealImage()
 bgZoom()
 lineLeft()
+
+// --------------- Slider
+const slider = document.querySelector('[js-slider]')
+
+if (slider) {
+	const swiper = new Swiper(slider, {
+		slidesPerView: 'auto',
+		spaceBetween: 30,
+		centeredSlides: true,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		loop: true,
+  })
+}

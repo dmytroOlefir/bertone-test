@@ -82,8 +82,8 @@
     align-items: center;
 
     @include minTablet {
-      // left: 40vw;
-      // transform: translate(-50%, 30px) translateX(100px);
+      left: 40vw;
+      transform: translate(-50%, 30px) translateX(100px);
     }
     
     &:after {
