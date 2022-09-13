@@ -29,14 +29,16 @@ const lineReveal = () => {
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: text,
+				start: 'bottom 90%'
 			}
 		});
 
 		tl.from(splitText.lines, {
 			duration: 1.2,
+			y: 75,
 			opacity: 0,
-			ease: "power3.in",
-			stagger: 0.15
+			ease: "power3.out",
+			stagger: 0.12
 		})
 	});
 }
@@ -81,6 +83,8 @@ const revealSimple = () => {
 	const elements = document.querySelectorAll('[data-reveal-simple]');
 
 	elements.forEach((el, i) => {
+		let delay = el.dataset.revealSimple || '0';
+
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: el,
@@ -89,9 +93,9 @@ const revealSimple = () => {
 
 		tl.from(el, {
 			opacity: 0,
-			duration: 1,
-			ease: "power3.in",
-		}, "+=0.1")
+			duration: 1.2,
+			ease: "power3.out",
+		}, `+=${delay}`)
 	});
 }
 
@@ -147,6 +151,7 @@ const lineLeft = () => {
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: line,
+				start: 'bottom 90%'
 			}
 		});
 
