@@ -63,7 +63,12 @@ ScrollTrigger.addEventListener('refresh', () => lc.update())
 ScrollTrigger.refresh()
 
 opening()
-lineReveal()
+
+//Temp Fix, need to be updated
+setTimeout(() => {
+	lineReveal()
+}, 200)
+
 revealFromLeft()
 revealFromRight()
 revealSimple()
