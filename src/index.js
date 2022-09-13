@@ -21,10 +21,17 @@ const lc = new LocomotiveScroll({
 	smooth: true,
 	lerp: 0.08,
 	multiplier: 0.5,
+	smartphone: {
+		smooth: true
+	},
 	tablet: {
-		breakpoint: 1200,
-		smooth: true,
+		smooth: true
 	}
+	//Will probably remove Loco for mobile/tablet later on
+	// tablet: {
+	// 	breakpoint: 1200,
+	// 	smooth: true,
+	// }
 });
 
 window.lc = lc
