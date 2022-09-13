@@ -43,24 +43,32 @@
   }
 
   &_title {
-    max-width: 50vw;
+    // 
     margin-bottom: rem(100);
-    font-size: 3.5vw;
+    font-size: 36px;
     font-weight: 400;
     line-height: 1.2;
     text-transform: uppercase;
     font-family: $font;
     color: white;
     text-align: center; 
+
+    @include minTablet {
+      font-size: 3.5vw;
+      max-width: 50vw;
+    }
   }
 
   &_tag {
     font-family: $font;
-    font-size: .7vw;
+    font-size: 15px;
     letter-spacing: 0.7em;
     text-transform: uppercase;
     margin-bottom: rem(32);
     text-align: center;
+    @include minTablet {
+      font-size: .7vw;
+    }
   }
 
   &_form {

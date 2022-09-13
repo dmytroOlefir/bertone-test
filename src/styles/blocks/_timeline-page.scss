@@ -1,0 +1,344 @@
+.page-timeline {
+  color: white;
+  min-width: 100%;
+  height: 100%;
+  overflow: auto;
+
+  .timeline-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 98.6vh;
+    overflow-y: hidden;
+  }
+
+  .timeline-item {
+    min-width: 100vw;
+    margin-right: 15vw;
+    position: relative;
+
+    h2 {
+      text-transform: uppercase;
+      line-height: 1.2;
+      font-weight: 300;
+      font-size: 45px;
+
+      @include minTablet {
+        font-size: 4vw;
+
+      }
+    }
+
+    &_content {
+      z-index: 10;
+      p:not(.timeline-item_date) {
+        color: white;
+        font-size: 15px;
+        line-height: 28px;
+        font-weight: 400;
+      }
+    }
+
+    &_caption {
+      font-size: 11px;
+      color: white;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 90px;
+      transform: translateX(-180%);
+      z-index: 10;
+      line-height: 16px;
+
+      &:before {
+        content:"";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 1px;
+        background: $orange;
+        transform: translateY(-10px);
+      }
+
+      @include minTablet {
+        width: 6vw;
+        font-size: .8vw;
+        // line-height: 1.5px;
+      }
+    }
+
+    &_bkg {
+      display: flex;
+      // align-items: center;
+      line-height: 0;
+      font-size: 0;
+      position: relative;
+
+      img {
+        height: auto;
+        width: auto;
+      }
+      // jus
+    }
+
+    &_date {
+      color: $orange;
+      font-size: 150px;
+      font-family: $fontTitle;
+      display: flex;
+
+      @include minTablet {
+        font-size: 10vw;
+      }
+    }
+
+    &_diapo {
+      height: 100%;
+    }
+
+    // TITLE
+    &_title {
+      @include minTablet {
+        width: 50vw;
+      }
+
+      h2 {
+        font-size: 100px;
+        color: white;
+        line-height: 1;
+        text-align: center;
+        letter-spacing: -1px;
+        font-family: $fontTitle;
+
+        @include minTablet {
+          font-size: 6vw;
+        }
+      }
+    }
+    
+    // BY DATE 
+    &--first {
+      display: flex;
+      align-items: center;
+      padding: 5vh 0;
+
+      .timeline-item {
+        &_bkg {
+          height: 100%;
+
+          img {
+            height: 100%;
+            width: auto;
+          }
+        }
+      }
+    }
+
+    // 1912 -------------------------
+    &[data-date="1912"]{
+      .timeline-item {
+        &_diapo {
+          display: flex;
+        }
+
+        &_bkg {
+          &--1 {
+            height: 50vh;
+            margin-right: 5vw;
+            transform: translateY(10vh);
+          }
+
+          &--2 {
+            height: 40vh;
+            transform: translateY(40vh);
+          }
+        }
+
+        &_date {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate(-100%, -45%) translateX(-2vw);
+        }
+
+        &_content {
+          position: absolute;
+          top: 60vh;
+          left: 15vw;
+
+          h2 {
+            margin-bottom: 40px;
+          }
+
+          p {
+            @include minTablet {
+              max-width: 20vw;
+            }
+          }
+        }
+      }
+    }
+
+    // 1920 --------------------------
+    &[data-date="1920"]{
+      .timeline-item {
+        &_diapo {
+          display: flex;
+          height: 100%;
+
+        }
+        
+        &_bkg {
+          &--1 {
+            height: 50vh;
+            margin-right: 5vw;
+            transform: translateY(30vh);
+          }
+      
+          &--2 {
+            height: 80vh;
+            transform: translateY(10vh);
+
+            .timeline-item_caption {
+              top: 50px;
+              bottom: auto;
+            }
+          }
+        }
+
+        &_date {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transform: translateY(80%);
+        }
+      
+        &_content {
+          position: absolute;
+          top: 10vh;
+          left: -10vw;
+          width: 40vw;
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+
+          p {
+            max-width: 380px;
+          }
+        }
+      }
+    }
+    // 1930
+    &[data-date="1930"]{
+      // min-width: 150vw;
+      min-width: none;
+      display: flex;
+      // flex-wrap: wrap;
+      align-items: flex-start;
+
+      .timeline-item {
+        &_diapo {
+          width: 110vw;
+          display: flex;
+          height: 100%;
+        }
+        
+        &_bkg {
+          margin-left: 10vw;
+          &--1 {
+            position: absolute;
+            bottom: 10vh;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 30vh;
+            z-index: 1;
+          }
+      
+          &--2 {
+            position: relative;
+            height: 80vh;
+          }
+        }
+
+        &_date {
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        
+        &_content {
+          width: 40vw;
+          transform: translateY(10vh);
+          display: flex;
+          flex-direction: column-reverse;
+          
+          h2 {
+            max-width: 80%;
+          }
+
+          p {
+            margin-left: auto;
+            @include minTablet {
+              max-width: 15vw;
+            }
+          }
+        }
+      }
+    }
+    // 1940
+    &[data-date="1940"]{
+      .timeline-item {
+
+      }
+    }
+    // 1950
+    &[data-date="1950"]{
+      .timeline-item {
+
+      }
+    }
+    // 1960
+    &[data-date="1960"]{
+      .timeline-item {
+
+      }
+    }
+    // 1970
+    &[data-date="1970"]{
+      .timeline-item {
+
+      }
+    }
+    // 1980
+    &[data-date="1980"]{
+      .timeline-item {
+
+      }
+    }
+    // 1990
+    &[data-date="1990"]{
+      .timeline-item {
+
+      }
+    }
+    // 2000
+    &[data-date="2000"]{
+      .timeline-item {
+
+      }
+    }
+    // 2010
+    &[data-date="2010"]{
+      .timeline-item {
+
+      }
+    }
+    // 2020
+    &[data-date="2020"]{
+      .timeline-item {
+
+      }
+    }
+  }
+}

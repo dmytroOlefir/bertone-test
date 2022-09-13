@@ -1,19 +1,30 @@
 .encart {
   position: relative;
-  padding: 10vw 0;
+  padding: 60px 0;
   background: black;
   color: white;
+
+  @include minTablet {
+    padding: 6vw 0;
+  }
   
   h2 {
     position: relative;
-    font-size: 4vw;
+    font-size: 44px;
     line-height: 1;
     z-index: 1;
     font-family: $font;
-    max-width: 36vw;
+    max-width: 90vw;
     margin: 0;
-    margin-left: 15vw;
+    margin-left: 5vw;
     font-weight: 300;
+
+    @include minTablet {
+      font-size: 4vw;
+      max-width: 36vw;
+      margin-left: 15vw;
+      font-weight: 300;
+    }
 
     span.color--red {
       text-transform: uppercase;
@@ -29,5 +40,6 @@
     margin: auto;
     transform: none;
     z-index: 0;
+    min-width: 600px;
   }
 }
