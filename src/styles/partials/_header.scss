@@ -1,7 +1,10 @@
 .header {
-  position:relative;
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background: #ffffff;
-  z-index: 4;
+  z-index: 99;
   &_logo {
     padding: 0;
     height: 100%;

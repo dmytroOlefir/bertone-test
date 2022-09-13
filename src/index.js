@@ -1,5 +1,5 @@
 import './styles/index.scss'
-import {opening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft} from './scripts/modules/_animations'
+import {opening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp} from './scripts/modules/_animations'
 import barba from '@barba/core'
 import LocomotiveScroll from 'locomotive-scroll'
 import {gsap} from './scripts/inc/_gsap'
@@ -59,3 +59,4 @@ revealSimple()
 revealImage()
 bgZoom()
 lineLeft()
+fadeUp()
