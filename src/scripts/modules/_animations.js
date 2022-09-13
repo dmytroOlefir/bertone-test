@@ -136,7 +136,7 @@ const bgZoom = () => {
 
 		tl.from(image, {
 			duration: 8,
-			scale: 1.3,
+			scale: 1.2,
 			ease: "power1.out",
 		}, "+=0");
 	});
