@@ -33,7 +33,7 @@ const opening = () => {
 }
 
 const lineReveal = () => {
-	const lineTitle = document.querySelectorAll('[data-line-reveal] > *');
+	const lineTitle = document.querySelectorAll('[data-line-reveal], [data-line-reveal] > *');
 
 	lineTitle.forEach((text, i) => {
 

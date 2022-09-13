@@ -8,10 +8,15 @@
 }
 
 [data-line-reveal] {
-  //display: inline;
-  > div {
-	overflow: hidden;
-	display: inline;
+
+  div {
+	overflow: visible;
+	font-weight: inherit;
+	line-height: inherit;
+  }
+  span {
+	font-weight: inherit;
+	line-height: inherit;
   }
 }
 
