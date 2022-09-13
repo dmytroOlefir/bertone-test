@@ -7,6 +7,10 @@
   z-index: 1;
   overflow: visible;
 
+  @include mobile {
+    padding: 52px 0 78px;
+  }
+
   h2{
     position: relative;
     font-size: 26px;
@@ -17,14 +21,16 @@
     font-weight: 400;
     margin-left: 5vw;
     max-width: 90vw;
+
     &:before {
       content: none;
     }
 
-    @media (min-width: 1280px) {
+    margin-bottom: 30px;
+
+    @include minTablet {
       font-size: 2.5vw;
       margin-left: 40vw;
-      max-width: 28vw;
     }
 
     .line {
@@ -42,9 +48,11 @@
     line-height: 1.5;
     font-family: $fontTitle;
     margin: 0;
+    text-align: center;
 
-    @media (min-width: 1024px) {
+    @include minTablet {
       font-size: 1.4vw;
+      text-align: left;
     }
   }
 
@@ -55,9 +63,10 @@
     letter-spacing: 0.7em;
     text-transform: uppercase;
     margin: 0;
+    margin-bottom: 20px;
     text-align: center;
 
-    @media (min-width: 1024px) {
+    @include minTablet {
       font-size: 0.6vw;
       position: absolute;
       top: 0;
@@ -76,9 +85,10 @@
 
     margin-top: 5vw;
     z-index: 2;
-     @media (min-width: 1024px) {
-       max-width: 50vw;
-     }
+
+    @include minTablet {
+      max-width: 50vw;
+    }
   }
 
   &_bkg {

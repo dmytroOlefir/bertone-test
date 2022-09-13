@@ -10,11 +10,18 @@
   padding: 10vw 0 5vw;
   z-index: 3;
 
+  @include mobile {
+    .container {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
   &_text {
     position: relative;
     z-index: 2;
     font-size: 35px;
-    line-height: 1;
+    line-height: 1.2;
     text-transform: uppercase;
     font-family: $font;
     color: white;
@@ -22,20 +29,27 @@
     margin-left: 5vw;
     max-width: 90vw;
 
-    @media (min-width: 1024px) {
+    @include minTablet {
       font-size: 4.6vw;
       margin-left: 40vw;
       max-width: 42vw;
+      line-height: 1;
     }
   }
 
   &_bkg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(-10vw, -16vw);
-    z-index: 0;
-    height: auto;
-    width: 65vw;
+    width: 540px;
+    max-width: none;
+    transform: translate(-130px, -50px);
+
+    @include minTablet {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-10vw, -16vw);
+      z-index: 0;
+      height: auto;
+      width: 65vw;
+    }
   }
 }

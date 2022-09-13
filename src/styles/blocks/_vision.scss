@@ -2,17 +2,18 @@
   position: relative;
   background: transparent;
   color: white;
-  padding: 10vw 0 20vw;
-  display: flex;
-  align-items: center;
+  padding: 10vw 0 300px;
 
-  @media(min-width: 1440px) {
+  @include minTablet {
     padding: 10vw 0 10vw;
+    display: flex;
+    align-items: center;
   }
 
   &_text {
     position: relative;
     margin-top: 2vw;
+
     .line {
       position: absolute;
       top: 0.7vw;
@@ -25,45 +26,63 @@
 
   h2 {
       position: relative;
-      font-size: 4.5vw;
+      font-size: 44px;
       line-height: 1;
       font-family: $fontTitle;
-      max-width: 22vw;
+      max-width: 60vw;
+      margin-left: 5vw;
       z-index: 2;
       color: white;
-      transform: translateX(-8vw);
-      margin: 0;
       margin-top: 3vw;
-      margin-bottom: 2vw;
+      margin-bottom: 20px;
       font-weight: 300;
+
+      @include minTablet {
+        max-width: 22vw;
+        font-size: 4.5vw;
+        transform: translateX(-8vw);
+      }
   }
 
   p {
-	margin-top: 0;
+	  // margin-top: 0;
+    padding-top: 20px;
+    margin-top: 2vw;
     margin-bottom: 0;
     margin-right: auto;
     margin-left: auto;;
     position: relative;
-    max-width: 16vw;
-    font-size: 1vw;
+    font-size: 15px;
     line-height: 1.5;
-    &:after {
-      content: none;
+
+    max-width: 90vw;
+    margin-left: 5vw;
+
+    @include minTablet {
+      margin-left: 0;
+      font-size: 1vw;
+      max-width: 16vw;
+      padding-top: 0;
     }
   }
 
   .btn_play {
     bottom: 0;
-    left: 40vw;
+    left: 50%;
     position: absolute;
     padding: 0;
     background: transparent;
     z-index: 10;
     border: 0;
-    transform: translate(-50%,30px) translateX(100px);
+    transform: translate(-50%, 200px);
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include minTablet {
+      // left: 40vw;
+      // transform: translate(-50%, 30px) translateX(100px);
+    }
     
     &:after {
       content: "";
@@ -95,13 +114,21 @@
   }
 
   .vision_illu1 {
-    transform: translateY(150px);
-    margin-right: 50px;
+    transform: translateY(50px);
+    margin-right: 20px;
+
+    @include minTablet {
+      transform: translateY(150px);
+      margin-right: 50px;
+    }
   }
 
   &_wrap {
-    display: grid;
-    grid-template-columns: 60vw 30vw;
+    @include minTablet {
+
+      display: grid;
+      grid-template-columns: 60vw 30vw;
+    }
   }
 
   &_diapo {
@@ -109,11 +136,16 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
+    margin: 0px 5vw;
 
     img {
-      width: 20vw;
-      min-width: 348px;
+      width: 100%;
       height: auto;
+
+      @include minTablet {
+        width: 20vw;
+        // min-width: 348px;
+      }
     }
   }
 
@@ -123,7 +155,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include minTablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
+  
   &_illu2 {
     position: relative;
     z-index: 1;

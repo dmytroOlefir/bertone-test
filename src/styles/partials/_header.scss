@@ -7,7 +7,7 @@
     height: 100%;
     display: block;
 
-    @media (max-width: 1024px) {
+    @include minTablet {
       width: 140px;
       height: auto;
     }

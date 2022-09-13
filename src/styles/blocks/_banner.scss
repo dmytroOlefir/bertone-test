@@ -8,7 +8,7 @@
   background: black;
   text-align: center;
 
-  @media (min-width: 1024px) {
+  @include minTablet{
     min-height: 100vh;
   }
   &_bg {
@@ -61,7 +61,7 @@
     margin: 0px auto;
     color: white;
 
-    @media (min-width: 1024px) {
+    @include minTablet {
       font-size: 4.5vw;
     }
 

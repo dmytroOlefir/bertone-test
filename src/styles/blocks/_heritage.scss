@@ -22,6 +22,10 @@
     max-width: 24vw;
     text-align: center;
 
+    @include minTablet {
+      max-width: 24vw;
+    }
+
     h2 {
       font-size: 4vw;
       line-height: 1;
