@@ -5,6 +5,7 @@
   right: 0;
   background: #ffffff;
   z-index: 99;
+
   &_logo {
     padding: 0;
     height: 100%;
@@ -21,25 +22,28 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    // height: 120px;
-    padding: 0 5vw;
+    padding: 10px 5vw;
 
     @media (min-width: 1280px) {
-        padding: 2vh 5vw;
+        padding: 0px 5vw;
     }
   }
 
   &_tagline{
-    font-size: 40px;
-    transform: translateX(-20px) rotate(3deg);;
-    line-height: 1.2;
+    font-size: 26px;
+    transform: translateX(-20px) translateY(5px) rotate(3deg);
+    line-height: 1;
     font-weight: 400;
     font-family: $fontTag;
-    padding-top: 20px; 
+    // padding-top: 20px; 
     margin: 0;
     
     @media (min-width: 1280px) {
       font-size: 3vw;
+    }
+
+    @media (min-width: 1680px) {
+      font-size: 46px;
     }
   }
 
