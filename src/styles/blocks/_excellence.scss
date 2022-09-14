@@ -76,14 +76,14 @@
   }
 
   &_content {
-    font-size: 22px;
+    font-size: 15px;
     line-height: 1.5;
-    font-family: $fontTitle;
+    // font-family: $fontTitle;
     max-width: rem(506);
     margin: 0 auto;
   
     @include minTablet {
-      font-size: 1.4vw;
+      font-size: 1vw;
     }
   }
 }
