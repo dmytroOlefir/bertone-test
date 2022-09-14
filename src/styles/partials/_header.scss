@@ -22,16 +22,12 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 5vw;
-
-    @media (min-width: 1280px) {
-        padding: 0px 5vw;
-    }
+    padding: 10px 5vw
   }
 
   &_tagline{
     font-size: 26px;
-    transform: translateX(-20px) translateY(5px) rotate(3deg);
+    transform: translateX(-20px) translateY(12px) rotate(3deg);
     line-height: 1;
     font-weight: 400;
     font-family: $fontTag;
