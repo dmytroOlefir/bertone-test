@@ -91,7 +91,7 @@
     .line {
       position: absolute;
       top: 5px;
-      left: 0;
+      left: 5vw;
       width: 50px;
       height: 1px;
       background: white;
@@ -99,7 +99,9 @@
   }
 
   &_content {
+    padding-top: 40px;
     @include minTablet {
+      padding-top: 0;
       width: 28vw;
       margin-left: 10vw;
     }

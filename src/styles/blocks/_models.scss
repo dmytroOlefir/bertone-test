@@ -66,7 +66,7 @@
     margin: 0 rem(12);
     background: black;
     overflow: hidden;
-    width: 224px;
+    max-width: 224px;
     height: 280px !important;
 
     &:nth-child(2) {

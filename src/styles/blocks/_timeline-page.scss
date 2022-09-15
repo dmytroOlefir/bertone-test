@@ -3,6 +3,7 @@
   min-width: 100%;
   height: 100%;
   overflow: auto;
+  background-color: black;
 
   .timeline-grid {
     display: flex;
@@ -230,10 +231,8 @@
     }
     // 1930
     &[data-date="1930"]{
-      // min-width: 150vw;
       min-width: none;
       display: flex;
-      // flex-wrap: wrap;
       align-items: flex-start;
 
       .timeline-item {
@@ -249,7 +248,7 @@
             position: absolute;
             bottom: 10vh;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-100%);
             height: 30vh;
             z-index: 1;
           }
@@ -288,20 +287,170 @@
     }
     // 1940
     &[data-date="1940"]{
-      .timeline-item {
+      display: flex;
+      align-items: flex-end;
+      margin-left: 20vw;
 
+      .timeline-item {
+        &_date {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate(-50%, -60%);
+        }
+
+        &_content {
+          position: relative;
+          z-index: 2;
+          width: 450px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          transform: translateY(-10vh);
+
+          h2 {
+            width: 43vw;
+            transform: translateX(70%);
+          }
+
+          p {
+            text-align: right;
+          }
+        }
+        
+        &_diapo {
+          width: 100vw;
+          height: 100%;
+          display: flex;
+          align-items: flex-end;
+          margin-left: 5vw;
+        }
+
+        &_bkg {
+          &--1 {
+            position: absolute;
+            top: 0;
+            left: 5vw;
+            height: 40vh;
+            z-index: 1;
+
+            .timeline-item_caption {
+              top: 5vh
+            }
+          }
+
+          &--2 {
+            height: 80vh;
+            transform: translateY(-5vh);
+
+            img {
+              max-width: none;
+              max-height: none;
+            }
+
+            .timeline-item_caption {
+              right: 0;
+              left: auto;
+            }
+          }
+        }
       }
     }
     // 1950
     &[data-date="1950"]{
+      display: flex;
+      align-items: flex-start;
+      min-width: unset;
+
       .timeline-item {
 
+        &_content {
+          position: relative;
+          z-index: 1;
+          display: flex;
+          align-items: center;
+          width: 54vw;
+          transform: translateY(5vh);
+        }
+
+        &_bkg {
+          &--1 {
+            position: absolute;
+            z-index: 2;
+            bottom: 10vh;
+            left: 0;
+            transform: translateX(-50%);
+
+            img {
+              width: auto;
+                height: 30vh;
+                max-width: none;
+                max-height: none;
+            }
+          }
+        
+          &--2 {
+            img {
+              width: auto;
+              height: 100vh;
+              max-width: none;
+              max-height: none;
+            }
+          }
+        }
+
+        &_diapo {
+          transform: translateX(-25vw);
+        }
       }
     }
     // 1960
     &[data-date="1960"]{
-      .timeline-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
+      .timeline-item {
+        &_content {
+          height: 30vh;
+          // display: flex;
+          // max-width: 30vw;
+          // align-items: center;
+        }
+
+        &_diapo {
+          
+        }
+
+        &_bkg {
+          &--1 {
+            img {
+              height: 60vh;
+              width: auto;
+              max-width: none;
+              max-height: none;
+            }
+          }
+          
+          &--2 {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            img {
+              width: auto;
+              height: 30vh;
+              max-width: none;
+              max-height: none;
+            }
+          }
+
+          &--3 {
+            height: 40vh;
+            width: 50vw;
+            transform: translateY(10px);
+          }
+        }
       }
     }
     // 1970

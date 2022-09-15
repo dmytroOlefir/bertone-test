@@ -10,11 +10,8 @@
     padding: 0;
     height: 100%;
     display: block;
-
-    @include minTablet {
-      width: 140px;
-      height: auto;
-    }
+    width: 140px;
+    height: auto;
   }
 
   &_wrap {
@@ -26,7 +23,7 @@
   }
 
   &_tagline{
-    font-size: 26px;
+    font-size: 32px;
     transform: translateX(-20px) translateY(12px) rotate(3deg);
     line-height: 1;
     font-weight: 400;
