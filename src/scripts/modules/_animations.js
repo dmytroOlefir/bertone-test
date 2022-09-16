@@ -120,9 +120,6 @@ const revealImage = () => {
 
 	reveal.forEach((block, i) => {
 
-		let image = block.querySelector('.the-image__img'),
-			curtain = block.querySelector('.the-image__curtain');
-
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: block,
@@ -130,9 +127,9 @@ const revealImage = () => {
 			}
 		});
 
-		tl.from(curtain, {
+		tl.from(block, {
 			duration: 1.2,
-			scaleX: 1,
+			"--clip": '100%',
 			ease: "power3.out",
 		}, "+=0");
 	});

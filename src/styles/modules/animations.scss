@@ -20,17 +20,18 @@
   }
 }
 
-.the-image {
-  position: relative;
-  &__curtain {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 1;
-	background: #000000;
-	transform: scaleX(0);
-	transform-origin: left;
-  }
+[data-reveal-image] {
+  --clip: 0%;
+  clip-path: inset(0% var(--clip) 0% 0%);
+  //&__curtain {
+	//position: absolute;
+	//top: 0;
+	//left: 0;
+	//right: 0;
+	//bottom: 0;
+	//z-index: 1;
+	//background: #000000;
+	//transform: scaleX(0);
+	//transform-origin: left;
+  //}
 }

@@ -116,11 +116,11 @@
   }
 
   .vision_illu1 {
-    transform: translateY(50px);
+    top: 50px;
     margin-right: 20px;
 
     @include minTablet {
-      transform: translateY(150px);
+      top: 150px;
       margin-right: 50px;
     }
   }

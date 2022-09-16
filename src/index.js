@@ -1,5 +1,4 @@
 import './styles/index.scss'
-import {opening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp} from './scripts/modules/_animations'
 import barba from '@barba/core'
 import LocomotiveScroll from 'locomotive-scroll'
 import {gsap} from './scripts/inc/_gsap'
@@ -9,6 +8,10 @@ import CSSPlugin from './scripts/inc/_CSSPlugin'
 
 import Swiper from 'swiper'
 import 'swiper/css'
+
+import {opening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp} from './scripts/modules/_animations'
+import {imageFlip} from './scripts/modules/_image3d'
+
 
 
 const gsapWithCSS = gsap.registerPlugin(CSSPlugin, ScrollTrigger, SplitText) || gsap, // to protect from tree shaking
@@ -76,6 +79,7 @@ revealImage()
 bgZoom()
 lineLeft()
 fadeUp()
+imageFlip()
 
 // --------------- Slider
 const slider = document.querySelector('[js-slider]')
