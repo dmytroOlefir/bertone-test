@@ -409,17 +409,27 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      min-width: unset;
 
       .timeline-item {
         &_content {
-          height: 30vh;
-          // display: flex;
-          // max-width: 30vw;
-          // align-items: center;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          max-width: 25vw;
+        }
+
+        &_date {
+          position: absolute;
+          top: 0vh;
+          left: 0;
+          transform: translate(-50%, 40vh)
         }
 
         &_diapo {
-          
+          display: flex;
+          align-items: flex-end;
         }
 
         &_bkg {
@@ -434,8 +444,9 @@
           
           &--2 {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 50%;
+            left: 50vw;
+            transform: translate(-5vw, -20vh);
 
             img {
               width: auto;
@@ -446,47 +457,395 @@
           }
 
           &--3 {
-            height: 40vh;
-            width: 50vw;
+            position: absolute;
+            top: 0;
+            left: 60%;
+            z-index: 4;
             transform: translateY(10px);
+
+            img {
+              height: 35vh;
+            }
           }
         }
       }
     }
     // 1970
     &[data-date="1970"]{
+      display: flex;
+      align-items: flex-end;
+      min-width: unset;
+      margin-left: 25vw;
+      
       .timeline-item {
+        &_date {
+          position: absolute;
+          top: 0%;
+          left: 0;
+        }
 
+        &_content {
+          width: calc(30vw + 350px);
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+
+          h2 {
+            width: 28vw;
+          }
+
+          p {
+            width: 350px; 
+          }
+        }
+
+        &_bkg {
+          &--1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateX(60%);
+            
+            z-index: 1;
+
+            img {
+              height: 45vh;
+            }
+          }
+
+          &--2 {
+            margin-left: 5vw;
+
+            img {
+              height: 100vh;
+              width: auto;
+              max-width: none;
+              max-height: none;
+            }
+          }
+        }
       }
     }
     // 1980
     &[data-date="1980"]{
-      .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      min-width: unset;
 
+      .timeline-item {
+        &_content {
+          position: relative;
+          width: 50vw;
+          z-index: 2;
+          display: flex;
+          justify-content: flex-end;
+
+          h2 {
+            width: 30vw;
+            transform: translate(25%, 5vh);
+          }
+
+          p {
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 300px;
+            transform: translate(70vw, 65vh);
+          }
+        }
+
+        &_date {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translateY(50vh) translateY(-50%) translateX(50%);
+        }
+        
+        &_bkg {
+          &--1 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            img {
+              height: 50vh;
+              width: auto;
+              max-width: none;
+              max-height: none;
+            }
+          }
+      
+          &--2 {
+            img {
+              height: 60vh;
+              width: auto;
+              max-width: none;
+              max-height: none;
+            }
+          }
+        }
       }
     }
     // 1990
     &[data-date="1990"]{
-      .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      min-width: unset;
 
+      .timeline-item {
+        &_bkg {
+          &--1 {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+
+            img {
+              height: 55vh;
+              width: auto;
+              max-width: none;
+              max-height: none;
+            }
+          }
+      
+          &--2 {
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+
+            img {
+              height: 45vh;
+              width: auto;
+              max-width: none;
+              max-height: none;
+            }
+          }
+
+          &--3 {
+            height: 100%;
+            display: flex;
+            align-items: flex-end;
+            margin-left: 5vw;
+            img {
+              height: 80vh;
+              width: auto;
+              max-width: none;
+              max-height: none;
+            }
+          }
+        }
+
+        &_content {
+          display: flex;
+          align-items: flex-start;
+          width: 75vw;
+          margin-top: 10vh;
+
+          h2 {
+            max-width: 75%;
+            margin: 0px auto;
+          }
+
+          p {
+            margin-top: 10vh;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: 0;
+          }
+        }
       }
     }
+
     // 2000
     &[data-date="2000"]{
-      .timeline-item {
+      display: flex;
+      min-width: unset;
+      align-items: flex-start;
 
+      .timeline-item {
+        &_content {
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          z-index: 10;
+          width: 50vw;
+      
+          h2 {
+            margin-bottom: 10vh;
+            width: 75%;
+          }
+      
+          p {
+            max-width: 380px;
+            transform: translateX(50vw) translateX(-50%);
+          }
+        }
+      
+        &_date {
+          margin-bottom: 10vh;
+          transform: translateX(50vw) translateX(-50%);
+        }
+
+        &_diapo {
+          display: flex;
+          align-items: flex-start;
+        }
+
+        &_bkg {
+            &--1 {
+              position: relative;
+              z-index: 3;
+              img {
+                height: 50vh;
+                width: auto;
+                max-width: none;
+                max-height: none;
+              }
+            }
+        
+            &--2 {
+              height: 100%;
+              display: flex;
+              align-items: flex-end;
+              transform: translateX(-10vw);
+
+              img {
+                height: 60vh;
+                width: auto;
+                max-width: none;
+                max-height: none;
+              }
+            }
+        }
       }
     }
     // 2010
     &[data-date="2010"]{
-      .timeline-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: unset;
+      height: 100%;
 
+      .timeline-item {
+        &_content {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 30vh;
+
+          h2 {
+            margin-right: 5vw;
+            max-width: 28vw;
+            transform: translateX(-10vw);
+          }
+
+          p {
+            max-width: 360px;
+            transform: translateX(-10vw);
+          }
+        }
+
+        &_date {
+          position: absolute;
+          top: 50vh;
+          left: 0;
+          transform: translateY(-40%) translateX(-50%); 
+        }
+
+        &_diapo {
+          display: flex;
+          align-items: flex-end;
+        }
+
+        &_bkg {
+            &--1 {
+              position: relative;
+              z-index: 1;
+              img {
+                height: 65vh;
+                width: auto;
+                max-width: none;
+                max-height: none;
+              }
+            }
+        
+            &--2 {
+              margin-left: 5vw;
+
+              img {
+                transform: translateY(-40%);
+                height: 50vh;
+                width: auto;
+                max-width: none;
+                max-height: none;
+              }
+            }
+          }
       }
     }
     // 2020
     &[data-date="2020"]{
-      .timeline-item {
+      min-width: unset;
 
+      .timeline-item {
+        &_diapo {
+          margin-left: 30vw;
+          display: flex;
+          align-items: flex-start;
+        }
+
+        &_date {
+          position: absolute;
+          top: 50vh;
+          left: 0;
+          transform: translate(50%, -25%);
+        }
+
+        &_content {
+          position: absolute;
+          top: 10%;
+          left: 0;
+          width: 70vw;
+          height: 80%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          h2 {
+            max-width: 30vw;
+          }
+
+          p {
+            width: 292px;
+            margin-right: 0px;
+            margin-left: auto;
+          }
+        }
+        
+        &_bkg {
+            &--1 {
+              img {
+                height: 70vh;
+                width: auto;
+                max-width: none;
+                max-height: none;
+              }
+            }
+        
+            &--2 {
+              height: 100%;
+              display: flex;
+              align-items: flex-end;
+              transform: translateX(-10vw);
+              img {
+                height: 40vh;
+                width: auto;
+                max-width: none;
+                max-height: none;
+              }
+            }
+          }
       }
     }
   }
