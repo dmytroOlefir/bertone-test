@@ -82,6 +82,10 @@
       @include minTablet{
         height: 50vh;
       }
+
+      @media (min-width: 1680px) {
+        height: 65vh;
+      }
     }
   }
 
@@ -90,8 +94,8 @@
 
     .line {
       position: absolute;
-      top: 5px;
-      left: 5vw;
+      top: 0.8vw;
+      left: 0;
       width: 50px;
       height: 1px;
       background: white;

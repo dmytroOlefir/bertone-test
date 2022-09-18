@@ -35,3 +35,19 @@
 	//transform-origin: left;
   //}
 }
+
+.cursor {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  width: .6875vw;
+  height: .6875vw;
+  background: #FF4409;
+  z-index: 1000;
+  border-radius: 100%;
+  pointer-events: none;
+
+  &__ball {
+
+  }
+}

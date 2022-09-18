@@ -86,7 +86,10 @@
       font-size: rem(20);
       line-height: 1;
       height: rem(50);
-      width: 100%
+      width: 100%;
+      &::placeholder {
+        color: #ffffff;
+      }
     }
 
     button[type="submit"] {

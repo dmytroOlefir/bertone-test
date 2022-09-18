@@ -86,46 +86,46 @@
       position: absolute;
       width: 304px;
       top: 160px;
-      right: 0;
+      right: -40px;
       z-index: 1;
-      transform: translateX(10%);
+      transform: none;
     }
 
     &_4 {
       position: absolute;
       top: 0;
-      right: 0;
+      right: -85px;
       z-index: 1;
       width: 192px;
-      transform: translateX(40%);
+      transform: none;
     }
     
     @include minTablet {
       &_1 {
-        top: 0;
-        left: 0;
-        transform: translate(-2vw, -4vw);
+        top: -4vw;
+        left: -2vw;
+        transform: none;
         width: 15vw;
       }
 
       &_2 {
-        top: 0;
-        left: 0;
-        transform: translate(3vw, 100%);
+        top: 60%;
+        left: 3vw;
+        transform: none;
         width: 25vw;
       }
 
       &_3 {
-        top: 50%;
-        left: 0;
-        transform: translate(15vw, -50%);
+        top: 0;
+        left: 15vw;
+        transform: none;
         width: 36vw;
       }
 
       &_4 {
-        top: 0;
-        left: 0;
-        transform: translate(26vw, -8vw);
+        top: -8vw;
+        left: 26vw;
+        transform: none;
         width: 18vw;
       }
     }

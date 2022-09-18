@@ -27,8 +27,7 @@ const opening = () => {
 		.to(banner, {autoAlpha: 0, ease: "power3.Out", duration: 0.6 }, "+=0")
 		.from(introImg, {opacity: 0, x: -80, duration: 3}, "+=0.25")
 		.from(splitText.lines, {duration: 1, y: 75, opacity: 0, ease: "power3.out", stagger: 0.12}, "-=2.4")
-		.from(header, {y: '-120%', ease: "power3.Out", duration: 1.25}, "-=0.45")
-
+		.from(header, {y: '-135%', ease: "power3.Out", duration: 1.25}, "-=1.6")
 
 }
 
@@ -119,6 +118,7 @@ const revealImage = () => {
 	const reveal = document.querySelectorAll('[data-reveal-image]');
 
 	reveal.forEach((block, i) => {
+		const img = block.querySelector('img');
 
 		let tl = gsap.timeline({
 			scrollTrigger: {
@@ -127,11 +127,9 @@ const revealImage = () => {
 			}
 		});
 
-		tl.from(block, {
-			duration: 1.2,
-			"--clip": '100%',
-			ease: "power3.out",
-		}, "+=0");
+		tl
+			.from(block, {duration: 1, "--clip": '100%', ease: "power3.out"})
+			.from(img, {duration: 1.5, x: '-80%', ease: "power4.out"}, "-=1.3")
 	});
 }
 
@@ -161,7 +159,7 @@ const fadeUp = () => {
 	const elements = document.querySelectorAll('[data-fade-up]');
 
 	elements.forEach((el, i) => {
-		let delay = el.dataset.revealSimple || '0';
+		let delay = el.dataset.fadeUp || '0';
 
 		let tl = gsap.timeline({
 			scrollTrigger: {
@@ -184,6 +182,7 @@ const lineLeft = () => {
 
 	lines.forEach((line, i) => {
 		let direction = line.dataset.line;
+		let delay = line.dataset.lineDelay || '0';
 
 		let tl = gsap.timeline({
 			scrollTrigger: {
@@ -197,7 +196,7 @@ const lineLeft = () => {
 			scale: 0,
 			transformOrigin: direction,
 			ease: "power3.out",
-		}, "+=0.2");
+		}, `+=${delay}`);
 	});
 }
 

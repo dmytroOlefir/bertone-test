@@ -4,10 +4,13 @@ import LocomotiveScroll from 'locomotive-scroll'
 import {gsap} from './scripts/inc/_gsap'
 import {ScrollTrigger} from './scripts/inc/_ScrollTrigger'
 import {SplitText} from './scripts/inc/_SplitText'
+import {customCursor} from "./scripts/modules/_cursor";
 import CSSPlugin from './scripts/inc/_CSSPlugin'
 
-import Swiper from 'swiper'
+import Swiper, {Autoplay} from 'swiper'
 import 'swiper/css'
+
+Swiper.use([Autoplay]);
 
 import {opening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp} from './scripts/modules/_animations'
 import {imageFlip} from './scripts/modules/_image3d'
@@ -79,7 +82,7 @@ revealImage()
 bgZoom()
 lineLeft()
 fadeUp()
-imageFlip()
+customCursor()
 
 // --------------- Slider
 const slider = document.querySelector('[js-slider]')
@@ -88,9 +91,12 @@ if (slider) {
 	const swiper = new Swiper(slider, {
 		slidesPerView: 'auto',
 		spaceBetween: 30,
-		centeredSlides: true,
+		speed: 4000,
+		grabCursor: true,
+		mousewheelControl: true,
+		keyboardControl: true,
 		autoplay: {
-			delay: 2500,
+			delay: 0,
 			disableOnInteraction: false,
 		},
 		loop: true,

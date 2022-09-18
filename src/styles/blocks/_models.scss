@@ -29,10 +29,13 @@
     }
   }
 
+  .swiper-wrapper {
+    transition-timing-function : linear;
+  }
+
   &_rail {
     position: absolute;
     display: flex;
-    animation: rail 40s linear infinite;
   }
 
   &_title {

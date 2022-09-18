@@ -17,7 +17,7 @@
 
     .line {
       position: absolute;
-      top: 2.2vw;
+      top: 2.7vw;
       left: -100px;
       width: rem(58);
       height: 1px;
@@ -98,13 +98,28 @@
     }
     
     &_circle {
-      width: rem(108);
-      height: rem(108);
+      position: relative;
+      width: 8vw;
+      height: 8vw;
       border: 1px solid $orange;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      &:before {
+        content: '';
+        position: absolute;
+        top: -6vw;
+        left: -6vw;
+        right: -6vw;
+        bottom: -6vw;
+        border: 1px solid rgba(255, 68, 9, 0.5);
+        border-radius: 50%;
+      }
+      svg {
+        width: 1.75vw;
+        height: auto;
+      }
     }
 
     span {
@@ -116,6 +131,7 @@
   }
 
   .vision_illu1 {
+    position: relative;
     top: 50px;
     margin-right: 20px;
 
