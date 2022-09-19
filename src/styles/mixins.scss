@@ -69,6 +69,14 @@
     @content;
   }
 }
+@mixin minDesktop {
+  $val: $desktop +1px;
+  @debug $val;
+
+  @media(min-width: $val) {
+    @content;
+  }
+}
 
 // Add container + gap
 @mixin container {
