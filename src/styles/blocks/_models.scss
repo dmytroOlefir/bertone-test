@@ -31,6 +31,8 @@
 
   .swiper-wrapper {
     transition-timing-function : linear;
+    will-change: transform;
+    cursor: auto !important;
   }
 
   &_rail {

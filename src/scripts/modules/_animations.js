@@ -29,7 +29,7 @@ const opening = () => {
 		.to(banner, {autoAlpha: 0, ease: "power3.Out", duration: 0.6 }, "+=0")
 		.from(introImg, {opacity: 0, x: -80, duration: 3}, "+=0.25")
 		.from(splitText.lines, {duration: 1, y: 75, opacity: 0, ease: "power3.out", stagger: 0.12}, "-=2.4")
-		.from(header, {y: '-135%', ease: "power3.Out", duration: 1.25}, "-=1.6")
+		.from(header, {y: '-135%', ease: "power3.Out", duration: 1.25}, "-=2")
 
 }
 

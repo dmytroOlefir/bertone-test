@@ -95,6 +95,7 @@ if (slider) {
 		grabCursor: true,
 		mousewheelControl: true,
 		keyboardControl: true,
+		freeMode: true,
 		autoplay: {
 			delay: 0,
 			disableOnInteraction: false,

@@ -1,10 +1,10 @@
 import {gsap} from "../inc/_gsap";
 
 const customCursor = () => {
-	const bigBall = document.querySelector('.cursor'),
+	const bigBall = document.querySelector('[data-cursor]'),
 		hoverables = document.querySelectorAll('.hoverable'),
-		letsgo = document.querySelectorAll('.letsgo'),
-		drag = document.querySelectorAll('.drag');
+		letsgo = document.querySelectorAll('.letsgoable'),
+		drag = document.querySelectorAll('.draggable');
 
 	document.body.addEventListener('mousemove', onMouseMove);
 
@@ -27,7 +27,7 @@ const customCursor = () => {
 		gsap.to(bigBall, .4, {
 			x: e.pageX - 15,
 			y: e.pageY - 15,
-			scale: 1
+			backgroundColor: '#FF4409'
 		})
 	}
 
@@ -53,19 +53,51 @@ const customCursor = () => {
 	}
 
 	function onMouseLetsgo(e) {
+		bigBall.classList.add('letsgo');
 
+		gsap.to(bigBall, .4, {
+			scale: 10,
+			x: e.pageX,
+			y: e.pageY,
+			top: 10,
+			left: 10,
+		})
 	}
 
 	function onMouseLetsgoOut(e) {
+		bigBall.classList.remove('letsgo');
 
+		gsap.to(bigBall, .4, {
+			scale: 1,
+			x: e.pageX - 15,
+			y: e.pageY - 15,
+			top: 40,
+			left: 40,
+		})
 	}
 
 	function onMouseDrag(e) {
+		bigBall.classList.add('drag');
 
+		gsap.to(bigBall, .4, {
+			scale: 10,
+			x: e.pageX,
+			y: e.pageY,
+			top: 10,
+			left: 10,
+		})
 	}
 
 	function onMouseDragOut(e) {
+		bigBall.classList.remove('drag');
 
+		gsap.to(bigBall, .4, {
+			scale: 1,
+			x: e.pageX - 15,
+			y: e.pageY - 15,
+			top: 40,
+			left: 40,
+		})
 	}
 }
 
