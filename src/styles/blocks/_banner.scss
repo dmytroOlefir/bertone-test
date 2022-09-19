@@ -32,8 +32,9 @@
       background-position: center;
       transform: scaleY(1.4);
     }
-    &--empty {
-      clip: rect(auto auto 100vh auto);
+    &--red {
+      //clip: rect(100vh auto auto auto);
+      mask-image: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%);
     }
     &--bottom, &--top {
       position: absolute;

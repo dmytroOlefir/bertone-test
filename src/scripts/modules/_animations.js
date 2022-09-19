@@ -9,7 +9,7 @@ const opening = () => {
 		introImg = document.querySelector('[data-intro-img]'),
 		// filmBars = document.querySelectorAll('[data-film-bar]'),
 		banner = document.querySelector('#banner'),
-		emptyBg = document.querySelector('[data-banner-bg="empty"]'),
+		emptyBg = document.querySelector('[data-banner-bg="red"]'),
 		header = document.querySelector('#header'),
 		bg = document.querySelectorAll('[data-banner-bg]');
 
@@ -19,10 +19,12 @@ const opening = () => {
 
 	openingTl
 		.to(curtain, {autoAlpha: 0, duration: 1.2}, "+=0.5")
-		.to(bg, {scale: 1, duration: 4}, "-=0.7")
-		.from(title, {opacity: 0, ease: "power3.in", duration: 1.5}, "-=2.8")
+		.to(bg, {scale: 1, duration: 3.2}, "-=0.7")
+		.from(title, {opacity: 0, ease: "power3.in", duration: 1.3}, "-=2.8")
 		// .to(filmBars, {scaleY: 0, duration: 2.15, ease: "power3.in"}, "-=3")
-		.to(emptyBg, {clip: 'rect(auto auto 0vw auto)', ease: "power2.out", duration: 1.1}, "=-1.4")
+		// .to(emptyBg, {clip: 'rect(0vh auto auto auto)', ease: "power2.out", duration: 3.1}, "=-1.4")
+		.from(emptyBg, {maskImage: 'linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 0%)', duration: 1}, "=-1.7")
+		.to(emptyBg, {maskImage: 'linear-gradient(0deg, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 100%)', ease: "power2.out", duration: 0.4}, "=-0.85")
 		.to(bgWrap, {opacity: 0, ease: "power3.Out", duration: 1.4}, "-=0.8")
 		.to(banner, {autoAlpha: 0, ease: "power3.Out", duration: 0.6 }, "+=0")
 		.from(introImg, {opacity: 0, x: -80, duration: 3}, "+=0.25")

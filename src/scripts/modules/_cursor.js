@@ -27,6 +27,7 @@ const customCursor = () => {
 		gsap.to(bigBall, .4, {
 			x: e.pageX - 15,
 			y: e.pageY - 15,
+			scale: 1
 		})
 	}
 
@@ -52,7 +53,7 @@ const customCursor = () => {
 	}
 
 	function onMouseLetsgo(e) {
-		
+
 	}
 
 	function onMouseLetsgoOut(e) {
