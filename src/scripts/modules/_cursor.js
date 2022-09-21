@@ -1,7 +1,8 @@
 import {gsap} from "../inc/_gsap";
 
 const customCursor = () => {
-	const bigBall = document.querySelector('[data-cursor]'),
+	const cursor = document.querySelector('[data-cursor]'),
+		bigBall = document.querySelector('[data-cursor-inner]'),
 		hoverables = document.querySelectorAll('.hoverable'),
 		letsgo = document.querySelectorAll('.letsgoable'),
 		drag = document.querySelectorAll('.draggable');
@@ -24,79 +25,89 @@ const customCursor = () => {
 	}
 
 	function onMouseMove(e) {
-		gsap.to(bigBall, .4, {
+		gsap.to(cursor, .4, {
 			x: e.pageX - 15,
 			y: e.pageY - 15,
+		})
+		gsap.to(bigBall, .4, {
 			backgroundColor: '#FF4409'
 		})
 	}
 
 	function onMouseHover(e) {
+		gsap.to(cursor, .4, {
+			top: 10,
+			left: 10,
+			x: e.pageX,
+			y: e.pageY,
+		})
 		gsap.to(bigBall, .4, {
 			scale: 6,
 			opacity: .6,
-			x: e.pageX,
-			y: e.pageY,
-			top: 10,
-			left: 10,
 		})
 	}
 	function onMouseHoverOut(e) {
-		gsap.to(bigBall, .4, {
-			scale: 1,
-			x: e.pageX - 15,
-			y: e.pageY - 15,
+		gsap.to(cursor, .4, {
 			top: 40,
 			left: 40,
+			x: e.pageX - 15,
+			y: e.pageY - 15,
+		})
+		gsap.to(bigBall, .4, {
+			scale: 1,
 			opacity: 1,
 		})
 	}
 
 	function onMouseLetsgo(e) {
-		bigBall.classList.add('letsgo');
+		cursor.classList.add('letsgo');
+
+		gsap.to(cursor, .4, {
+			x: e.pageX,
+			y: e.pageY,
+		})
 
 		gsap.to(bigBall, .4, {
 			scale: 10,
-			x: e.pageX,
-			y: e.pageY,
-			top: 10,
-			left: 10,
+			// top: 10,
+			// left: 10,
 		})
 	}
 
 	function onMouseLetsgoOut(e) {
-		bigBall.classList.remove('letsgo');
+		cursor.classList.remove('letsgo');
+
+		gsap.to(cursor, .4, {
+			x: e.pageX - 15,
+			y: e.pageY - 15,
+		})
 
 		gsap.to(bigBall, .4, {
 			scale: 1,
-			x: e.pageX - 15,
-			y: e.pageY - 15,
-			top: 40,
-			left: 40,
 		})
 	}
 
 	function onMouseDrag(e) {
-		bigBall.classList.add('drag');
+		cursor.classList.add('drag');
 
-		gsap.to(bigBall, .4, {
-			scale: 10,
-			x: e.pageX,
-			y: e.pageY,
-			top: 10,
-			left: 10,
+		gsap.to(bigBall, .2, {
+			opacity: 0,
+			// x: e.pageX,
+			// y: e.pageY,
+			// top: 10,
+			// left: 10,
 		})
 	}
 
 	function onMouseDragOut(e) {
-		bigBall.classList.remove('drag');
+		cursor.classList.remove('drag');
 
-		gsap.to(bigBall, .4, {
-			scale: 1,
-			x: e.pageX - 15,
-			y: e.pageY - 15,
-			top: 40,
-			left: 40,
+		gsap.to(bigBall, .2, {
+			opacity: 1,
+			// x: e.pageX - 15,
+			// y: e.pageY - 15,
+			// top: 40,
+			// left: 40,
 		})
 	}
 }

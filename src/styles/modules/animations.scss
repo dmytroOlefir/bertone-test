@@ -4,7 +4,7 @@
 }
 
 [data-bg-zoom] {
-  // overflow: hidden;
+   overflow: hidden;
 }
 
 [data-line-reveal] {
@@ -43,38 +43,62 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: .6875vw;
-  height: .6875vw;
-  background: transparent;
-  z-index: 1000;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 1;
 
-  &__ball {
-
+  z-index: 100;
+  &:after {
+    content: "Let's Go";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    white-space: nowrap;
+    opacity: 0;
+    display: block;
+    font-size: 1vw;
+    line-height: 1;
+    color: white;
+    transition: all 0.15s ease-out;
+  }
+  &:before {
+    content: '';
+    transform: translate(-45%, -45%) scale(0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5.5vw;
+    height: 5.5vw;
+    border-radius: 50%;
+    opacity: 1;
+    background: url("data:image/svg+xml,%3Csvg width='110' height='107' viewBox='0 0 110 107' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='54.8767' cy='53.5' rx='54.8767' ry='53.5' fill='%23FF4409'/%3E%3Cpath d='M79.2316 52.2332L71.0257 46V47.8574L78.7609 53.7324V54.2676L71.0257 60.1426V62L79.2316 55.7649V52.2332Z' fill='white'/%3E%3Cpath d='M31.0257 55.7668L39.2316 62L39.2316 60.1426L31.4964 54.2676L31.4964 53.7324L39.2316 47.8574L39.2316 46L31.0257 52.2351L31.0257 55.7668Z' fill='white'/%3E%3Ccircle cx='55.4256' cy='54.3999' r='2' fill='white'/%3E%3C/svg%3E%0A") center no-repeat;
+    background-size: cover;
+    transition: transform 0.3s ease-out, top 0.2s ease, left 0.2s ease;
   }
   &.drag {
     &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 50%;
-      background: url("data:image/svg+xml,%3Csvg width='110' height='107' viewBox='0 0 110 107' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='54.8767' cy='53.5' rx='54.8767' ry='53.5' fill='%23FF4409'/%3E%3Cpath d='M79.2316 52.2332L71.0257 46V47.8574L78.7609 53.7324V54.2676L71.0257 60.1426V62L79.2316 55.7649V52.2332Z' fill='white'/%3E%3Cpath d='M31.0257 55.7668L39.2316 62L39.2316 60.1426L31.4964 54.2676L31.4964 53.7324L39.2316 47.8574L39.2316 46L31.0257 52.2351L31.0257 55.7668Z' fill='white'/%3E%3Ccircle cx='55.4256' cy='54.3999' r='2' fill='white'/%3E%3C/svg%3E%0A") center no-repeat;
-      background-size: cover;
+      top: -20px;
+      left: -20px;
+      transform: translate(-50%, -50%) scale(1);
     }
   }
   &.letsgo {
-    &:before {
-      content: "Let's Go";
+    &:after {
       display: inline-block;
-      font-size: 0.12rem;
-      line-height: 1;
-      color: white;
+      opacity: 1;
+      transition: all 0.15s ease-out 0.1s;
     }
+  }
+
+  &__ball {
+    position: relative;
+
+    width: .6875vw;
+    height: .6875vw;
+    background: red;
+    z-index: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 1;
   }
 }
 

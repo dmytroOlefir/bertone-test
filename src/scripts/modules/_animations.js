@@ -23,8 +23,8 @@ const opening = () => {
 		.from(title, {opacity: 0, ease: "power3.in", duration: 1.3}, "-=2.8")
 		// .to(filmBars, {scaleY: 0, duration: 2.15, ease: "power3.in"}, "-=3")
 		// .to(emptyBg, {clip: 'rect(0vh auto auto auto)', ease: "power2.out", duration: 3.1}, "=-1.4")
-		.from(emptyBg, {maskImage: 'linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 0%)', duration: 1}, "=-1.7")
-		.to(emptyBg, {maskImage: 'linear-gradient(0deg, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 100%)', ease: "power2.out", duration: 0.4}, "=-0.85")
+		.from(emptyBg, {maskImage: 'linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 0%)', duration: 0.8}, "=-1.7")
+		.to(emptyBg, {maskImage: 'linear-gradient(0deg, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 100%)', ease: "power1.out", duration: 0.45}, "=-1")
 		.to(bgWrap, {opacity: 0, ease: "power3.Out", duration: 1.4}, "-=0.8")
 		.to(banner, {autoAlpha: 0, ease: "power3.Out", duration: 0.6 }, "+=0")
 		.from(introImg, {opacity: 0, x: -80, duration: 3}, "+=0.25")
@@ -61,10 +61,12 @@ const revealFromLeft = () => {
 	const elements = document.querySelectorAll('[data-reveal-left]');
 
 	elements.forEach((el, i) => {
+		let delay = el.dataset.revealLeft || '0';
+
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: el,
-				start: "center bottom"
+				start: "top bottom"
 			}
 		});
 
@@ -72,7 +74,7 @@ const revealFromLeft = () => {
 			x: -80,
 			duration: 5,
 			ease: "power3.out",
-		}, "+=0.2")
+		}, `+=${delay}`)
 	});
 }
 
@@ -80,6 +82,8 @@ const revealFromRight = () => {
 	const elements = document.querySelectorAll('[data-reveal-right]');
 
 	elements.forEach((el, i) => {
+		let delay = el.dataset.revealRight || '0';
+
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: el,
@@ -91,7 +95,7 @@ const revealFromRight = () => {
 			x: 80,
 			duration: 5,
 			ease: "power3.out",
-		}, "+=0.2")
+		}, `+=${delay}`)
 	});
 }
 
@@ -122,6 +126,10 @@ const revealImage = () => {
 	reveal.forEach((block, i) => {
 		const img = block.querySelector('img');
 
+		let distance = block.offsetWidth,
+			speed = window.innerWidth/5,
+			time = distance/speed;
+
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: block,
@@ -130,8 +138,8 @@ const revealImage = () => {
 		});
 
 		tl
-			.from(block, {duration: 1, "--clip": '100%', ease: "power3.out"})
-			.from(img, {duration: 1.5, x: '-80%', ease: "power4.out"}, "-=1.3")
+			.from(block, {duration: time, "--clip": '100%', ease: "power3.out"})
+			.from(img, {duration: time * 1.5, x: '-80%', ease: "power4.out"}, `-=${time * 1.3}`)
 	});
 }
 
@@ -141,11 +149,12 @@ const bgZoom = () => {
 	bg.forEach((block, i) => {
 
 		let image = block.querySelector('.zoom');
+		let delay = block.dataset.bgZoom || '0';
 
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: block,
-				start: "center bottom"
+				start: "top bottom"
 			}
 		});
 
@@ -153,7 +162,7 @@ const bgZoom = () => {
 			duration: 8,
 			scale: 1.2,
 			ease: "power1.out",
-		}, "+=0");
+		}, `+=${delay}`);
 	});
 }
 
