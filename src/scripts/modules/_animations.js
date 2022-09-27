@@ -1,7 +1,7 @@
 import {gsap} from "../inc/_gsap";
 import {SplitText} from "../inc/_SplitText";
 
-const opening = () => {
+const opening = (count) => {
 	const curtain = document.querySelector('[data-curtain]'),
 		bgWrap = document.querySelector('[data-banner-wrap]'),
 		title = document.querySelector('[data-banner-title]'),
@@ -17,24 +17,41 @@ const opening = () => {
 
 	const openingTl = gsap.timeline();
 
-	openingTl
-		.to(curtain, {autoAlpha: 0, duration: 1.2}, "+=0.5")
-		.to(bg, {scale: 1, duration: 3.2}, "-=0.7")
-		.from(title, {opacity: 0, ease: "power3.in", duration: 1.3}, "-=2.8")
-		// .to(filmBars, {scaleY: 0, duration: 2.15, ease: "power3.in"}, "-=3")
-		// .to(emptyBg, {clip: 'rect(0vh auto auto auto)', ease: "power2.out", duration: 3.1}, "=-1.4")
-		.from(emptyBg, {maskImage: 'linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 0%)', duration: 0.8}, "=-1.7")
-		.to(emptyBg, {maskImage: 'linear-gradient(0deg, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 100%)', ease: "power1.out", duration: 0.45}, "=-1")
-		.to(bgWrap, {opacity: 0, ease: "power3.Out", duration: 1.4}, "-=0.8")
-		.to(banner, {autoAlpha: 0, ease: "power3.Out", duration: 0.6 }, "+=0")
-		.from(introImg, {opacity: 0, x: -80, duration: 3}, "+=0.25")
-		.from(splitText.lines, {duration: 1, y: 75, opacity: 0, ease: "power3.out", stagger: 0.12}, "-=2.4")
-		.from(header, {y: '-135%', ease: "power3.Out", duration: 1.25}, "-=2")
+	if (count >= 1) {
+		openingTl
+			.fromTo(curtain, {autoAlpha: 1}, {autoAlpha: 0, duration: 1.8})
+			.to(header, {autoAlpha: 1, duration: 0.1}, "-=1.7")
+			.from(header, {y: '-135%', ease: "power3.Out", duration: 1.25}, "-=1.2")
+	} else {
+		openingTl
+			.to(curtain, {autoAlpha: 0, duration: 1.2}, "+=0.5")
+			.to(bg, {scale: 1, duration: 3.2}, "-=0.7")
+			.from(title, {opacity: 0, ease: "power3.in", duration: 1.3}, "-=2.8")
+			// .to(filmBars, {scaleY: 0, duration: 2.15, ease: "power3.in"}, "-=3")
+			// .to(emptyBg, {clip: 'rect(0vh auto auto auto)', ease: "power2.out", duration: 3.1}, "=-1.4")
+			.from(emptyBg, {maskImage: 'linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 0%)', duration: 0.8}, "=-1.7")
+			.to(emptyBg, {maskImage: 'linear-gradient(0deg, rgba(0,0,0,1) 100%, rgba(0,0,0,0) 100%)', ease: "power1.out", duration: 0.45}, "=-1")
+			.to(bgWrap, {opacity: 0, ease: "power3.Out", duration: 1.4}, "-=0.8")
+			.to(banner, {autoAlpha: 0, ease: "power3.Out", duration: 0.6 }, "+=0")
+			.from(introImg, {opacity: 0, x: -80, duration: 3}, "+=0.25")
+			.from(splitText.lines, {duration: 1, y: 75, opacity: 0, ease: "power3.out", stagger: 0.12}, "-=2.4")
+			.from(header, {y: '-135%', ease: "power3.Out", duration: 1.25}, "-=2")
+	}
 
 }
 
+
+
 const lineReveal = () => {
 	const lineTitle = document.querySelectorAll('[data-line-reveal], [data-line-reveal] > *');
+
+	const horizontalPage = document.querySelector('[data-hz-scroll]')
+
+	let start = 'bottom 90%'
+
+	if (horizontalPage) {
+		start = 'left 65%'
+	}
 
 	lineTitle.forEach((text, i) => {
 
@@ -43,7 +60,7 @@ const lineReveal = () => {
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: text,
-				start: 'bottom 90%'
+				start: start
 			}
 		});
 
@@ -102,13 +119,21 @@ const revealFromRight = () => {
 const revealSimple = () => {
 	const elements = document.querySelectorAll('[data-reveal-simple]');
 
+	const horizontalPage = document.querySelector('[data-hz-scroll]')
+
+	let start = 'bottom 95%'
+
+	if (horizontalPage) {
+		start = 'left 65%'
+	}
+
 	elements.forEach((el, i) => {
 		let delay = el.dataset.revealSimple || '0';
 
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: el,
-				start: 'bottom 95%'
+				start: start
 			}
 		});
 
@@ -123,6 +148,14 @@ const revealSimple = () => {
 const revealImage = () => {
 	const reveal = document.querySelectorAll('[data-reveal-image]');
 
+	const horizontalPage = document.querySelector('[data-hz-scroll]')
+
+	let start = 'center bottom'
+
+	if (horizontalPage) {
+		start = 'left 93%'
+	}
+
 	reveal.forEach((block, i) => {
 		const img = block.querySelector('img');
 
@@ -133,7 +166,7 @@ const revealImage = () => {
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: block,
-				start: "center bottom"
+				start: start
 			}
 		});
 
@@ -191,6 +224,14 @@ const fadeUp = () => {
 const lineLeft = () => {
 	const lines = document.querySelectorAll('[data-line]');
 
+	const horizontalPage = document.querySelector('[data-hz-scroll]')
+
+	let start = 'center bottom'
+
+	if (horizontalPage) {
+		start = 'left 85%'
+	}
+
 	lines.forEach((line, i) => {
 		let direction = line.dataset.line;
 		let delay = line.dataset.lineDelay || '0';
@@ -198,7 +239,7 @@ const lineLeft = () => {
 		let tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: line,
-				start: "center bottom"
+				start: start
 			}
 		});
 
@@ -211,4 +252,28 @@ const lineLeft = () => {
 	});
 }
 
-export {opening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp};
+const yearReveal = () => {
+	const years = document.querySelectorAll('[data-year]');
+
+	years.forEach((year) => {
+		let delay = year.dataset.lineDelay || '0';
+		let splitText = new SplitText(year, {type: "chars"})
+
+		let tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: year,
+				start: "left 90%"
+			}
+		});
+
+		tl.from(splitText.chars, {
+			duration: 1.2,
+			y: 75,
+			opacity: 0,
+			ease: "power3.out",
+			stagger: 0.12
+		}, `+=${delay}`);
+	})
+}
+
+export {opening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp, yearReveal};

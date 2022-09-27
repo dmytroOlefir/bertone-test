@@ -6,254 +6,368 @@
 	</head>
 {% endblock %}
 
-	<body class="{{body_class}} page-timeline" data-template="timeline.twig">
-    <div class="timeline-grid">
-      {# First #}
-      <div class="timeline-item timeline-item--first">
-        <div class="timeline-item_bkg">
-          <img src="{{site.theme.link}}/public/timeline/intro.jpg" alt="" />
-        </div>
-        <div class="timeline-item_title">
-          <h2>The origins of Bertone<h2>
-        </div>
-      </div>
+	<body class="{{body_class}}" data-barba="wrapper">
+        <div data-main-scroll>
+            <div class="a-cursor" data-cursor>
+                <div class="a-cursor__ball" data-cursor-inner></div>
+            </div>
+{#            <div class="curtain" data-curtain></div>#}
+            <main class="page-timeline" data-barba="container" data-barba-namespace="timeline">
+                <a href="/" class="back-btn hoverable">
+                    <i></i>
+                    <i></i>
+                </a>
+                <div data-hz-scroll>
+                    <div class="timeline-grid">
+                        {# First #}
+                        <div class="timeline-item timeline-item--first">
+                            <div class="timeline-item_bkg">
+                                <div class="overflow-hidden">
+                                    <img src="{{site.theme.link}}/public/timeline/intro.jpg" alt="" data-scroll data-scroll-speed="-1.2" />
+                                </div>
+                            </div>
+                            <div class="timeline-item_title">
+                                <h2 data-line-reveal data-scroll data-scroll-speed="1.3">
+                                    <span>The origins of Bertone</span><h2>
+                            </div>
+                        </div>
 
-      {# Second + pattern #}
-      <div class="timeline-item" data-date="1912">
-        <div class="timeline-item_content">
-          <span class="timeline-item_date">1912</span>
-          <h2>The birth</h2>
-          <p>The Carrozzeria Bertone was founded in 1912.The  company was specialized in car styling, coachbuilding and manufacturing.</p>
-        </div>
-        <div class="timeline-item_diapo">
-          <div class="timeline-item_bkg timeline-item_bkg--1">
-            <img src="{{site.theme.link}}/public/timeline/intro.jpg" alt="" />
-          </div>
-          <div class="timeline-item_bkg timeline-item_bkg--2">
-            <img src="{{site.theme.link}}/public/timeline/intro.jpg" alt="" />
-          </div>
-        </div>
-      </div>
+                        {# Second + pattern #}
+                        <div class="timeline-item" data-date="1912">
+                            <div class="timeline-item_content">
+                                <span class="timeline-item_date" data-year>1912</span>
+                                <h2 data-line-reveal>The birth</h2>
+                                <p data-reveal-simple="0.65">The Carrozzeria Bertone was founded in 1912.The  company was specialized in car styling, coachbuilding and manufacturing.</p>
+                            </div>
+                            <div class="timeline-item_diapo">
+                                <div class="timeline-item_bkg timeline-item_bkg--1" data-reveal-image data-scroll data-scroll-speed="1.5">
+                                    <img src="{{site.theme.link}}/public/timeline/intro.jpg" alt="" />
+                                </div>
+                                <div class="timeline-item_bkg timeline-item_bkg--2" data-reveal-image data-scroll data-scroll-speed="0.7">
+                                    <img src="{{site.theme.link}}/public/timeline/intro.jpg" alt="" />
+                                </div>
+                            </div>
+                        </div>
 
-      {# Third +  #}
-      <div class="timeline-item" data-date="1920">
-        <div class="timeline-item_content">
-          <span class="timeline-item_date">1920</span> 
-          <h2>Engine</h2>
-          <p>Bertone's business began focusing on the automotive sector.These were exciting years for Bertone himself and for the evolution of industrial style and design.</p>
-        </div>
-        <div class="timeline-item_diapo">
-          <div class="timeline-item_bkg timeline-item_bkg--1">
-            <img src="{{site.theme.link}}/public/timeline/1920-bertone-1.jpg" alt="" />
-            <div class="timeline-item_caption">Fiat 501 Siluro corsa</div>
-          </div>
-          <div class="timeline-item_bkg timeline-item_bkg--2">
-            <img src="{{site.theme.link}}/public/timeline/1920-bertone-2.jpg" alt="" />
-            <div class="timeline-item_caption">Lancia Lambda VIII Series</div>
-          </div>
-        </div>
-      </div>
+                        {# Third +  #}
+                        <div class="timeline-item" data-date="1920">
+                            <div class="timeline-item_content">
+                                <span class="timeline-item_date" data-year>1920</span>
+                                <h2 data-line-reveal>Engine</h2>
+                                <p data-reveal-simple>Bertone's business began focusing on the automotive sector.These were exciting years for Bertone himself and for the evolution of industrial style and design.</p>
+                            </div>
+                            <div class="timeline-item_diapo">
+                                <div class="timeline-item_bkg timeline-item_bkg--1">
+                                    <div data-reveal-image data-scroll data-scroll-speed="0.65">
+                                        <img src="{{site.theme.link}}/public/timeline/1920-bertone-1.jpg" alt="" />
+                                    </div>
+                                    <div class="timeline-item_caption">
+                                        <div class="line" data-line="right" data-line-delay="1"></div>
+                                        <span data-reveal-simple="0.7">Fiat 501 Siluro corsa</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item_bkg timeline-item_bkg--2">
+                                    <div data-reveal-image data-scroll data-scroll-speed="1.6">
+                                        <img src="{{site.theme.link}}/public/timeline/1920-bertone-2.jpg" alt="" />
+                                    </div>
+                                    <div class="timeline-item_caption">
+                                        <div class="line" data-line="left" data-line-delay="1"></div>
+                                        <span data-reveal-simple="0.7">Lancia Lambda VIII Series</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-      {# FOUR #}
-      <div class="timeline-item" data-date="1930">
-         <div class="timeline-item_content">
-          <span class="timeline-item_date">1930</span>
-          <h2>INTERNATIONAL SUCESS</h2>
-          <p>Giovanni Bertone's shrewd management allowed the company to carry on creating cars with an appeal</p>
-        </div>
-        <div class="timeline-item_diapo">
-          <div class="timeline-item_bkg timeline-item_bkg--1">
-           <img src="{{site.theme.link}}/public/timeline/1930-bertone-1.jpg" alt="" />
-            <div class="timeline-item_caption">Fiat 527 Ardita 2500</div>
-          </div>
-          <div class="timeline-item_bkg timeline-item_bkg--2">
-            <img src="{{site.theme.link}}/public/timeline/1920-bertone-2.jpg" alt="" />
-          </div>
-        </div>
-      </div>
+                        {# FOUR #}
+                        <div class="timeline-item" data-date="1930">
+                            <div class="timeline-item_content">
+                                <span class="timeline-item_date" data-year>1930</span>
+                                <h2 data-line-reveal>
+                                    <span>INTERNATIONAL SUCESS</span>
+                                </h2>
+                                <p data-reveal-simple>Giovanni Bertone's shrewd management allowed the company to carry on creating cars with an appeal</p>
+                            </div>
+                            <div class="timeline-item_diapo">
+                                <div class="timeline-item_bkg timeline-item_bkg--1">
+                                    <div data-scroll data-scroll-speed="1.5" data-reveal-image>
+                                        <img src="{{site.theme.link}}/public/timeline/1930-bertone-1.jpg" alt="" />
+                                    </div>
 
-      {# FIve #}
-      <div class="timeline-item" data-date="1940">
-         <div class="timeline-item_content">
-          <span class="timeline-item_date">1940</span>
-          <h2>FROM RECONSTRUCTION TO ECONOMIC BOOM</h2>
-          <p>Bertone, reacted to the crisis by turning to military vehicles of various kinds. After the war, as the long slow process of reconstruction began in Europe, the big industrial companies gradually scaled up their production levels, and the bodyworks got back to work.</p>
-        </div>
-        <div class="timeline-item_diapo">
-          <div class="timeline-item_bkg timeline-item_bkg--1">
-           <img src="{{site.theme.link}}/public/timeline/1940-bertone-1.jpg" alt="" />
-            <div class="timeline-item_caption">Fiat 2800  Cabriolet </div>
-          </div>
-          <div class="timeline-item_bkg timeline-item_bkg--2">
-           <img src="{{site.theme.link}}/public/timeline/1940-bertone-2.jpg" alt="" />
-            <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div>
-          </div>
-        </div>
-      </div>
+                                    <div class="timeline-item_caption">
+                                        <div class="line" data-line="left" data-line-delay="1"></div>
+                                        <span data-reveal-simple>Fiat 527 Ardita 2500</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item_bkg timeline-item_bkg--2">
+                                    <div class="overflow-hidden">
+                                        <img src="{{site.theme.link}}/public/timeline/1920-bertone-2.jpg" alt="" data-scroll data-scroll-speed="-1.2" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-      {# FIve #}
-      <div class="timeline-item" data-date="1950">
-         <div class="timeline-item_content">
-          <span class="timeline-item_date">1950</span>
-          <div>
-            <h2>FROM A STUDIO TO AN INDUSTRIAL CONCERN</h2>
-            <p>The 1950s brought in the first orders from countries other than Italy,</p>
-          </div>
-        </div>
-        <div class="timeline-item_diapo">
-          <div class="timeline-item_bkg timeline-item_bkg--1">
-            <img src="{{site.theme.link}}/public/timeline/bertone-1950-1.jpg" alt="" />
-          </div>
-          <div class="timeline-item_bkg timeline-item_bkg--2">
-            <img src="{{site.theme.link}}/public/timeline/bertone-1950-2.jpg" alt="" />
-            <div class="timeline-item_caption">Alfa Romeo BAT 5 (1953) <br/>BAT 7 (1954) <br/>BAT 9 (1955)</div>
-          </div>
-        </div>
-      </div>
+                        {# FIve #}
+                        <div class="timeline-item" data-date="1940">
+                            <div class="timeline-item_content">
+                                <span class="timeline-item_date" data-year>1940</span>
+                                <h2 data-line-reveal>FROM RECONSTRUCTION TO ECONOMIC BOOM</h2>
+                                <p data-reveal-simple>Bertone, reacted to the crisis by turning to military vehicles of various kinds. After the war, as the long slow process of reconstruction began in Europe, the big industrial companies gradually scaled up their production levels, and the bodyworks got back to work.</p>
+                            </div>
+                            <div class="timeline-item_diapo">
+                                <div class="timeline-item_bkg timeline-item_bkg--1">
+                                    <div data-scroll data-scroll-speed="1.5" data-reveal-image>
+                                        <img src="{{site.theme.link}}/public/timeline/1940-bertone-1.jpg" alt="" />
+                                    </div>
 
-      {# FIve #}
-      <div class="timeline-item" data-date="1960">
-         <div class="timeline-item_content">
-          <span class="timeline-item_date">1960</span>
-          <h2>UNEXPLORED HORIZONS</h2>
-          <p>The 1960s were the years of the Italian-style GT</p>
-        </div>
-        <div class="timeline-item_diapo">
-          <div class="timeline-item_bkg timeline-item_bkg--1">
-            <img src="{{site.theme.link}}/public/timeline/bertone-1960-1.jpg" alt="" />
-            <div class="timeline-item_caption">Fiat 2800  Cabriolet  </div>
-          </div>
-          <div class="timeline-item_bkg timeline-item_bkg--2">
-            <img src="{{site.theme.link}}/public/timeline/bertone-1960-2.jpg" alt="" />
-            <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div>
-          </div>
-          <div class="timeline-item_bkg timeline-item_bkg--3">
-            <img src="{{site.theme.link}}/public/timeline/bertone-1960-3.jpg" alt="" />
-            <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div>
-          </div>
-        </div>
-      </div>
+                                    <div class="timeline-item_caption">
+                                        <div class="line" data-line="left" data-line-delay="1"></div>
+                                        <span data-reveal-simple>Fiat 2800  Cabriolet</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item_bkg timeline-item_bkg--2">
+                                    <div class="overflow-hidden">
+                                        <img src="{{site.theme.link}}/public/timeline/1940-bertone-2.jpg" alt="" data-scroll data-scroll-speed="-1.2"/>
+                                    </div>
+                                    <div class="timeline-item_caption">
+                                        <div class="line" data-line="left" data-line-delay="1"></div>
+                                        <span data-reveal-simple>
+                                            Lancia Aprilia Cabriolet
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-      {# FIve #}
-      <div class="timeline-item" data-date="1970">
-         <div class="timeline-item_content">
-          <span class="timeline-item_date">1970</span>
-          <h2>CONCEPTUAL REVOLUTION</h2>
-          <p>The partnership with Lamborghini led to the development of the Lamborghini Espada.  After this initial success with the Espada, Bertone went on to design the Lamborghini Jarama and the Lamborghini Urraco. With the Stratos Zero prototype, Bertone came to represent a new point of reference in modern art, as well as on the international car design scene. The company began working for Volvo </p>
-        </div>
-        <div class="timeline-item_diapo">
-          <div class="timeline-item_bkg timeline-item_bkg--1">
-            <img src="{{ site.theme.link }}/public/timeline/1970-bertone-1.jpg" alt="" />
-            {# <div class="timeline-item_caption">Fiat 2800  Cabriolet  </div> #}
-          </div>
-          <div class="timeline-item_bkg timeline-item_bkg--2">
-            <img src="{{ site.theme.link }}/public/timeline/1970-bertone-2.jpg" alt="" />
-            {# <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div> #}
-          </div>
-        </div>
-      </div>
-      
-      {# FIve #}
-      <div class="timeline-item" data-date="1980">
-         <div class="timeline-item_content">
-          <span class="timeline-item_date">1980</span>
-          <h2>Lorem ipsum dolor amet consector</h2>
-          <p>Bertone was responsible not only for production but also for the sales network and after-sales assistance for Fiat Ritmo Cabrio and the Fiat X1/9</p>
-        </div>
-        <div class="timeline-item_diapo">
-          <div class="timeline-item_bkg timeline-item_bkg--1">
-            <img src="{{site.theme.link}}/public/timeline/1980-bertone-1.jpg" alt="" />
-            {# <div class="timeline-item_caption">Fiat 2800  Cabriolet  </div> #}
-          </div>
-          <div class="timeline-item_bkg timeline-item_bkg--2">
-            <img src="{{site.theme.link}}/public/timeline/1980-bertone-2.jpg" alt="" />
-            {# <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div> #}
-          </div>
-        </div>
-      </div>
+                        {# FIve #}
+                        <div class="timeline-item" data-date="1950">
+                            <div class="timeline-item_content">
+                                <span class="timeline-item_date" data-year>1950</span>
+                                <div>
+                                    <h2 data-line-reveal="">FROM A STUDIO TO AN INDUSTRIAL CONCERN</h2>
+                                    <p data-reveal-simple>The 1950s brought in the first orders from countries other than Italy,</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item_diapo">
+                                <div class="timeline-item_bkg timeline-item_bkg--1">
+                                    <div data-scroll data-scroll-speed="1.5" data-reveal-image>
+                                        <img src="{{site.theme.link}}/public/timeline/bertone-1950-1.jpg" alt="" />
+                                    </div>
+                                </div>
+                                <div class="timeline-item_bkg timeline-item_bkg--2">
+                                    <div class="overflow-hidden">
+                                        <img src="{{site.theme.link}}/public/timeline/bertone-1950-2.jpg" alt="" data-scroll data-scroll-speed="-1.2" />
+                                    </div>
+                                    <div class="timeline-item_caption">
+                                        <div class="line" data-line="left" data-line-delay="1"></div>
+                                        <span data-reveal-simple>Alfa Romeo BAT 5 (1953) <br/>BAT 7 (1954) <br/>BAT 9 (1955)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-      {# FIve #}
-      <div class="timeline-item" data-date="1990">
-         <div class="timeline-item_content">
-          <span class="timeline-item_date">1990</span>
-          <div>
-            <h2>Lorem ipsum dolor amet consector</h2>
-            <p> Bertone entered the 1990s with its focus on technological innovations.  Blitz Barchetta, a show car that featured an electric engine and avant-garde construction. The Barchetta had a tubular chassis in special steel integrated with sandwich-structured fiberglass panels, bodywork in composite materials, and carbon interiors.</p>
-          </div>
-        </div>
-        <div class="timeline-item_diapo">
-          <div class="timeline-item_bkg timeline-item_bkg--1">
-            <img src="{{ site.theme.link }}/public/timeline/1990-bertone-1.jpg" alt="" />
-            {# <div class="timeline-item_caption">Fiat 2800  Cabriolet  </div> #}
-          </div>
-          <div class="timeline-item_bkg timeline-item_bkg--2">
-            <img src="{{ site.theme.link }}/public/timeline/1990-bertone-2.jpg" alt="" />
-            {# <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div> #}
-          </div>
-          <div class="timeline-item_bkg timeline-item_bkg--3">
-            <img src="{{ site.theme.link }}/public/timeline/1990-bertone-3.jpg" alt="" />
-            {# <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div> #}
-          </div>
-        </div>
-      </div>
+                        {# FIve #}
+                        <div class="timeline-item" data-date="1960">
+                            <div class="timeline-item_content">
+                                <span class="timeline-item_date" data-year>1960</span>
+                                <h2 data-line-reveal="">UNEXPLORED HORIZONS</h2>
+                                <p data-reveal-simple>The 1960s were the years of the Italian-style GT</p>
+                            </div>
+                            <div class="timeline-item_diapo">
+                                <div class="timeline-item_bkg timeline-item_bkg--1">
+                                    <div data-scroll data-scroll-speed="1.5" data-reveal-image>
+                                        <img src="{{site.theme.link}}/public/timeline/bertone-1960-1.jpg" alt="" />
+                                    </div>
 
-      {# FIve #}
-      <div class="timeline-item" data-date="2000">
-         <div class="timeline-item_content">
-          <span class="timeline-item_date">2000</span>
-          <h2>THE DECLINE OF AN INVENTION</h2>
-          <p>Bertone underwent a major restructuring process and became a fully integrated service company in the automotive, transportation, and industrial design sectors</p>
-        </div>
-        <div class="timeline-item_diapo">
-          <div class="timeline-item_bkg timeline-item_bkg--1">
-            <img src="{{ site.theme.link }}/public/timeline/2000-bertone-1.jpg" alt="" />
-            {# <div class="timeline-item_caption">Fiat 2800  Cabriolet  </div> #}
-          </div>
-          <div class="timeline-item_bkg timeline-item_bkg--2">
-            <img src="{{ site.theme.link }}/public/timeline/2000-bertone-2.jpg" alt="" />
-            {# <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div> #}
-          </div>
-        </div>
-      </div>
-      {# FIve #}
-      <div class="timeline-item" data-date="2010">
-         <div class="timeline-item_content">
-          <span class="timeline-item_date">2010</span>
-          <h2>THE DECLINE OF AN INVENTION</h2>
-          <p>The financial turmoil continued, leading Bertone to sell off some of its treasured collection of concept cars in 2011. Bertone Design was sold to the group AKKA Technologies in the second quarter of 2016</p>
-        </div>
-        <div class="timeline-item_diapo">
-          <div class="timeline-item_bkg timeline-item_bkg--1">
-            <img src="{{ site.theme.link }}/public/timeline/2010-bertone-1.jpg" alt="" />
-            {# <div class="timeline-item_caption">Fiat 2800  Cabriolet  </div> #}
-          </div>
-          <div class="timeline-item_bkg timeline-item_bkg--2">
-            <img src="{{ site.theme.link }}/public/timeline/2010-bertone-2.jpg" alt="" />
-            {# <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div> #}
-          </div>
-        </div>
-      </div>
+                                    <div class="timeline-item_caption">
+                                        <div class="line" data-line="left" data-line-delay="1"></div>
+                                        <span data-reveal-simple>Fiat 2800  Cabriolet</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item_bkg timeline-item_bkg--2">
+                                    <div data-scroll data-scroll-speed="1.5" data-reveal-image>
+                                        <img src="{{site.theme.link}}/public/timeline/bertone-1960-2.jpg" alt="" />
+                                    </div>
 
-      {# FIve #}
-      <div class="timeline-item" data-date="2020">
-         <div class="timeline-item_content">
-          <span class="timeline-item_date">2020<br/>2022</span> 
-          <h2>THE DECLINE OF AN INVENTION</h2>
-          <p>relaunch the brand and revive the myth in the future</p>
-        </div>
-        <div class="timeline-item_diapo">
-          <div class="timeline-item_bkg timeline-item_bkg--1">
-            <img src="{{ site.theme.link }}/public/timeline/2020-bertone-1.jpg" alt="" />
-            {# <div class="timeline-item_caption">Fiat 2800  Cabriolet  </div> #}
-          </div>
-          <div class="timeline-item_bkg timeline-item_bkg--2">
-            <img src="{{ site.theme.link }}/public/timeline/2020-bertone-2.jpg" alt="" />
-            {# <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div> #}
-          </div>
-        </div>
-      </div>
+                                    <div class="timeline-item_caption">
+                                        <div class="line" data-line="left" data-line-delay="1"></div>
+                                        <span data-reveal-simple>Lancia Aprilia Cabriolet</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item_bkg timeline-item_bkg--3">
+                                    <div data-scroll data-scroll-speed="1.5" data-reveal-image>
+                                        <img src="{{site.theme.link}}/public/timeline/bertone-1960-3.jpg" alt="" />
+                                    </div>
+
+                                    <div class="timeline-item_caption">
+                                        <div class="line" data-line="left" data-line-delay="1"></div>
+                                        <span data-reveal-simple>Lancia Aprilia Cabriolet</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {# FIve #}
+                        <div class="timeline-item" data-date="1970">
+                            <div class="timeline-item_content">
+                                <span class="timeline-item_date" data-year>1970</span>
+                                <h2 data-line-reveal="">CONCEPTUAL REVOLUTION</h2>
+                                <p data-reveal-simple>The partnership with Lamborghini led to the development of the Lamborghini Espada.  After this initial success with the Espada, Bertone went on to design the Lamborghini Jarama and the Lamborghini Urraco. With the Stratos Zero prototype, Bertone came to represent a new point of reference in modern art, as well as on the international car design scene. The company began working for Volvo </p>
+                            </div>
+                            <div class="timeline-item_diapo">
+                                <div class="timeline-item_bkg timeline-item_bkg--1">
+                                    <div data-scroll data-scroll-speed="1.5" data-reveal-image>
+                                        <img src="{{ site.theme.link }}/public/timeline/1970-bertone-1.jpg" alt="" />
+                                    </div>
+
+                                    {# <div class="timeline-item_caption">Fiat 2800  Cabriolet  </div> #}
+                                </div>
+                                <div class="timeline-item_bkg timeline-item_bkg--2">
+                                    <div class="overflow-hidden">
+                                        <img src="{{ site.theme.link }}/public/timeline/1970-bertone-2.jpg" alt="" data-scroll data-scroll-speed="-1.2"/>
+                                    </div>
+                                    {# <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div> #}
+                                </div>
+                            </div>
+                        </div>
+
+                        {# FIve #}
+                        <div class="timeline-item" data-date="1980">
+                            <div class="timeline-item_content">
+                                <span class="timeline-item_date" data-year>1980</span>
+                                <h2 data-line-reveal="">Lorem ipsum dolor amet consector</h2>
+                                <p data-reveal-simple>Bertone was responsible not only for production but also for the sales network and after-sales assistance for Fiat Ritmo Cabrio and the Fiat X1/9</p>
+                            </div>
+                            <div class="timeline-item_diapo">
+                                <div class="timeline-item_bkg timeline-item_bkg--1">
+                                    <div data-scroll data-scroll-speed="1.5" data-reveal-image>
+                                        <img src="{{site.theme.link}}/public/timeline/1980-bertone-1.jpg" alt="" />
+                                    </div>
+
+                                    {# <div class="timeline-item_caption">Fiat 2800  Cabriolet  </div> #}
+                                </div>
+                                <div class="timeline-item_bkg timeline-item_bkg--2">
+                                    <div class="overflow-hidden">
+                                        <img src="{{site.theme.link}}/public/timeline/1980-bertone-2.jpg" alt="" data-scroll data-scroll-speed="-1"/>
+                                    </div>
+
+                                    {# <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div> #}
+                                </div>
+                            </div>
+                        </div>
+
+                        {# FIve #}
+                        <div class="timeline-item" data-date="1990">
+                            <div class="timeline-item_content">
+                                <span class="timeline-item_date" data-year>1990</span>
+                                <div>
+                                    <h2 data-line-reveal="">Lorem ipsum dolor amet consector</h2>
+                                    <p data-reveal-simple> Bertone entered the 1990s with its focus on technological innovations.  Blitz Barchetta, a show car that featured an electric engine and avant-garde construction. The Barchetta had a tubular chassis in special steel integrated with sandwich-structured fiberglass panels, bodywork in composite materials, and carbon interiors.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item_diapo">
+                                <div class="timeline-item_bkg timeline-item_bkg--1">
+                                    <div data-scroll data-scroll-speed="1.5" data-reveal-image>
+                                        <img src="{{ site.theme.link }}/public/timeline/1990-bertone-1.jpg" alt="" />
+                                    </div>
+
+                                    {# <div class="timeline-item_caption">Fiat 2800  Cabriolet  </div> #}
+                                </div>
+                                <div class="timeline-item_bkg timeline-item_bkg--2">
+                                    <div data-scroll data-scroll-speed="1.5" data-reveal-image>
+                                        <img src="{{ site.theme.link }}/public/timeline/1990-bertone-2.jpg" alt="" />
+                                    </div>
+
+                                    {# <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div> #}
+                                </div>
+                                <div class="timeline-item_bkg timeline-item_bkg--3">
+                                    <div class="overflow-hidden">
+                                        <img src="{{ site.theme.link }}/public/timeline/1990-bertone-3.jpg" alt="" data-scroll data-scroll-speed="-1"/>
+                                    </div>
+                                    {# <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div> #}
+                                </div>
+                            </div>
+                        </div>
+
+                        {# FIve #}
+                        <div class="timeline-item" data-date="2000">
+                            <div class="timeline-item_content">
+                                <span class="timeline-item_date" data-year>2000</span>
+                                <h2 data-line-reveal="">THE DECLINE OF AN INVENTION</h2>
+                                <p data-reveal-simple>Bertone underwent a major restructuring process and became a fully integrated service company in the automotive, transportation, and industrial design sectors</p>
+                            </div>
+                            <div class="timeline-item_diapo">
+                                <div class="timeline-item_bkg timeline-item_bkg--1">
+                                    <div data-scroll data-scroll-speed="1.5" data-reveal-image>
+                                        <img src="{{ site.theme.link }}/public/timeline/2000-bertone-1.jpg" alt="" />
+                                    </div>
+
+                                    {# <div class="timeline-item_caption">Fiat 2800  Cabriolet  </div> #}
+                                </div>
+                                <div class="timeline-item_bkg timeline-item_bkg--2">
+                                    <div data-scroll data-scroll-speed="1.5" data-reveal-image>
+                                        <img src="{{ site.theme.link }}/public/timeline/2000-bertone-2.jpg" alt="" />
+                                    </div>
+
+                                    {# <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div> #}
+                                </div>
+                            </div>
+                        </div>
+                        {# FIve #}
+                        <div class="timeline-item" data-date="2010">
+                            <div class="timeline-item_content">
+                                <span class="timeline-item_date" data-year>2010</span>
+                                <h2 data-line-reveal="">THE DECLINE OF AN INVENTION</h2>
+                                <p data-reveal-simple>The financial turmoil continued, leading Bertone to sell off some of its treasured collection of concept cars in 2011. Bertone Design was sold to the group AKKA Technologies in the second quarter of 2016</p>
+                            </div>
+                            <div class="timeline-item_diapo">
+                                <div class="timeline-item_bkg timeline-item_bkg--1">
+                                    <div data-scroll data-scroll-speed="1.5" data-reveal-image>
+                                        <img src="{{ site.theme.link }}/public/timeline/2010-bertone-1.jpg" alt="" />
+                                    </div>
+
+                                    {# <div class="timeline-item_caption">Fiat 2800  Cabriolet  </div> #}
+                                </div>
+                                <div class="timeline-item_bkg timeline-item_bkg--2">
+                                    <div data-scroll data-scroll-speed="1.5" data-reveal-image>
+                                        <img src="{{ site.theme.link }}/public/timeline/2010-bertone-2.jpg" alt="" />
+                                    </div>
+
+                                    {# <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div> #}
+                                </div>
+                            </div>
+                        </div>
+
+                        {# FIve #}
+                        <div class="timeline-item" data-date="2020">
+                            <div class="timeline-item_content">
+                                <span class="timeline-item_date" data-year>2020</span>
+                                <br>
+{#                                <span class="timeline-item_date" data-year>2022</span>#}
+                                <h2 data-line-reveal="">THE DECLINE OF AN INVENTION</h2>
+                                <p data-reveal-simple>relaunch the brand and revive the myth in the future</p>
+                            </div>
+                            <div class="timeline-item_diapo">
+                                <div class="timeline-item_bkg timeline-item_bkg--1">
+                                    <div class="overflow-hidden">
+                                        <img src="{{ site.theme.link }}/public/timeline/2020-bertone-1.jpg" alt="" data-scroll data-scroll-speed="-1.2"/>
+                                    </div>
+                                    {# <div class="timeline-item_caption">Fiat 2800  Cabriolet  </div> #}
+                                </div>
+                                <div class="timeline-item_bkg timeline-item_bkg--2">
+                                    <div data-scroll data-scroll-speed="1.5" data-reveal-image>
+                                        <img src="{{ site.theme.link }}/public/timeline/2020-bertone-2.jpg" alt="" />
+                                    </div>
+
+                                    {# <div class="timeline-item_caption">Lancia Aprilia Cabriolet</div> #}
+                                </div>
+                            </div>
+                        </div>
 
 
-    </div>
+                    </div>
+                </div>
+            </main>
+            {{ function('wp_footer') }}
+        </div>
 	</body>
 </html>

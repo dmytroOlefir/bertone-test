@@ -12,77 +12,11 @@ import 'swiper/css'
 
 Swiper.use([Autoplay]);
 
-import {opening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp} from './scripts/modules/_animations'
-import {imageFlip} from './scripts/modules/_image3d'
-
+import {opening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp, yearReveal} from './scripts/modules/_animations'
 
 
 const gsapWithCSS = gsap.registerPlugin(CSSPlugin, ScrollTrigger, SplitText) || gsap, // to protect from tree shaking
 	TweenMaxWithCSS = gsapWithCSS.core.Tween;
-
-const scroller = document.querySelector('[data-main-scroll]')
-
-const lc = new LocomotiveScroll({
-	el: scroller,
-	smooth: true,
-	lerp: 0.08,
-	multiplier: 0.5,
-	smartphone: {
-		smooth: true
-	},
-	tablet: {
-		smooth: true
-	}
-	//Will probably remove Loco for mobile/tablet later on
-	// tablet: {
-	// 	breakpoint: 1200,
-	// 	smooth: true,
-	// }
-});
-
-window.lc = lc
-
-lc.on('scroll', ScrollTrigger.update)
-
-ScrollTrigger.scrollerProxy(scroller, {
-	scrollTop(value) {
-		return arguments.length
-			? lc.scrollTo(value, 0, 0)
-			: lc.scroll.instance.scroll.y
-	},
-	getBoundingClientRect() {
-		return {
-			left: 0,
-			top: 0,
-			width: window.innerWidth,
-			height: window.innerHeight
-		}
-	},
-	pinType: scroller.style.transform ? "transform" : "fixed"
-})
-
-ScrollTrigger.defaults({
-	scroller: scroller
-})
-
-ScrollTrigger.addEventListener('refresh', () => lc.update())
-ScrollTrigger.refresh()
-
-opening()
-
-//Temp Fix, need to be updated
-setTimeout(() => {
-	lineReveal()
-}, 200)
-
-revealFromLeft()
-revealFromRight()
-revealSimple()
-revealImage()
-bgZoom()
-lineLeft()
-fadeUp()
-customCursor()
 
 // --------------- Slider
 const slider = document.querySelector('[js-slider]')
@@ -103,3 +37,260 @@ if (slider) {
 		loop: true,
   })
 }
+
+function delay(ms) {
+	return new Promise(resolve => {
+		setTimeout(() => {
+			resolve('resolved');
+		}, ms);
+	});
+}
+
+const scroller = document.querySelector('[data-main-scroll]')
+
+const timelinePage = document.querySelector('.page-template-timeline')
+
+const lc = new LocomotiveScroll({
+	el: scroller,
+	smooth: true,
+	lerp: 0.08,
+	multiplier: 0.5,
+	smartphone: {
+		smooth: true
+	},
+	tablet: {
+		smooth: true
+	}
+	//Will probably remove Loco for mobile/tablet later on
+	// tablet: {
+	// 	breakpoint: 1200,
+	// 	smooth: true,
+	// }
+})
+
+window.lc = lc
+
+if (timelinePage) {
+	lc.stop();
+}
+
+barba.hooks.beforeEnter((data) => {
+	ScrollTrigger.getAll().forEach(t => t.kill());
+	customCursor()
+})
+
+barba.hooks.after((data) => {
+
+	if (data.next.namespace === 'timeline') {
+		lc.update();
+		lc.stop();
+	} else {
+		lc.update();
+		setTimeout(() => {
+			lc.start();
+		}, 500)
+	}
+})
+
+const curtain = document.querySelector('[data-curtain]');
+
+let frontCount = 0;
+
+barba.init({
+	transitions: [{
+		name: 'default-transition',
+		 async leave(data) {
+			console.log('default');
+
+			// gsap.to(curtain, {autoAlpha: 1, duration: 0.3})
+
+			 const res = await delay(400);
+
+		},
+		afterLeave(data) {
+			lc.scrollTo('top', {
+				'offset': 0,
+				'duration': 0,
+				'disableLerp': true
+			})
+		},
+		enter(data) {
+			console.log('enter');
+			// gsap.to(curtain, {autoAlpha: 0, duration: 0.3, ease: "power3.Out"})
+		}
+	}],
+	views: [{
+		namespace: 'front',
+		async beforeEnter(data) {
+			console.log(frontCount)
+
+			if (frontCount >= 1) {
+				setTimeout(()=> {
+					console.log(frontCount)
+					const tlSection = document.querySelector('#timeline-section');
+
+					lc.scrollTo(tlSection, {
+						'offset': -100,
+						'duration': 0,
+						'disableLerp': true
+					})
+				})
+			}
+
+			lc.on('scroll', ScrollTrigger.update)
+
+			ScrollTrigger.scrollerProxy(scroller, {
+				scrollTop(value) {
+					return arguments.length
+						? lc.scrollTo(value, 0, 0)
+						: lc.scroll.instance.scroll.y
+				},
+				getBoundingClientRect() {
+					return {
+						left: 0,
+						top: 0,
+						width: window.innerWidth,
+						height: window.innerHeight
+					}
+				},
+				pinType: scroller.style.transform ? "transform" : "fixed"
+			})
+
+			ScrollTrigger.defaults({
+				scroller: scroller
+			})
+
+			ScrollTrigger.addEventListener('refresh', () => lc.update())
+			ScrollTrigger.refresh()
+
+			// const header = document.querySelector('.header');
+			//
+			// if (header) {
+			// 	gsap.to(header, {autoAlpha: 1, ease: "power3.Out", duration: 0.3})
+			// }
+		},
+		async afterEnter(data) {
+			opening(frontCount)
+			frontCount++
+
+			//Temp Fix, need to be updated
+			setTimeout(() => {
+				lineReveal()
+			}, 200)
+
+			revealFromLeft()
+			revealFromRight()
+			revealSimple()
+			revealImage()
+			bgZoom()
+			lineLeft()
+			fadeUp()
+		},
+		afterLeave(data) {
+			ScrollTrigger.getAll().forEach(t => t.kill())
+
+			ScrollTrigger.defaults({
+				scroller: scroller,
+				horizontal: false
+			});
+
+			ScrollTrigger.addEventListener('refresh', () => lc.update())
+			ScrollTrigger.refresh()
+		}
+	},{
+		namespace: 'timeline',
+		beforeEnter(data) {
+			ScrollTrigger.getAll().forEach(t => t.kill())
+
+			const horizontalScroller = document.querySelector('[data-hz-scroll]')
+
+			const locoScroll = new LocomotiveScroll({
+				el: horizontalScroller,
+				smooth: true,
+				direction: 'horizontal',
+				lerp: 0.08,
+				multiplier: 0.4,
+				// tablet: {
+				// 	breakpoint: 1200,
+				// 	smooth: true,
+				// 	direction: 'horizontal',
+				// }
+				// gestureDirection: 'both'
+			});
+
+			locoScroll.on('scroll', ScrollTrigger.update)
+			window.hscroll = locoScroll
+
+			ScrollTrigger.scrollerProxy(horizontalScroller, {
+				scrollLeft(value) {
+					return arguments.length
+						? locoScroll.scrollTo(value, 0, 0)
+						: locoScroll.scroll.instance.scroll.x
+				},
+				getBoundingClientRect() {
+					return {
+						left: 0,
+						top: 0,
+						width: window.innerWidth,
+						height: window.innerHeight
+					}
+				},
+				pinType: horizontalScroller.style.transform ? "transform" : "fixed"
+			})
+
+			ScrollTrigger.defaults({
+				scroller: horizontalScroller,
+				horizontal: true
+			})
+
+			ScrollTrigger.addEventListener('refresh', () => locoScroll.update())
+
+			// Cursor adjustment
+			const cursor = document.querySelector('.a-cursor');
+
+			if (cursor) {
+				cursor.classList.remove('letsgo')
+
+				gsap.to(cursor.querySelector('[data-cursor-inner]'), .4, {
+					scale: 1,
+				})
+			}
+
+			// Hide Header
+			const header = document.querySelector('.header');
+
+			if (header) {
+				gsap.to(header, {autoAlpha: 0, ease: "power3.Out", duration: 0.3})
+			}
+
+
+		},
+		async afterEnter(data) {
+			//Temp Fix, need to be updated
+			setTimeout(() => {
+				lineReveal()
+				yearReveal()
+			}, 300)
+
+			revealFromLeft()
+			revealFromRight()
+			revealSimple()
+			revealImage()
+			bgZoom()
+			lineLeft()
+			fadeUp()
+		},
+		afterLeave(data) {
+			ScrollTrigger.getAll().forEach(t => t.kill())
+
+			ScrollTrigger.defaults({
+				scroller: scroller,
+				horizontal: false
+			});
+
+			// ScrollTrigger.addEventListener('refresh', () => locoScroll.update());
+			ScrollTrigger.refresh()
+		}
+
+	}]
+});

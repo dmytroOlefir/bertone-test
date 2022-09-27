@@ -1,8 +1,38 @@
+body.page-template-timeline {
+  height: 100vh;
+  background: black;
+}
+
+.back-btn {
+  position: fixed;
+  top: 1vw;
+  right: 1vw;
+  z-index: 1;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  border: 2px solid white;
+  i {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 2px;
+    background: white;
+  }
+  i:first-child {
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+  }
+  i:last-child {
+    transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+  }
+}
 .page-timeline {
   color: white;
   width: 100%;
   height: auto;
-  overflow: auto;
+  overflow: hidden;
   background-color: black;
 
   @include minTablet {
@@ -13,7 +43,7 @@
     .timeline-grid {
       display: flex;
       flex-wrap: nowrap;
-      height: 98.6vh;
+      height: 100vh;
       overflow-y: hidden;
     }
   }
@@ -66,9 +96,11 @@
       padding: 10px;
       width: 50%;
       margin-left: 40px;
-
       &:before {
-        content:"";
+        content: none;
+      }
+
+      .line {
         position: absolute;
         bottom: 0;
         left: 0;
@@ -100,6 +132,7 @@
     }
 
     &_bkg {
+      overflow: visible;
       margin-top: 20px;
       // align-items: center;
       line-height: 0;
@@ -204,12 +237,14 @@
               &--1 {
                 height: 50vh;
                 margin-right: 5vw;
-                transform: translateY(10vh);
+                position: relative;
+                top: 10vh;
               }
         
               &--2 {
                 height: 40vh;
-                transform: translateY(40vh);
+                position: relative;
+                top: 40vh;
               }
             }
         

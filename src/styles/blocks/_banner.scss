@@ -1,8 +1,7 @@
 .banner {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  bottom: 0;
   right: 0;
   z-index: 999;
   display: flex;
@@ -14,7 +13,7 @@
   text-align: center;
 
   @include minTablet{
-    min-height: 100vh;
+    height: 100vh;
   }
   &_bg {
     position: absolute;

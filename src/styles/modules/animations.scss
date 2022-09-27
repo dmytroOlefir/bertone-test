@@ -105,3 +105,12 @@
 .hoverable {
   cursor: pointer;
 }
+
+[data-hz-scroll] {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
