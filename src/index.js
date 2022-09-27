@@ -12,7 +12,7 @@ import 'swiper/css'
 
 Swiper.use([Autoplay]);
 
-import {opening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp, yearReveal} from './scripts/modules/_animations'
+import {opening, tlOpening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp, yearReveal} from './scripts/modules/_animations'
 
 
 const gsapWithCSS = gsap.registerPlugin(CSSPlugin, ScrollTrigger, SplitText) || gsap, // to protect from tree shaking
@@ -24,7 +24,7 @@ const slider = document.querySelector('[js-slider]')
 if (slider) {
 	const swiper = new Swiper(slider, {
 		slidesPerView: 'auto',
-		spaceBetween: 30,
+		// spaceBetween: 30,
 		speed: 4000,
 		grabCursor: true,
 		mousewheelControl: true,
@@ -71,28 +71,28 @@ const lc = new LocomotiveScroll({
 window.lc = lc
 
 if (timelinePage) {
-	lc.stop();
+	lc.stop()
 }
 
 barba.hooks.beforeEnter((data) => {
-	ScrollTrigger.getAll().forEach(t => t.kill());
-	customCursor()
+	ScrollTrigger.getAll().forEach(t => t.kill())
 })
 
 barba.hooks.after((data) => {
 
 	if (data.next.namespace === 'timeline') {
-		lc.update();
-		lc.stop();
+		lc.update()
+		lc.stop()
 	} else {
-		lc.update();
+		lc.update()
 		setTimeout(() => {
-			lc.start();
+			lc.start()
 		}, 500)
 	}
 })
 
-const curtain = document.querySelector('[data-curtain]');
+const curtain = document.querySelector('[data-curtain]'),
+	header = document.querySelector('#header')
 
 let frontCount = 0;
 
@@ -102,17 +102,17 @@ barba.init({
 		 async leave(data) {
 			console.log('default');
 
-			// gsap.to(curtain, {autoAlpha: 1, duration: 0.3})
+			gsap.to(curtain, {autoAlpha: 1, duration: 0.7})
 
-			 const res = await delay(400);
+			 const res = await delay(700);
 
 		},
 		afterLeave(data) {
-			lc.scrollTo('top', {
-				'offset': 0,
-				'duration': 0,
-				'disableLerp': true
-			})
+			// lc.scrollTo('top', {
+			// 	'offset': 0,
+			// 	'duration': 0,
+			// 	'disableLerp': true
+			// })
 		},
 		enter(data) {
 			console.log('enter');
@@ -122,20 +122,7 @@ barba.init({
 	views: [{
 		namespace: 'front',
 		async beforeEnter(data) {
-			console.log(frontCount)
-
-			if (frontCount >= 1) {
-				setTimeout(()=> {
-					console.log(frontCount)
-					const tlSection = document.querySelector('#timeline-section');
-
-					lc.scrollTo(tlSection, {
-						'offset': -100,
-						'duration': 0,
-						'disableLerp': true
-					})
-				})
-			}
+			customCursor()
 
 			lc.on('scroll', ScrollTrigger.update)
 
@@ -170,6 +157,20 @@ barba.init({
 			// }
 		},
 		async afterEnter(data) {
+			header.classList.add('show')
+
+			if (frontCount >= 1) {
+				setTimeout(()=> {
+					const tlSection = document.querySelector('#timeline-section');
+
+					lc.scrollTo(tlSection, {
+						'offset': -100,
+						'duration': 0,
+						'disableLerp': true
+					})
+				})
+			}
+
 			opening(frontCount)
 			frontCount++
 
@@ -187,6 +188,7 @@ barba.init({
 			fadeUp()
 		},
 		afterLeave(data) {
+			header.classList.remove('show')
 			ScrollTrigger.getAll().forEach(t => t.kill())
 
 			ScrollTrigger.defaults({
@@ -200,6 +202,8 @@ barba.init({
 	},{
 		namespace: 'timeline',
 		beforeEnter(data) {
+			customCursor()
+
 			ScrollTrigger.getAll().forEach(t => t.kill())
 
 			const horizontalScroller = document.querySelector('[data-hz-scroll]')
@@ -256,16 +260,10 @@ barba.init({
 				})
 			}
 
-			// Hide Header
-			const header = document.querySelector('.header');
-
-			if (header) {
-				gsap.to(header, {autoAlpha: 0, ease: "power3.Out", duration: 0.3})
-			}
-
 
 		},
 		async afterEnter(data) {
+			tlOpening()
 			//Temp Fix, need to be updated
 			setTimeout(() => {
 				lineReveal()

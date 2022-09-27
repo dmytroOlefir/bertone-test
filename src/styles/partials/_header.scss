@@ -17,7 +17,7 @@
   }
 
   &_wrap {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
@@ -56,5 +56,11 @@
     right: 0;
     transform: translateY(30px) scaleX(-1);
     z-index: 999999;
+  }
+}
+
+.header.show {
+  .header_wrap {
+    display: flex;
   }
 }

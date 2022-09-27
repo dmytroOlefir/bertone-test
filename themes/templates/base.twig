@@ -10,10 +10,10 @@
 </div>
 	<body class="{{body_class}}" data-template="base.twig" data-barba="wrapper">
 		{% include '/header.twig' %}
+		{% include '/banner.twig' %}
 		<div class="curtain" data-curtain></div>
 		<div data-main-scroll>
 			<div data-barba="container" data-barba-namespace="front">
-				{% include '/banner.twig' %}
 				{% block content %}
 					Sorry, no content
 				{% endblock %}

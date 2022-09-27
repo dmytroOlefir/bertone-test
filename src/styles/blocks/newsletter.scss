@@ -87,6 +87,7 @@
       line-height: 1;
       height: rem(50);
       width: 100%;
+      outline: none !important;
       &::placeholder {
         color: #ffffff;
       }

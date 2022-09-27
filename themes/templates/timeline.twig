@@ -11,7 +11,8 @@
             <div class="a-cursor" data-cursor>
                 <div class="a-cursor__ball" data-cursor-inner></div>
             </div>
-{#            <div class="curtain" data-curtain></div>#}
+            {% include '/header.twig' %}
+            <div class="curtain" data-curtain></div>
             <main class="page-timeline" data-barba="container" data-barba-namespace="timeline">
                 <a href="/" class="back-btn hoverable">
                     <i></i>
@@ -22,12 +23,12 @@
                         {# First #}
                         <div class="timeline-item timeline-item--first">
                             <div class="timeline-item_bkg">
-                                <div class="overflow-hidden">
+                                <div class="overflow-hidden" data-op-image>
                                     <img src="{{site.theme.link}}/public/timeline/intro.jpg" alt="" data-scroll data-scroll-speed="-1.2" />
                                 </div>
                             </div>
                             <div class="timeline-item_title">
-                                <h2 data-line-reveal data-scroll data-scroll-speed="1.3">
+                                <h2 data-op-title data-scroll data-scroll-speed="1.3">
                                     <span>The origins of Bertone</span><h2>
                             </div>
                         </div>
