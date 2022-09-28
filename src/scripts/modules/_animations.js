@@ -287,7 +287,7 @@ const yearReveal = () => {
 	const years = document.querySelectorAll('[data-year]');
 
 	years.forEach((year) => {
-		let delay = year.dataset.lineDelay || '0';
+		let delay = year.dataset.year || '0';
 		let splitText = new SplitText(year, {type: "chars"})
 
 		let tl = gsap.timeline({
@@ -307,4 +307,38 @@ const yearReveal = () => {
 	})
 }
 
-export {opening, tlOpening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp, yearReveal};
+const captionReveal = () => {
+	const captions = document.querySelectorAll('[data-caption]');
+
+	captions.forEach((caption) => {
+		let line = caption.querySelector('.line'),
+			text = caption.querySelector('span');
+
+		let delay = caption.dataset.caption || '0';
+
+		let tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: caption,
+				start: "left 70%"
+			}
+		});
+
+		tl
+			.from(line, {
+				duration: 1,
+				scale: 0,
+				transformOrigin: 'left',
+				ease: "power3.out",
+			}, `+=${delay}`)
+			.from(text, {
+				opacity: 0,
+				duration: 0.8,
+				ease: "power3.out",
+			}, "-=0.8")
+
+
+
+	})
+}
+
+export {opening, tlOpening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp, yearReveal, captionReveal};

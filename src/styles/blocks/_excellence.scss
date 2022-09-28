@@ -66,6 +66,12 @@
 
     @include minTablet {
       font-size: 4.5vw;
+      line-height: 1.2;
+      margin-bottom: 25px;
+    }
+
+    @media only screen and (min-width: 1700px) {
+      margin-bottom: 30px;
     }
   }
 
@@ -77,6 +83,9 @@
     font-size: rem(14);
     font-family: $font;
     font-weight: 600;
+    @media only screen and (min-width: 1700px) {
+      font-size: 1.25rem;
+    }
   }
 
   &_content {
@@ -88,6 +97,10 @@
   
     @include minTablet {
       font-size: 1vw;
+    }
+
+    @media only screen and (min-width: 1700px) {
+      max-width: 35vw;
     }
   }
 }

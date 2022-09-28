@@ -12,11 +12,13 @@ const customCursor = () => {
 	for (let i = 0; i < hoverables.length; i++) {
 		hoverables[i].addEventListener('mouseenter', onMouseHover);
 		hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
+		hoverables[i].addEventListener('click', onMouseHoverOut);
 	}
 
 	for (let i = 0; i < letsgo.length; i++) {
 		letsgo[i].addEventListener('mouseenter', onMouseLetsgo);
 		letsgo[i].addEventListener('mouseleave', onMouseLetsgoOut);
+		letsgo[i].addEventListener('click', onMouseLetsgoOut);
 	}
 
 	for (let i = 0; i < drag.length; i++) {
@@ -90,10 +92,13 @@ const customCursor = () => {
 	function onMouseDrag(e) {
 		cursor.classList.add('drag');
 
-		gsap.to(bigBall, .2, {
-			opacity: 0,
-			// x: e.pageX,
-			// y: e.pageY,
+		gsap.to(cursor, .4, {
+			x: e.pageX,
+			y: e.pageY,
+		})
+
+		gsap.to(bigBall, .4, {
+			scale: 10,
 			// top: 10,
 			// left: 10,
 		})
@@ -102,12 +107,13 @@ const customCursor = () => {
 	function onMouseDragOut(e) {
 		cursor.classList.remove('drag');
 
-		gsap.to(bigBall, .2, {
-			opacity: 1,
-			// x: e.pageX - 15,
-			// y: e.pageY - 15,
-			// top: 40,
-			// left: 40,
+		gsap.to(cursor, .4, {
+			x: e.pageX - 15,
+			y: e.pageY - 15,
+		})
+
+		gsap.to(bigBall, .4, {
+			scale: 1,
 		})
 	}
 }

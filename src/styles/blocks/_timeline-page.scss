@@ -286,9 +286,13 @@ body.page-template-timeline {
           
           &_bkg {
             &--1 {
-              height: 50vh;
+              height: 37vh;
               margin-right: 5vw;
-              transform: translateY(30vh);
+              transform: translateY(46vh);
+
+              .timeline-item_caption {
+                bottom: 38px;
+              }
             }
         
             &--2 {
@@ -298,6 +302,7 @@ body.page-template-timeline {
               .timeline-item_caption {
                 top: 50px;
                 bottom: auto;
+                transform: translateX(-130%);
               }
             }
           }
@@ -311,9 +316,9 @@ body.page-template-timeline {
         
           &_content {
             position: absolute;
-            top: 10vh;
+            top: 27vh;
             left: -10vw;
-            width: 40vw;
+            width: 48vw;
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
@@ -331,6 +336,7 @@ body.page-template-timeline {
         min-width: none;
         display: flex;
         align-items: flex-start;
+        margin-right: 0;
 
         .timeline-item {
           &_diapo {
@@ -344,7 +350,7 @@ body.page-template-timeline {
             &--1 {
               position: absolute;
               bottom: 10vh;
-              left: 50%;
+              left: 45%;
               transform: translateX(-100%);
               height: 30vh;
               z-index: 1;
@@ -388,7 +394,8 @@ body.page-template-timeline {
       @include minTablet {
         display: flex;
         align-items: flex-end;
-        margin-left: 20vw;
+        margin-left: 10vw;
+        margin-right: 0;
 
         .timeline-item {
           &_date {
@@ -408,6 +415,7 @@ body.page-template-timeline {
             transform: translateY(-10vh);
 
             h2 {
+              margin-bottom: 20px;
               width: 43vw;
               transform: translateX(70%);
             }
@@ -450,6 +458,12 @@ body.page-template-timeline {
               .timeline-item_caption {
                 right: 0;
                 left: auto;
+                transform: translateX(150%);
+                text-align: right;
+                .line {
+                  right: 0;
+                  left: auto;
+                }
               }
             }
           }
@@ -470,7 +484,8 @@ body.page-template-timeline {
             z-index: 1;
             display: flex;
             align-items: center;
-            width: 54vw;
+            justify-content: space-between;
+            width: 65vw;
             transform: translateY(5vh);
           }
 
@@ -657,7 +672,7 @@ body.page-template-timeline {
               top: 0;
               left: 0;
               max-width: 300px;
-              transform: translate(75vw, 65vh);
+              transform: translate(83vw, 65vh);
             }
           }
 
@@ -718,7 +733,7 @@ body.page-template-timeline {
             &--2 {
               position: absolute;
               top: 0%;
-              left: 50%;
+              left: 47%;
               transform: translateX(-50%);
               z-index: 2;
 
@@ -748,15 +763,15 @@ body.page-template-timeline {
             display: flex;
             align-items: flex-start;
             width: 85vw;
-            margin-top: 10vh;
+            margin-top: 15vh;
 
             h2 {
-              max-width: 60%;
+              max-width: 100%;
               margin: 0px auto;
             }
 
             p {
-              margin-top: 20vh;
+              margin-top: 64vh;
               max-width: 400px;
               margin-left: auto;
               margin-right: 0;
@@ -768,10 +783,12 @@ body.page-template-timeline {
       @include minDesktop {
         .timeline-item {
           &_content {
-            width: 75vw;
+            width: 80vw;
         
             h2 {
-              max-width: 70%;
+			  position: relative;
+			  left: 3vw;
+              max-width: 90%;
             }
         
             // p {
@@ -798,16 +815,16 @@ body.page-template-timeline {
             display: flex;
             flex-direction: column;
             z-index: 10;
-            width: 50vw;
+            width: 41vw;
         
             h2 {
               margin-bottom: 10vh;
-              width: 75%;
+              width: 85%;
             }
         
             p {
               max-width: 380px;
-              transform: translateX(50vw) translateX(-50%);
+              transform: translateX(58vw) translateX(-50%);
             }
           }
         
@@ -837,7 +854,7 @@ body.page-template-timeline {
                 height: 100%;
                 display: flex;
                 align-items: flex-end;
-                transform: translateX(-10vw);
+                transform: translateX(-16vw);
 
                 img {
                   height: 60vh;

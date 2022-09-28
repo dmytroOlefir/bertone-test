@@ -12,7 +12,7 @@ import 'swiper/css'
 
 Swiper.use([Autoplay]);
 
-import {opening, tlOpening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp, yearReveal} from './scripts/modules/_animations'
+import {opening, tlOpening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp, yearReveal, captionReveal} from './scripts/modules/_animations'
 
 
 const gsapWithCSS = gsap.registerPlugin(CSSPlugin, ScrollTrigger, SplitText) || gsap, // to protect from tree shaking
@@ -277,6 +277,7 @@ barba.init({
 			bgZoom()
 			lineLeft()
 			fadeUp()
+			captionReveal()
 		},
 		afterLeave(data) {
 			ScrollTrigger.getAll().forEach(t => t.kill())

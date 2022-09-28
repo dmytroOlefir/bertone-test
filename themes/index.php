@@ -15,6 +15,8 @@
 
 $context          = Timber::context();
 $context['foo']   = 'bar';
+$context['site'] = new Timber\Site();
+
 $templates        = array( 'index.twig' );
 if ( is_home() ) {
 	array_unshift( $templates, 'front-page.twig', 'home.twig' );
