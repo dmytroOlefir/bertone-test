@@ -135,6 +135,10 @@
       display: flex;
       font-family: $font;
       transition: transform 0.35s ease-out;
+      @include minTablet {
+        font-size: 1.2vw;
+        margin-top: 1vw;
+      }
     }
     &_label {
       transition: transform 0.2s ease-out;

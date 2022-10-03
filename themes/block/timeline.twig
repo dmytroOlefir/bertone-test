@@ -1,7 +1,4 @@
 <div class="timeline" id="timeline-section">
-  <div class="timeline_bg" data-bg-zoom>
-    <div style="background-image: url({{site.theme.link}}/public/dna-pattern-min.jpeg);" class="zoom"></div>
-  </div>
   <div class="container">
     <div class="timeline_scroll">
       <div class="timeline_content" data-scroll data-scroll-speed="0.75">
@@ -13,16 +10,25 @@
           <p data-fade-up="0.35">
             With exquisite craftsmanship at its core, Bertone’s creations are regarded by many as akin to canonical art. By restricting production to limited quantities, it is able to focus its unique savoir-faire on subtle enhancements, signature details and dynamic technological refinement.
           </p>
+          <a href="{{ site.link }}/timeline" class="timeline_btn letsgoable" data-reveal-simple>
+            Discover Bertone's history
+          </a>
         </div>
       </div>
-      <div class="timeline_scroll_bottom">
-        <a href="{{ site.link }}/timeline" class="timeline_discover letsgoable" data-reveal-simple>
-          <p>Discover</p>
-        </a>
-        <div class="timeline_slider the-image" data-reveal-image>
-          <img src="{{site.theme.link}}/public/DNA.jpg" alt="" />
+      <div data-bg-zoom>
+        <div class="timeline_bg zoom">
+          <div class="timeline_bg--shades"></div>
+          <img src="{{theme.link}}/public/threecars.jpeg" alt="three cars in the desert" />
         </div>
       </div>
+{#      <div class="timeline_scroll_bottom">#}
+{#        <a href="{{ site.link }}/timeline" class="timeline_discover letsgoable" data-reveal-simple>#}
+{#          <p>Discover</p>#}
+{#        </a>#}
+{#        <div class="timeline_slider the-image" data-reveal-image>#}
+{#          <img src="{{site.theme.link}}/public/DNA.jpg" alt="" />#}
+{#        </div>#}
+{#      </div>#}
     </div>
   </div>
 </div>

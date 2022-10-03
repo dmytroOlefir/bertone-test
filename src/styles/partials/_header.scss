@@ -9,8 +9,11 @@
   &_logo {
     padding: 0;
     display: block;
-    width: 10.5vw;
     height: auto;
+    width: 100px;
+    @include minTablet{
+      width: 10.5vw;
+    }
     img {
       width: 100%;
     }

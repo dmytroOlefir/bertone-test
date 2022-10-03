@@ -15,9 +15,9 @@ body.home {
   padding: 10vh 0;
   background: black;
   text-align: center;
-
+  height: 100vh;
   @include minTablet{
-    height: 100vh;
+
   }
   &_bg {
     position: absolute;

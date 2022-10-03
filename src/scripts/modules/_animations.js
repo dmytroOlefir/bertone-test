@@ -15,6 +15,14 @@ const opening = (count) => {
 
 	let splitText = new SplitText(introText, {type: "lines"})
 
+	let headerY = ''
+
+	if (window.screen.width >= 1201) {
+		headerY = '-135%'
+	} else {
+		headerY = '-170%'
+	}
+
 	const openingTl = gsap.timeline();
 
 	if (count >= 1) {
@@ -22,7 +30,7 @@ const opening = (count) => {
 
 			.fromTo(curtain, {autoAlpha: 1}, {autoAlpha: 0, duration: 1.8}, "+=0.5")
 			.to(header, {autoAlpha: 1, duration: 0.1}, "-=1.7")
-			.from(header, {y: '-135%', ease: "power3.Out", duration: 1.25}, "-=1.2")
+			.from(header, {y: headerY, ease: "power3.Out", duration: 1.25}, "-=1.2")
 	} else {
 		if (banner) {
 			openingTl
@@ -37,14 +45,14 @@ const opening = (count) => {
 				.to(banner, {autoAlpha: 0, ease: "power3.Out", duration: 0.6 }, "+=0")
 				.from(introImg, {opacity: 0, x: -80, duration: 3}, "+=0.25")
 				.from(splitText.lines, {duration: 1, y: 75, opacity: 0, ease: "power3.out", stagger: 0.12}, "-=2.4")
-				.from(header, {y: '-135%', ease: "power3.Out", duration: 1.25}, "-=2")
+				.from(header, {y: headerY, ease: "power3.Out", duration: 1.25}, "-=2")
 		} else {
 			openingTl
 				.fromTo(curtain, {autoAlpha: 1}, {autoAlpha: 0, duration: 1})
 				.to(header, {autoAlpha: 1, duration: 0.1}, "-=1")
 				.from(introImg, {opacity: 0, x: -80, duration: 3}, "+=0.25")
 				.from(splitText.lines, {duration: 1, y: 75, opacity: 0, ease: "power3.out", stagger: 0.12}, "-=2.4")
-				.from(header, {y: '-135%', ease: "power3.Out", duration: 1.25}, "-=2")
+				.from(header, {y: headerY, ease: "power3.Out", duration: 1.25}, "-=2")
 		}
 	}
 }
@@ -223,8 +231,8 @@ const bgZoom = () => {
 		});
 
 		tl.from(image, {
-			duration: 8,
-			scale: 1.2,
+			duration: 7,
+			scale: 1.15,
 			ease: "power1.out",
 		}, `+=${delay}`);
 	});
