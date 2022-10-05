@@ -53,7 +53,7 @@
       font-weight: 400;
       // font-family: $fontTitle;
       
-      @include minTablet {
+      @include minDesktop {
         font-size: 1vw;
       }
     }
@@ -65,6 +65,13 @@
     padding-top: 10vw;
     padding-bottom: 8vw;
     height: 440px;
+    @include minMobile {
+      width: 55%;
+      margin: 0 auto;
+    }
+    @include minTablet {
+      width: 100%;
+    }
 
     &_1 {
       position: absolute;
@@ -99,8 +106,38 @@
       width: 192px;
       transform: none;
     }
-    
-    @include minTablet {
+
+    @include minMobile {
+      &_1 {
+        top: 10vw;
+        left: -9vw;
+        transform: none;
+        width: 18vw;
+      }
+
+      &_2 {
+        top: 60%;
+        left: -3vw;
+        transform: none;
+        width: 30vw;
+      }
+
+      &_3 {
+        top: 14vw;
+        left: 15vw;
+        transform: none;
+        width: 50vw;
+      }
+
+      &_4 {
+        top: 6vw;
+        left: 32vw;
+        transform: none;
+        width: 26vw;
+      }
+    }
+
+    @include minDesktop {
       &_1 {
         top: -4vw;
         left: -2vw;

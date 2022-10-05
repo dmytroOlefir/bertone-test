@@ -7,6 +7,8 @@ const opening = (count) => {
 		title = document.querySelector('[data-banner-title]'),
 		introText = document.querySelectorAll('[data-intro-text] span'),
 		introImg = document.querySelector('[data-intro-img]'),
+		introUp = document.querySelector('[data-intro-up]'),
+		introBar = document.querySelector('[data-intro-up] span'),
 		// filmBars = document.querySelectorAll('[data-film-bar]'),
 		banner = document.querySelector('#banner'),
 		emptyBg = document.querySelector('[data-banner-bg="red"]'),
@@ -45,13 +47,24 @@ const opening = (count) => {
 				.to(banner, {autoAlpha: 0, ease: "power3.Out", duration: 0.6 }, "+=0")
 				.from(introImg, {opacity: 0, x: -80, duration: 3}, "+=0.25")
 				.from(splitText.lines, {duration: 1, y: 75, opacity: 0, ease: "power3.out", stagger: 0.12}, "-=2.4")
+				.from(introUp, {duration: 1, y: -75, opacity: 0, ease: "power3.out"}, "-=1.5")
 				.from(header, {y: headerY, ease: "power3.Out", duration: 1.25}, "-=2")
+
+			gsap.to(introBar, {
+				scrollTrigger: {
+					trigger: introBar,
+					start: "top bottom-=200px",
+					scrub: true
+				},
+				scaleY: 1
+			})
 		} else {
 			openingTl
 				.fromTo(curtain, {autoAlpha: 1}, {autoAlpha: 0, duration: 1})
 				.to(header, {autoAlpha: 1, duration: 0.1}, "-=1")
 				.from(introImg, {opacity: 0, x: -80, duration: 3}, "+=0.25")
 				.from(splitText.lines, {duration: 1, y: 75, opacity: 0, ease: "power3.out", stagger: 0.12}, "-=2.4")
+				.from(introUp, {duration: 1, y: -75, opacity: 0, ease: "power3.out"}, "-=1.5")
 				.from(header, {y: headerY, ease: "power3.Out", duration: 1.25}, "-=2")
 		}
 	}

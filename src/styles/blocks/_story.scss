@@ -10,6 +10,14 @@
     padding: 52px 0 78px;
   }
 
+  @include minMobile {
+    padding: 6vw 0 8vw;
+  }
+
+  @include minTablet {
+    padding: 4vw 0 8vw;
+  }
+
   h2{
     position: relative;
     font-size: 26px;
@@ -26,6 +34,11 @@
     }
 
     margin-bottom: 30px;
+
+    @include minMobile {
+      margin-left: 45vw;
+      max-width: none;
+    }
 
     @include minTablet {
       font-size: 2.5vw;
@@ -84,8 +97,13 @@
     margin-top: 5vw;
     z-index: 2;
 
+    @include minMobile {
+      margin-top: 150px;
+    }
+
     @include minTablet {
       max-width: 50vw;
+      margin-top: 5vw;
     }
   }
 
