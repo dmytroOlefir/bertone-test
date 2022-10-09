@@ -7,10 +7,10 @@ import {SplitText} from './scripts/inc/_SplitText'
 import {customCursor} from "./scripts/modules/_cursor";
 import CSSPlugin from './scripts/inc/_CSSPlugin'
 
-import Swiper, {Autoplay} from 'swiper'
+import Swiper, {Autoplay, FreeMode} from 'swiper'
 import 'swiper/css'
 
-Swiper.use([Autoplay]);
+Swiper.use([Autoplay, FreeMode]);
 
 import {opening, tlOpening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp, yearReveal, captionReveal} from './scripts/modules/_animations'
 
@@ -26,10 +26,17 @@ if (slider) {
 		slidesPerView: 'auto',
 		// spaceBetween: 30,
 		speed: 4000,
+		slideToClickedSlide: true,
 		grabCursor: true,
-		mousewheelControl: true,
-		keyboardControl: true,
-		freeMode: true,
+		// mousewheelControl: true,
+		// keyboardControl: true,
+		freeMode: {
+			enabled: true,
+			momentumBounceRatio: 0.03,
+			momentumVelocityRatio: 2,
+			minimumVelocity: 0.1,
+			momentumRatio: 0.3
+		},
 		autoplay: {
 			delay: 0,
 			disableOnInteraction: false,
@@ -54,7 +61,7 @@ const lc = new LocomotiveScroll({
 	el: scroller,
 	smooth: true,
 	lerp: 0.08,
-	multiplier: 0.5,
+	multiplier: 1,
 	smartphone: {
 		smooth: true
 	},
@@ -174,18 +181,18 @@ barba.init({
 			opening(frontCount)
 			frontCount++
 
-			//Temp Fix, need to be updated
-			setTimeout(() => {
-				lineReveal()
-			}, 200)
-
-			revealFromLeft()
-			revealFromRight()
-			revealSimple()
-			revealImage()
-			bgZoom()
-			lineLeft()
-			fadeUp()
+			// //Temp Fix, need to be updated
+			// setTimeout(() => {
+			// 	lineReveal()
+			// }, 200)
+			//
+			// revealFromLeft()
+			// revealFromRight()
+			// revealSimple()
+			// revealImage()
+			// bgZoom()
+			// lineLeft()
+			// fadeUp()
 		},
 		afterLeave(data) {
 			header.classList.remove('show')

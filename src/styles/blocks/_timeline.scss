@@ -224,12 +224,16 @@
     text-decoration: none;
     margin-top: 20px;
     margin-left: 5vw;
+    transition: background-color 0.35s ease-out;
     @include minTablet {
       margin-left: 0;
       margin-top: 0;
       padding: 1vw 3vw;
       border-radius: 2vw;
       font-size: 1.2vw;
+    }
+    &:hover {
+      background-color: rgba(255, 68, 9, 0.1);
     }
   }
 
