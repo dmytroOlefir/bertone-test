@@ -57,23 +57,45 @@ const scroller = document.querySelector('[data-main-scroll]')
 
 const timelinePage = document.querySelector('.page-template-timeline')
 
-const lc = new LocomotiveScroll({
-	el: scroller,
-	smooth: true,
-	lerp: 0.08,
-	multiplier: 1,
-	smartphone: {
-		smooth: true
-	},
-	tablet: {
-		smooth: true
-	}
-	//Will probably remove Loco for mobile/tablet later on
-	// tablet: {
-	// 	breakpoint: 1200,
-	// 	smooth: true,
-	// }
-})
+let lc
+
+if (window.screen.width >= 1201) {
+	 lc = new LocomotiveScroll({
+		el: scroller,
+		smooth: true,
+		lerp: 0.08,
+		multiplier: 0.5,
+		smartphone: {
+			smooth: true
+		},
+		tablet: {
+			smooth: true
+		}
+		//Will probably remove Loco for mobile/tablet later on
+		// tablet: {
+		// 	breakpoint: 1200,
+		// 	smooth: true,
+		// }
+	})
+} else {
+	lc = new LocomotiveScroll({
+		el: scroller,
+		smooth: true,
+		lerp: 1,
+		multiplier: 1,
+		smartphone: {
+			smooth: true
+		},
+		tablet: {
+			smooth: true
+		}
+		//Will probably remove Loco for mobile/tablet later on
+		// tablet: {
+		// 	breakpoint: 1200,
+		// 	smooth: true,
+		// }
+	})
+}
 
 window.lc = lc
 
