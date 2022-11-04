@@ -1,0 +1,26 @@
+{% block html_head_container %}
+
+  {% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+<div class="a-cursor" data-cursor>
+	<div class="a-cursor__ball" data-cursor-inner></div>
+</div>
+	<body class="{{body_class}}" data-template="base.twig" data-barba="wrapper">
+		{% include '/header.twig' %}
+		<div class="curtain" data-curtain></div>
+		<div data-main-scroll>
+			<div data-barba="container" data-barba-namespace="front">
+				{% block content %}
+                    {% include './block/contact.twig' %}
+				{% endblock %}
+				{% block footer %}
+					{% include 'footer.twig' %}
+					{{ function('wp_footer') }}
+				{% endblock %}
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,226 @@
+.contact {
+  background: black;
+  color: white;
+
+  h1 {
+    font-size: 4.6vw;
+    font-family: $font;
+    font-weight: 300;
+    text-transform: uppercase;
+    max-width: 90%;
+
+    .color--red {
+      font-family: $fontTitle;
+    }
+  }
+
+  &-intro {
+    position: relative;
+    padding: 25vh 0;
+
+    .tagline {
+      text-transform: uppercase;
+      font-size: 1vw;
+      letter-spacing: 0.7em;
+      margin-bottom: rem(30);
+      font-weight: bold;
+    }
+
+    &-image {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 0;
+      transform: translateY(-50%);
+    }
+
+    &-text {
+      position: relative;
+      z-index: 10;
+      max-width: 30vw;
+      margin-left: 50vw;
+    }
+
+    &-description {
+      font-size: 1.6vw;
+      line-height: 1.6;
+      font-family: $fontTitle;
+      padding-left: calc(1 / 23 * 100vw);
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 1px;  
+        height: 100%;
+        background: white;
+        top: 0;
+        left: 5px;
+        z-index: 2;
+      }
+    }
+  }
+
+  &-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25vh 0;
+  }
+
+  &-form {
+    width: calc( 10 / 23 * 100%);
+    margin-left: calc( 2 / 23 * 100%);
+
+    .with_frm_style {
+      input[type="text"],
+      input[type="tel"],
+      input[type="email"],
+      select,
+      textarea {
+        background: none;
+        border: 0;
+        border-radius: 0;
+        appearance: none;
+        font-size: 1vw;
+        color: white;
+        border-bottom: 1px solid white;
+        height: rem(50);
+        padding-left: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        outline: 0 !important;
+        
+        &::placeholder{
+          color: white !important;
+          opacity: 1 !important;
+        }
+
+        &:focus{
+          background-color: transparent !important;
+          color: white !important;
+        }
+      }
+
+      textarea {
+        height: rem(40);
+        padding-top: rem(10);
+      }
+      
+      .frm_submit button.frm_button_submit {
+        background-color: $orange;
+        border: 0;
+        border-radius: rem(25);
+        color: white;
+        font-size: 1.2vw;
+        padding: 1rem 2rem;
+        font-family: $font;
+        margin: rem(66) 0 0;
+        height: auto;
+        box-shadow: none;
+      }
+
+      .frm_checkbox {
+        label {
+          position: relative;
+          font-size: 1vw;
+          font-family: $font;
+          text-indent: 0 !important;
+          display: flex;
+          padding: 0 !important;
+          margin-top: rem(20);
+
+          span {
+            color: white;
+            padding-left: rem(30);
+
+            &:after {
+              content: "";
+              width: rem(20);
+              height: rem(20);
+              position: absolute;
+              border: 1px solid white;
+          
+              top: 50%;
+              left: 0;
+              transform: translateY(-50%);
+            }
+            &:before {
+              content: "";
+              width: rem(8);
+              height: rem(8);
+              position: absolute;
+              background: white;
+              top: 50%;
+              left: rem(7);
+              transform: translateY(-50%) scale(0);
+              transition: all .3s ease-out;
+              opacity: 0;
+            }
+          }
+          input[type="checkbox"]:checked+span {
+            &:before {
+              transform: translateY(-50%) scale(1);
+              opacity: 1;
+            }
+          }
+        }
+
+        input[type="checkbox"] {
+          @include sr-only;
+        }
+      }
+    }
+
+    .frm_form_field {
+      position: relative;
+
+      svg {
+        position: absolute;
+        top: 50%;
+        right: 0;
+      }
+    }
+  }
+
+  &-infos {
+    width: calc( 6 / 23 * 100%);
+    margin-left: calc(2 / 23 * 100vw);
+
+    h2 {
+      font-size: 3vw;
+      font-family: $fontTitle;
+      margin-bottom: 5vh;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: 1.2vw;
+
+        span {
+          margin-right: rem(36);
+          border-right: 1px solid white;
+          padding-right: rem(36);
+          padding-top: rem(12);
+          padding-bottom: rem(12);
+
+          svg {
+            width: rem(25);
+          }
+        }
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        font-family: $font;
+        font-size: 1.2vw;
+      }
+    }
+  }
+}
