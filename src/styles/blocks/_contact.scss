@@ -318,12 +318,13 @@
           height: rem(30);
           margin-right: rem(10);
           display: flex;
+          flex-wrap: wrap;
           align-items: center;
           justify-content: center;
 
           svg {
-            width: rem(20);
-            height: rem(22);
+            width: rem(16);
+            height: rem(18);
           }
         }
       }
