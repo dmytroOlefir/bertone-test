@@ -3,25 +3,30 @@
 @import './grid.scss';
 @import './global.scss';
 
+/***
+  To update I think i'ts better to update main.prod.css or
+  if you thinks it's an additive components create a new file here :)
+*/
+
 // PARTIALS
-@import './partials/footer';
-@import './partials/header';
+// @import './partials/footer';
+// @import './partials/header';
 
 // BLOCK
-@import './blocks/banner';
-@import './blocks/newsletter';
-@import './blocks/intro';
-@import './blocks/story';
-@import './blocks/heritage';
-@import './blocks/vision';
-@import './blocks/excellence';
-@import './blocks/encart';
-@import './blocks/models';
-@import './blocks/timeline';
-@import './blocks/timeline-page';
+// @import './blocks/banner';
+// @import './blocks/newsletter';
+// @import './blocks/intro';
+// @import './blocks/story';
+// @import './blocks/heritage';
+// @import './blocks/vision';
+// @import './blocks/excellence';
+// @import './blocks/encart';
+// @import './blocks/models';
+// @import './blocks/timeline';
+// @import './blocks/timeline-page';
 @import './blocks/contact';
-@import './blocks/about';
+// @import './blocks/about';
 
 // Modules
-@import './modules/animations';
+// @import './modules/animations';
 
