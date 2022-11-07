@@ -4,21 +4,59 @@
 
   &-intro {
     position: relative;
-    padding: 25vh 0 25vh;
+    padding: 35vh 0 10vh;
+
+    @include minMobile{
+      padding: 50vh 0 10vh;
+    }
+
+    @include minTablet {
+      padding: 50vh 0 25vh;
+    }
+    @include minDesktop {
+      padding: 30vh 0 25vh;
+    }
 
     h1 {
       position: relative;
       text-transform: uppercase;
-      font-size: 4.6vw;
+      font-size: rem(26);
       font-family: $font;
       font-weight: 300;
-      max-width: 48vw;
       text-align: left;
-      margin-left: 25vw;
       z-index: 1;
-    
-      .color--red {
-        font-family: $fontTitle;
+      max-width: calc(18 / 20 * 100vw);
+      margin-left: calc(1 / 20 * 100vw);
+      display: flex;
+      flex-direction: column;
+
+      span {
+        &:last-child {
+          @include minDesktop {
+            margin-bottom: rem(70);
+          }
+        }
+      }
+
+      @include minMobile {
+        font-size: rem(35);
+        margin-left: calc(1 / 20 * 100vw);
+        width: 60vw;
+      }
+
+      @include minTablet {
+        font-size: 3.8vw;
+        margin-left: calc(2 / 23 * 100vw);
+        width:  50vw;
+      }
+      
+      @include minLaptop {
+        width: calc( 13 / 23 * 100vw);
+      }
+
+      @include minDesktop {
+        margin-left: calc(1 / 23 * 100vw);
+        width: 55vw;
       }
     }
 
@@ -27,105 +65,173 @@
       top: 0;
       left: 0;
       z-index: 0;
-    }
-  }
-
-  &-encart {
-    position: relative;
-    width: 100%;
-    padding: 15vh 0;
-
-    &-image {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: 100%;
-      z-index: 0;
-      display: flex;
 
       img {
-        object-fit: cover;
+        width: 100%;
       }
-    }
+      // padding-top: rem(54);
 
-    &-left,
-    &-right {
-      position: relative;
-      z-index: 2;
-      font-size: 3.8vw;
-      font-family: $font;
-      text-transform: uppercase;
-      width: 50vw;
-    }
+      .mobile {
+        @include minLaptop {
+          display: none;
+        }
+      }
 
-    &-left {
-      margin-left: 10vw;
-    }
+      .desktop {
+        @include laptop {
+          display: none;
+        }
+      }
 
-    &-right {
-      margin-left: 30vw;
+      @include mobile {
+        width: 130vw;
+        transform: translate(-20%, 20%);
+      }
     }
   }
 
   &-experience {
+    margin-top: rem(80);
+
     h2 {
       margin-top: 0;
       margin-bottom: rem(28);
       font-weight: 100;
       font-family: $fontTitle;
     }
+    
+  }
 
-    &-intro {
-      margin-left: 40vw;
-      width: 40vw;
+  &-bio {
+    @include minMobile {
+      margin-top: 10vh;
+    }
 
-      p {
-        margin-left: 5vw;
+    p {
+      line-height: 1.66;
+      font-size: rem(18);
+      font-weight: 400;
+      font-family: $font;
+
+      @include minTablet {
         font-size: 1.2vw;
-        font-family: $font;
-        line-height: 1.8;
+      }
+    }
+    .about-wrap {
+      display: flex;
+      flex-direction: column;
 
-        &:not(:last-child) {
-          margin-bottom: rem(40);
-        }
+      @include minMobile {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
       }
     }
 
-    &-grid {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 25vh 0;
-      align-items: center;
-    }
+    &-intro {
+      margin-left: calc(1 / 20 * 100vw);
+      width: calc(18 / 20 * 100vw);
 
-    &-content {
-      margin-left: 15%;
-      width: 35%;
-      padding-right: rem(32);
-      border-right: 1px solid white;
-
-      &--right {
-        transform: translateX(-5vw);
+      @include minMobile {
+        width: calc(50% - 38px);
+      }
+      @include minTablet {
+        width: calc(50% - 46px);
+      }
+      @include minLaptop {
+        width: calc(50% - 56px);
+      }
+      @include minDesktop {
+        width: calc(50% - 70px);
       }
     }
 
     &-image {
-      width: 45%;
-      margin-left: 5%;
-      transform: translateX(2vw);
+      @include mobile {
+        order: -1;
+      }
+
+      @include minMobile {
+        width: calc(50% - 38px);
+        
+        &-wrap {
+          height: 60%;
+          display: flex;
+        }
+      }
+
+      @include minTablet {
+        width: calc(50% - 46px);
+      }
+
+      @include minLaptop {
+        width: calc(50% - 56px);
+
+        &-wrap {
+          display: block;
+          height: auto;
+
+          img {
+            width: 100%;;
+          }
+        }
+      }
+
+      @include minDesktop {
+        width: calc(50% - 70px);
+      }
+    }
+
+    &-grid {
+      margin-left: calc(1 / 20 * 100vw);
+      width: calc(18 / 20 * 100vw);
+
+      @include minMobile {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+
+    &-left,
+    &-right {
+      @include minMobile {
+        width: calc(50% - 38px);
+      }
+    
+      @include minTablet {
+        width: calc(50% - 46px);
+      }
+    
+      @include minLaptop {
+        width: calc(50% - 56px);
+      }
+    
+      @include minDesktop {
+        width: calc(50% - 70px);
+      }
+    }
+
+    &-right {
+      @include minMobile {
+        transform: translateY(-50%);
+      }
+
+      @include minDesktop {
+        transform: translateY(0);
+      }
     }
   }
 
-  &-wrap {
-    position: relative;
-    margin-top: 25vh;
-  }
-
   &-values {
-    position: absolute;
-    top: 0;
-    left: 10vw;
+    @include mobile {
+      margin-top: 10vh;
+    }
+
+    @include minTablet {
+      margin-left: calc(1 / 23 * 100vw);
+    }
 
     h2 {
       margin-bottom: rem(42);
@@ -134,12 +240,20 @@
     &-list {
       margin: 0;
       list-style: none;
+      padding: 0 0 0 rem(25);
+      border-left: 1px solid white;
+
       
       li {
         font-family: $fontTitle;
-        font-size: 2vw;
+        font-size: rem(28);
+        
         &:not(:last-child) {
           margin-bottom: rem(10);
+        }
+
+        @include minTablet {
+          font-size: 2vw;
         }
       }
     }
@@ -148,16 +262,67 @@
   .tagline {
     text-transform: uppercase;
     letter-spacing: 0.7em;
-    font-size: 1vw;
+    font-size: rem(14);
     font-weight: 600;
+
+    @include minTablet {
+      font-size: 1vw;
+    }
   }
 
   &-quote {
+    margin: 10vh 0 0;
+
+    @include minLaptop {
+      margin-top: 25vh;
+    }
+
     blockquote {
-      width: 50vw;
+      padding: 0;
+      margin: 0;
+      margin-left: calc(1 / 20 * 100vw);
+      width: calc(18 / 20 * 100vw);
+      padding: 0 calc(1 / 20 * 100vw);
+
+      @include minMobile {
+        margin-left: calc(2 / 20 * 100vw);
+        width: calc(16 / 20 * 100vw);
+      }
+
+      @include minLaptop {
+        margin-left: calc(3 / 23 * 100vw);
+        width: calc(17 / 23 * 100vw);
+      }
+
+      @include minDesktop {
+        margin-left: calc(4 / 23 * 100vw);
+        width: calc(15 / 23 * 100vw);
+      }
 
       p {
          text-transform: uppercase;
+         font-size: rem(26);
+         line-height: 1.6;
+         margin: 0;
+         font-family: $fontTitle;
+          max-width: 50vw;
+
+         @include minMobile {
+          font-size: rem(35);
+         }
+
+         @include minTablet {
+          font-size: 4.2vw;
+          max-width: 45vw;
+         }
+
+          &:last-child {
+            margin-left: 33%;
+          }
+
+         .color--red {
+          font-family: $font;
+         }
       }
     }
   }
@@ -166,27 +331,219 @@
   &-experience {
     h2 {
       text-transform: uppercase;
-      font-size: 4vw;
+      font-size: rem(26);
+
+      @include minMobile {
+        font-size: rem(35);
+      }
+      @include minTablet {
+        font-size: 4vw;
+      }
     }
   }
 
-  &-story {}
+  &-story {
+    position: relative;
+    padding-top: 35vh;
+    margin-bottom: 10vh;
 
-  &-more {
-    background: $orange;
-    padding: rem(72) 0 rem(72) rem(115);
+    @include minTablet {
+      padding-top: 50vh;
+    }
 
-    &-content {
-      max-width: calc(12 / 23 * 100vw);
+    @include minDesktop {
+      padding-top: 30vw;
+    }
 
-      h2 {
-        font-size: 4vw;
-        margin: rem(34) 0;
-        text-transform: uppercase;
+    h2 {
+      display: flex;
+      flex-direction: column;
+      font-family: $fontTitle;
+      font-weight: 300;
+
+      @include minDesktop {
+        margin-top: 0;
+        margin-bottom: 10vh;
       }
 
-      p {
-        margin: 0;
+      &:first-child {
+        font-family: $font;
+      }
+    }
+
+    &-image {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 200vw;
+      transform: translateX(-50%);
+
+      @include minTablet {
+        width: 100%;
+        transform: none;
+        left: 0;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      margin-left: calc(1 / 20 * 100vw);
+      width: calc(18 / 20 * 100vw);
+
+      @include minMobile {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+
+      @include minLaptop {
+        margin-left: calc(6 / 23 * 100vw);
+        width: calc(15 / 23 * 100vw);
+      }
+    }
+
+    &-right,
+    &-left {
+      @include minMobile {
+        width: calc( 9 / 20 * 100% );
+      }
+    }
+
+    &-btn {
+      display: flex;
+      flex-wrap: wrap;
+
+      @include minTablet {
+        margin-top: rem(50);
+      }
+
+      a.btn {
+        color: $orange;
+        border: 1px solid $orange;
+        padding: rem(20);
+        font-size: rem(18);
+        border-radius: rem(42);
+        text-decoration: none;
+        letter-spacing: 0.1em;
+
+        @include minTablet {
+          font-size: 1.2vw;
+        }
+      }
+    }
+
+    p {
+      line-height: 1.66;
+      font-size: rem(18);
+      font-weight: 400;
+      font-family: $font;
+
+      @include minTablet {
+        font-size: 1.2vw
+      }
+
+      &:not(:last-child) {
+        margin-bottom: rem(40);
+      }
+    }
+  }
+
+  &-more {
+    position: relative;
+    background: $orange;
+    overflow: hidden;
+    
+    @include minMobile{
+      margin: 0px auto;
+      width: calc(18 / 20 * 100vw);
+    }
+
+    @include minLaptop{
+      margin: 0px auto;
+      width: calc(18 / 23 * 100vw);
+    }
+
+    &-content {
+      padding: rem(66) rem(26);
+
+      @include minTablet {
+        padding: rem(72) 0 rem(72) rem(115);
+      }
+
+      h2 {
+        font-size: rem(26);
+        margin: rem(34) 0;
+        text-transform: uppercase;
+        font-family: $fontTitle;
+        line-height: 1.6;
+
+        @include minMobile {
+          font-size: rem(35);
+        }
+        @include minTablet {
+          font-size: 4vw;
+        }
+      }
+    }
+    
+    &-image {
+      position: absolute;
+      top: 0;
+      left: 0%;
+      height: 100%;
+      width: 100%;
+      display: flex;
+
+      img {
+        object-fit: cover;
+      }
+
+      @include minMobile {
+        transform: translateX(25%);
+      }
+
+      @include minLaptop {
+        left: auto;
+        right: 0;
+        height: 100%;
+        width: auto;
+        transform: none;
+
+        img {
+          object-fit: contain;
+        }
+      }
+    }
+
+    &-btn {
+      display: flex;
+      flex-wrap: wrap;
+
+      a.btn {
+        padding: rem(20);
+        font-size: rem(18);
+        letter-spacing: .1em;
+        background-color: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        border-radius: rem(42);
+        border: 0;
+        text-decoration: none;
+
+        svg {
+          margin-left: rem(25);
+        }
+
+        @include minTablet {
+          font-size: 1.2vw;
+        }
       }
     }
   }

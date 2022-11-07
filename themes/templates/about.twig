@@ -15,7 +15,7 @@
 			<div data-barba="container" data-barba-namespace="front">
 				{% block content %}
           {% include './block/about.twig' %}
-					{% include './block/newsletter.twig' %}
+					{% include './block/newsletter.twig' with {id: newsletter_id} %}
 				{% endblock %}
 				{% block footer %}
 					{% include 'footer.twig' %}
