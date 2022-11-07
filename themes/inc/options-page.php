@@ -26,7 +26,6 @@ if (function_exists('acf_add_options_page')) {
     'parent_slug'  => 'theme-general-settings',
   ));
 
-
   // ADD SOCIAL
   acf_add_local_field_group(array(
     'key' => 'social',
@@ -85,20 +84,6 @@ if (function_exists('acf_add_options_page')) {
             'name' => 'copyright',
             'type' => 'text',
         ),
-        array(
-            'key' => 'contact',
-            'label' => 'Contact',
-            'name' => 'contact',
-            'type' => 'repeater',
-            'sub_fields' => array(
-              array(
-                'key' => 'contact-email',
-                'label' => 'Email',
-                'name' => 'contact-email',
-                'type' => 'text',
-              )
-            ),
-        ),
     ),
     'location' => array(
       array(
@@ -111,36 +96,15 @@ if (function_exists('acf_add_options_page')) {
     ),
   ));
 
-   acf_add_local_field_group(array(
-    'key' => 'header',
-    'title' => 'Header',
-    'fields' => array(
-        array(
-            'key' => 'btn-header',
-            'label' => 'Join us url',
-            'name' => 'btn-header',
-            'type' => 'page_link',
-        ),
-    ),
-    'location' => array(
-      array(
-          array(
-              'param' => 'options_page',
-              'operator' => '==',
-              'value' => 'theme-general-settings',
-          ),
-      ),
-    ),
-  ));
 
    acf_add_local_field_group(array(
     'key' => 'newsletter',
     'title' => 'Newsletter',
     'fields' => array(
         array(
-            'key' => 'id-newsletter-footer',
+            'key' => 'id-newsletter',
             'label' => 'ID newlsetter',
-            'name' => 'id-newsletter-footer',
+            'name' => 'id-newsletter',
             'type' => 'text',
         ),
     ),
@@ -155,27 +119,15 @@ if (function_exists('acf_add_options_page')) {
     ),
   ));
 
-
-
    acf_add_local_field_group(array(
-    'key' => 'breadcrumbs',
-    'title' => 'Breadcrumbs',
+    'key' => 'contact',
+    'title' => 'Contact',
     'fields' => array(
         array(
-            'key' => 'id-breadcrumb-story',
-            'label' => 'Page stories',
-            'name' => 'id-breadcrumb-story',
-            'type' => 'post_object',
-	          'allow_null' => 1,
-            'post_type' =>  ['page'],  // or array of post types e.g. ['post', 'page']
-        ),
-        array(
-            'key' => 'id-breadcrumb-policy',
-            'label' => 'Page policy position',
-            'name' => 'id-breadcrumb-policy',
-            'type' => 'post_object',
-	          'allow_null' => 1,
-            'post_type' =>  ['page'],  // or array of post types e.g. ['post', 'page']
+            'key' => 'id-contact',
+            'label' => 'ID Contact',
+            'name' => 'id-contact',
+            'type' => 'text',
         ),
     ),
     'location' => array(
@@ -188,7 +140,6 @@ if (function_exists('acf_add_options_page')) {
       ),
     ),
   ));
-
 }
 
 

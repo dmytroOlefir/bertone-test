@@ -16,7 +16,7 @@
 $context          = Timber::context();
 $context['foo']   = 'bar';
 $context['site'] = new Timber\Site();
-
+$context['newsletter_id'] = get_field('id-newsletter', 'option');
 $templates        = array( 'index.twig' );
 if ( is_home() ) {
 	array_unshift( $templates, 'front-page.twig', 'home.twig' );

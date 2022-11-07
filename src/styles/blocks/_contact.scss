@@ -3,11 +3,15 @@
   color: white;
 
   h1 {
-    font-size: 4.6vw;
+    font-size: rem(26);
     font-family: $font;
     font-weight: 300;
     text-transform: uppercase;
     max-width: 90%;
+
+    @include minTablet {
+      font-size: 4.6vw;
+    }
 
     .color--red {
       font-family: $fontTitle;
@@ -16,37 +20,57 @@
 
   &-intro {
     position: relative;
-    padding: 25vh 0;
+    padding: 10vh 0;
+
+    @include minTablet {
+      padding: 25vh 0;
+    }
 
     .tagline {
       text-transform: uppercase;
-      font-size: 1vw;
+      font-size: rem(14);
       letter-spacing: 0.7em;
       margin-bottom: rem(30);
       font-weight: bold;
+
+      @include minTablet {
+        font-size: 1vw
+      }
     }
 
     &-image {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      z-index: 0;
-      transform: translateY(-50%);
+      @include minTablet {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        z-index: 0;
+        transform: translateY(-50%);
+      }
     }
 
     &-text {
       position: relative;
       z-index: 10;
-      max-width: 30vw;
-      margin-left: 50vw;
+      max-width: calc(18 / 20 * 100vw);
+      margin-left: calc(1 / 20 * 100vw);
+
+      @include minTablet {
+        max-width: 30vw;
+        margin-left: 50vw;
+      }
     }
 
     &-description {
-      font-size: 1.6vw;
+      font-size: rem(22);
       line-height: 1.6;
       font-family: $fontTitle;
-      padding-left: calc(1 / 23 * 100vw);
+      padding-left: calc(1 / 18 * 100vw);
       position: relative;
+
+      @include minTablet {
+        font-size: 1.6vw;
+        padding-left: calc(1 / 23 * 100vw);
+      }
 
       &:after {
         content: "";
@@ -62,14 +86,19 @@
   }
 
   &-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 25vh 0;
+    @include minTablet {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 25vh 0;
+    }
   }
 
   &-form {
-    width: calc( 10 / 23 * 100%);
-    margin-left: calc( 2 / 23 * 100%);
+    @include minTablet {
+      width: calc( 10 / 23 * 100%);
+      margin-left: calc( 2 / 23 * 100%);
+      order: -1;
+    }
 
     .with_frm_style {
       input[type="text"],
@@ -183,8 +212,11 @@
   }
 
   &-infos {
-    width: calc( 6 / 23 * 100%);
-    margin-left: calc(2 / 23 * 100vw);
+    @include minTablet {
+      width: calc( 6 / 23 * 100%);
+      margin-left: calc(2 / 23 * 100vw);
+      order: 1; 
+    }
 
     h2 {
       font-size: 3vw;

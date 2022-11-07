@@ -17,11 +17,6 @@
   {# Grid #}
   <div class="container">
     <div class="contact-wrap">
-      <div class="contact-form">
-        {% filter shortcodes %}
-            [formidable id=1]
-        {% endfilter %}
-      </div>
       <div class="contact-infos">
         <h2>We’d love to hear from you!</h2>
         <ul class="contact-list">
@@ -43,6 +38,11 @@
             <a href="tel: +352 621 192 940">+352 621 192 940</a>
           </li>
         </ul>
+      </div>
+      <div class="contact-form">
+        {% filter shortcodes %}
+            [formidable id={{contactId}}]
+        {% endfilter %}
       </div>
     </div>
   </div>
