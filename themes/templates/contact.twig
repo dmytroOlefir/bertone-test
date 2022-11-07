@@ -14,7 +14,7 @@
 		<div data-main-scroll>
 			<div data-barba="container" data-barba-namespace="front">
 				{% block content %}
-                    {% include './block/contact.twig' %}
+                    {% include './block/contact.twig' with {id: contact_id} %}
 				{% endblock %}
 				{% block footer %}
 					{% include 'footer.twig' %}

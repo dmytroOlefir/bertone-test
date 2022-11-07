@@ -9,6 +9,10 @@
     text-transform: uppercase;
     max-width: 90%;
 
+    @include minMobile {
+      font-size: rem(35);
+    }
+
     @include minTablet {
       font-size: 4.6vw;
     }
@@ -20,10 +24,10 @@
 
   &-intro {
     position: relative;
-    padding: 10vh 0;
+    padding: 10vh 0 10vh; 
 
-    @include minTablet {
-      padding: 25vh 0;
+    @include minMobile {
+      padding: 40vh 0 25vh;
     }
 
     .tagline {
@@ -39,11 +43,29 @@
     }
 
     &-image {
-      @include minTablet {
+      position: relative;
+      @include mobile {
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 50%;
+          background: linear-gradient(rgba(0, 0, 0, 0), black);
+          z-index: 1;
+        }
+      }
+      @include minMobile {
         position: absolute;
         top: 50%;
         left: 0;
         z-index: 0;
+        transform: translateY(-50%) translateX(-45%);
+        width: rem(550);
+      }
+
+      @include minTablet {
         transform: translateY(-50%);
       }
     }
@@ -54,6 +76,10 @@
       max-width: calc(18 / 20 * 100vw);
       margin-left: calc(1 / 20 * 100vw);
 
+      @include minMobile {
+        max-width: calc(12 / 20 * 100vw);
+        margin-left: calc(7 / 20 * 100vw);
+      }
       @include minTablet {
         max-width: 30vw;
         margin-left: 50vw;
@@ -66,6 +92,10 @@
       font-family: $fontTitle;
       padding-left: calc(1 / 18 * 100vw);
       position: relative;
+
+      @include minMobile {
+        font-size: rem(26);
+      }
 
       @include minTablet {
         font-size: 1.6vw;
@@ -86,6 +116,11 @@
   }
 
   &-wrap {
+    padding: 0vh 0 10vh;
+
+    @include minMobile {
+      padding: 10vh 0;
+    }
     @include minTablet {
       display: flex;
       flex-wrap: wrap;
@@ -94,10 +129,15 @@
   }
 
   &-form {
+    width: calc(18 / 20 * 100%);
+    margin-left: calc(1 / 20 * 100%);
+    margin-top: 10vh;
+    
     @include minTablet {
       width: calc( 10 / 23 * 100%);
       margin-left: calc( 2 / 23 * 100%);
       order: -1;
+      margin-top: 0;
     }
 
     .with_frm_style {
@@ -110,7 +150,7 @@
         border: 0;
         border-radius: 0;
         appearance: none;
-        font-size: 1vw;
+        font-size: 1rem;
         color: white;
         border-bottom: 1px solid white;
         height: rem(50);
@@ -118,6 +158,10 @@
         padding-top: 0;
         padding-bottom: 0;
         outline: 0 !important;
+
+        @include minTablet {
+          font-size: 1vw;
+        }
         
         &::placeholder{
           color: white !important;
@@ -140,23 +184,35 @@
         border: 0;
         border-radius: rem(25);
         color: white;
-        font-size: 1.2vw;
+        font-size: rem(18);
         padding: 1rem 2rem;
         font-family: $font;
         margin: rem(66) 0 0;
         height: auto;
         box-shadow: none;
+
+        @include mobile {
+          width: 100%;
+        }
+
+        @include minTablet {
+          font-size: 1.2vw;
+        }
       }
 
       .frm_checkbox {
         label {
           position: relative;
-          font-size: 1vw;
+          font-size: rem(16);
           font-family: $font;
           text-indent: 0 !important;
           display: flex;
           padding: 0 !important;
           margin-top: rem(20);
+
+          @include minTablet {
+            font-size: 1vw;
+          }
 
           span {
             color: white;
@@ -212,6 +268,9 @@
   }
 
   &-infos {
+    width: calc(18 / 20 * 100%);
+    margin-left: calc(1 / 20 * 100%);
+
     @include minTablet {
       width: calc( 6 / 23 * 100%);
       margin-left: calc(2 / 23 * 100vw);
@@ -219,9 +278,17 @@
     }
 
     h2 {
-      font-size: 3vw;
+      font-size: rem(26);
       font-family: $fontTitle;
       margin-bottom: 5vh;
+      margin-bottom: rem(30);
+
+      @include minMobile {
+        font-size: rem(30);
+      }
+      @include minTablet {
+        font-size: 3vw;
+      }
     }
 
     ul {
@@ -233,25 +300,43 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-        font-size: 1.2vw;
+        font-size: calc(18);
+        
+        @include minTablet {
+          font-size: 1.2vw;
+        }
+
+        address {
+          font-style: normal;
+          margin-bottom: rem(20);
+        }
 
         span {
-          margin-right: rem(36);
-          border-right: 1px solid white;
-          padding-right: rem(36);
-          padding-top: rem(12);
-          padding-bottom: rem(12);
+          border: 1px solid white;
+          border-radius: 50%;
+          width: rem(30);
+          height: rem(30);
+          margin-right: rem(10);
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
           svg {
-            width: rem(25);
+            width: rem(20);
+            height: rem(22);
           }
         }
       }
+
       a {
         color: white;
         text-decoration: none;
         font-family: $font;
-        font-size: 1.2vw;
+        font-size: rem(20);
+
+        @include minTablet {
+          font-size: 1.2vw;
+        }
       }
     }
   }

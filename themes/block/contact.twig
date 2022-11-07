@@ -4,7 +4,7 @@
   <div class="contact-intro">
     {#  #}
     <div class="contact-intro-image">
-      <img src="{{site.theme.link}}/public/contact.png" alt="Contact" />
+      <img src="{{site.theme.link}}/public/contact.jpg" alt="Contact" />
     </div>
     <div class="contact-intro-text">
       <p class="contact-tagline tagline">Contact</p>
@@ -21,13 +21,11 @@
         <h2>We’d love to hear from you!</h2>
         <ul class="contact-list">
           <li>
-            <span>
-              <svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 7.59621L24 2.07621V0.976807H0V2.07621L12 7.59621Z" fill="white"/>
-                <path d="M12 10.1721L0 5.7561V16.2717H24V5.7561L12 10.1721Z" fill="white"/>
-              </svg>
-            </span>
-            <a href="mailto: info@bertone.eu">info@bertone.eu</a>
+            <address>
+              Adresse de la rue<br />
+              Ville<br />
+              Pays
+            </address>
           </li>
           <li>
             <span>
@@ -41,7 +39,7 @@
       </div>
       <div class="contact-form">
         {% filter shortcodes %}
-            [formidable id={{contactId}}]
+            [formidable id={{id}}]
         {% endfilter %}
       </div>
     </div>
