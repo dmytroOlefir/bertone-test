@@ -52,8 +52,9 @@
     @include minMobile {
       position: absolute;
       top: 0;
-      left: -10vw;
-      transform: translate(-10vw, -16vw);
+      left: -12vw;
+      //transform: translate(-14vw, -16vw);
+      transform: none !important;
       z-index: 0;
       height: auto;
       width: 80vw;

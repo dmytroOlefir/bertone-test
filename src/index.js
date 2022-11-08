@@ -4,8 +4,10 @@ import LocomotiveScroll from 'locomotive-scroll'
 import {gsap} from './scripts/inc/_gsap'
 import {ScrollTrigger} from './scripts/inc/_ScrollTrigger'
 import {SplitText} from './scripts/inc/_SplitText'
-import {customCursor} from "./scripts/modules/_cursor";
+import {customCursor} from "./scripts/modules/_cursor"
 import CSSPlugin from './scripts/inc/_CSSPlugin'
+
+require('fslightbox');
 
 import Swiper, {Autoplay, FreeMode} from 'swiper'
 import 'swiper/css'
