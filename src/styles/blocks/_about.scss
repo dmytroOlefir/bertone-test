@@ -204,19 +204,44 @@
     &-left {
       position: relative;
 
+      @include minMobile {
+        width: calc(50% - 38px);
+        p {
+          margin-left: calc(1 / 23 * 100vw);
+        }
+      }
+      
+      @include minTablet {
+        width: calc(50% - 46px);
+      }
+
       @include minLaptop {
         margin-left: calc(2 / 23 * 100vw);
         width: calc(10 / 25 * 100vw);
-      }
 
-      @include minMobile {
-        &:after {
-          content: "";
+        p {
+          margin-left: 0;
+          width: calc(9 / 23 * 100vw);
         }
       }
     }
 
     &-right {
+      position: relative;
+
+      @include minMobile {
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 1px;
+          height: 100% ;
+          background: white;
+          transform: translateX(-4.5vw);
+        }
+      }
+
       @include minMobile {
         width: calc(50% - 38px);
       }
@@ -330,7 +355,10 @@
          line-height: 1.6;
          margin: 0;
          font-family: $fontTitle;
-          max-width: 50vw;
+         max-width: 70vw;
+          &:last-child {
+            margin-left: 10%;
+          }
 
          @include minMobile {
           font-size: rem(35);
@@ -340,12 +368,10 @@
           font-size: 4.2vw;
           max-width: 45vw;
           line-height: 1.2;
-         }
-
           &:last-child {
-            margin-left: 33%;
-          }
-
+              margin-left: 33%;
+            }
+         }
          .color--red {
           font-family: $font;
          }
@@ -364,6 +390,7 @@
       }
       @include minTablet {
         font-size: 4vw;
+        line-height: 1;
       }
     }
   }
@@ -387,6 +414,18 @@
       font-family: $fontTitle;
       font-weight: 300;
 
+      span {
+        font-family: $fontTitle;
+
+        &:last-child {
+          margin-left: calc(1 / 23 * 100%);
+        }
+
+        &:first-child {
+          font-family: $font;
+        }
+      }
+
       @include minDesktop {
         margin-top: 0;
         margin-bottom: 10vh;
@@ -403,6 +442,7 @@
       left: 50%;
       width: 200vw;
       transform: translateX(-50%);
+      opacity: 0.8;
 
       @include minTablet {
         width: 100%;
@@ -434,11 +474,56 @@
       }
     }
 
-    &-right,
     &-left {
-      // @include minMobile {
-      //   width: calc( 9 / 20 * 100% );
-      // }
+      @include minDesktop {
+        width: calc( 8 / 17 * 100% );
+
+        p {
+          margin-left: calc(2 / 17 * 100%);
+        }
+      }
+      @include minMobile {
+        width: calc(50% - 38px);
+      }
+
+      @include minTablet {
+        width: calc(50% - 46px);
+      }
+    }
+    &-right {
+      position: relative;
+
+      &:after {
+        @include minMobile {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 1px;
+          height: 100%;
+          background: white;
+          transform: translateX(-55px);
+        }
+
+        @include minLaptop {
+          transform: translateX(-46px);
+        }
+
+        @include minDesktop {
+          transform: translateX(-4.5vw);
+        }
+      }
+      
+      @include minMobile {
+          width: calc(50% - 38px);
+      }
+      @include minTablet {
+        width: calc(50% - 46px);
+      }
+      @include minDesktop {
+        margin-top: rem(50);
+        width: calc( 7/ 17 * 100% );
+      }
     }
 
     &-btn {
