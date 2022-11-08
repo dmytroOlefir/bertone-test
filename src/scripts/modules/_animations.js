@@ -110,7 +110,6 @@ const lineReveal = () => {
 	}
 
 	lineTitle.forEach((text, i) => {
-
 		let splitText = new SplitText(text, {type: "lines"})
 
 		let tl = gsap.timeline({

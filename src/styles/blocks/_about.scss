@@ -4,18 +4,18 @@
 
   &-intro {
     position: relative;
-    padding: 35vh 0 10vh;
+    padding: 55vw 0 10vh;
 
-    @include minMobile{
-      padding: 50vh 0 10vh;
+    @include minTablet{
+      padding: 20vw 0 10vh;
     }
 
-    @include minTablet {
-      padding: 50vh 0 25vh;
-    }
-    @include minDesktop {
-      padding: 30vh 0 25vh;
-    }
+    // @include minTablet {
+    //   padding: 50vh 0 25vh;
+    // }
+    // @include minDesktop {
+    //   padding: 30vh 0 25vh;
+    // }
 
     h1 {
       position: relative;
@@ -62,15 +62,14 @@
 
     &-image {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 3.7vw;
+      right: 0;
       z-index: 0;
       width: 100%;
 
       img {
         width: 100%;
       }
-      // padding-top: rem(54);
 
       .mobile {
         @include minLaptop {
@@ -84,10 +83,10 @@
         }
       }
 
-      @include mobile {
-        width: 130vw;
-        transform: translate(-20%, 20%);
-      }
+      // @include mobile {
+      //   width: 130vw;
+      //   transform: translate(-20%, 20%);
+      // }
     }
   }
 
@@ -136,14 +135,20 @@
       @include minMobile {
         width: calc(50% - 38px);
       }
-      @include minTablet {
-        width: calc(50% - 46px);
-      }
+
       @include minLaptop {
-        width: calc(50% - 56px);
+        margin-left: calc(1 / 23 * 100vw);
+        width: calc(10 / 23 * 100vw);
       }
-      @include minDesktop {
-        width: calc(50% - 70px);
+
+      p {
+        @include minTablet {
+          margin-left: calc(1 / 23 * 100vw);
+        }
+        
+        @include minLaptop {
+          margin-left: calc(1 / 23 * 100vw);
+        }
       }
     }
 
@@ -191,10 +196,26 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin: 0;
+        width: 100%;
       }
     }
 
-    &-left,
+    &-left {
+      position: relative;
+
+      @include minLaptop {
+        margin-left: calc(2 / 23 * 100vw);
+        width: calc(10 / 25 * 100vw);
+      }
+
+      @include minMobile {
+        &:after {
+          content: "";
+        }
+      }
+    }
+
     &-right {
       @include minMobile {
         width: calc(50% - 38px);
@@ -206,6 +227,10 @@
     
       @include minLaptop {
         width: calc(50% - 56px);
+
+        p {
+          width: calc(9 / 23 * 100vw);
+        }
       }
     
       @include minDesktop {
@@ -314,6 +339,7 @@
          @include minTablet {
           font-size: 4.2vw;
           max-width: 45vw;
+          line-height: 1.2;
          }
 
           &:last-child {
@@ -403,16 +429,16 @@
 
 
       @include minLaptop {
-        margin-left: calc(6 / 23 * 100vw);
-        width: calc(15 / 23 * 100vw);
+        margin-left: calc(6 / 23 * 100%);
+        width: calc(17 / 23 * 100%);
       }
     }
 
     &-right,
     &-left {
-      @include minMobile {
-        width: calc( 9 / 20 * 100% );
-      }
+      // @include minMobile {
+      //   width: calc( 9 / 20 * 100% );
+      // }
     }
 
     &-btn {
@@ -466,7 +492,7 @@
 
     @include minLaptop{
       margin: 0px auto;
-      width: calc(18 / 23 * 100vw);
+      width: calc(19 / 23 * 100vw);
     }
 
     &-content {

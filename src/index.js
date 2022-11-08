@@ -16,7 +16,7 @@ import {opening, tlOpening, lineReveal, revealFromLeft, revealFromRight, revealS
 
 
 const gsapWithCSS = gsap.registerPlugin(CSSPlugin, ScrollTrigger, SplitText) || gsap, // to protect from tree shaking
-	TweenMaxWithCSS = gsapWithCSS.core.Tween;
+TweenMaxWithCSS = gsapWithCSS.core.Tween;
 
 // --------------- Slider
 const slider = document.querySelector('[js-slider]')
@@ -218,6 +218,7 @@ barba.init({
 		},
 		afterLeave(data) {
 			header.classList.remove('show')
+
 			ScrollTrigger.getAll().forEach(t => t.kill())
 
 			ScrollTrigger.defaults({
@@ -320,5 +321,65 @@ barba.init({
 			ScrollTrigger.refresh()
 		}
 
+	}, {
+		namespace: 'page',
+		beforeEnter(data) {
+			customCursor()
+			lc.on('scroll', ScrollTrigger.update)
+
+			ScrollTrigger.scrollerProxy(scroller, {
+				scrollTop(value) {
+					return arguments.length
+						? lc.scrollTo(value, 0, 0)
+						: lc.scroll.instance.scroll.y
+				},
+				getBoundingClientRect() {
+					return {
+						left: 0,
+						top: 0,
+						width: window.innerWidth,
+						height: window.innerHeight
+					}
+				},
+				pinType: scroller.style.transform ? "transform" : "fixed"
+			})
+
+			ScrollTrigger.defaults({
+				scroller: scroller
+			})
+
+			ScrollTrigger.addEventListener('refresh', () => lc.update())
+			ScrollTrigger.refresh()
+		},
+		async afterEnter(data) {
+			// const lineTitle = document.querySelectorAll('[data-line-reveal], [data-line-reveal] > *');
+			const elements = document.querySelectorAll('[data-reveal-simple]');
+
+			gsap.fromTo(header, {
+				yPercent: -100,
+			}, {
+				yPercent: 0,
+				duration: 1
+			})
+
+			gsap.fromTo(curtain, { autoAlpha: 1 }, { autoAlpha: 0, duration: 1.4 })
+			header.classList.add('show')
+
+			elements.forEach((el, i) => {
+				let tl = gsap.timeline({
+					scrollTrigger: {
+						trigger: el,
+					}
+				});
+
+				tl.from(el, {
+					duration: 1,
+					y: 40,
+					opacity: 0,
+				}, `+=0.4`)
+			})
+
+			lineReveal()
+		}
 	}]
 });

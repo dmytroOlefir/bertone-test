@@ -27,7 +27,7 @@
     padding: 10vh 0 10vh; 
 
     @include minMobile {
-      padding: 40vh 0 25vh;
+      padding: 25vh 0;
     }
 
     .tagline {
@@ -56,6 +56,7 @@
           z-index: 1;
         }
       }
+
       @include minMobile {
         position: absolute;
         top: 50%;
@@ -67,6 +68,11 @@
 
       @include minTablet {
         transform: translateY(-50%);
+        width: 45vw;
+
+        img {
+          width: 100%;
+        }
       }
     }
 
@@ -158,6 +164,7 @@
         padding-top: 0;
         padding-bottom: 0;
         outline: 0 !important;
+        box-shadow: none;
 
         @include minTablet {
           font-size: 1vw;
