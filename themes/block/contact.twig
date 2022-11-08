@@ -4,12 +4,12 @@
   <div class="contact-intro">
     {#  #}
     <div class="contact-intro-image">
-      <img src="{{site.theme.link}}/public/contact.jpg" alt="Contact" />
+      <img src="{{site.theme.link}}/public/contact.jpg" alt="Contact" data-reveal-simple="0.4" />
     </div>
     <div class="contact-intro-text">
-      <p class="contact-tagline tagline">Contact</p>
-      <h1>Let's <span class="color--red">Keep in Touch</span></h1>
-      <p class="contact-intro-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan tium doloremque laudantium</p>
+      <p class="contact-tagline tagline" data-reveal-simple="0.4">Contact</p>
+      <h1 data-reveal-simple="0.4">Let's <span class="color--red">Keep in Touch</span></h1>
+      <p class="contact-intro-description" data-line-reveal>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusan tium doloremque laudantium</p>
     </div>
   </div>
 
@@ -18,16 +18,16 @@
   <div class="container">
     <div class="contact-wrap">
       <div class="contact-infos">
-        <h2>We’d love to hear from you!</h2>
+        <h2 data-line-reveal>We’d love to hear from you!</h2>
         <ul class="contact-list">
           <li>
-            <address>
+            <address data-line-reveal>
               Adresse de la rue<br />
               Ville<br />
               Pays
             </address>
           </li>
-          <li>
+          <li data-reveal-simple="0.4">
             <span>
               <svg width="25" height="28" viewBox="0 0 25 28" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M24.7284 23.5383L20.7964 18.6841C20.3365 18.1189 19.4558 18.0725 18.8245 18.5757L16.2291 20.6505L16.802 22.7331L16.4746 23.0118L14.6352 21.0067L6.32689 10.7447L4.58494 8.84016L4.9006 8.54983L6.99327 9.37048L7.987 8.57693L9.65491 7.24531C10.2862 6.74208 10.4265 5.87498 9.97056 5.30982L6.03462 0.455605C5.57477 -0.105688 4.69795 -0.15601 4.06664 0.347218L0.469736 3.21949C-0.0329741 3.6182 -0.173265 4.6324 0.251505 6.23886C0.95296 8.89048 3.19762 13.1718 7.92465 19.0092C11.5995 23.546 14.7288 25.8686 17.0669 27.0067C19.5571 28.2183 21.1432 28.0906 21.4861 27.8157L24.4166 25.4738C25.048 24.9705 25.1882 24.1073 24.7323 23.5383H24.7284Z" fill="white"/>
@@ -37,7 +37,7 @@
           </li>
         </ul>
       </div>
-      <div class="contact-form">
+      <div class="contact-form" data-reveal-simple="0.4">
         {% filter shortcodes %}
             [formidable id={{id}}]
         {% endfilter %}

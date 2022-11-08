@@ -11,8 +11,8 @@
 	<body class="{{body_class}}" data-template="base.twig" data-barba="wrapper">
 		{% include '/header.twig' %}
 		<div class="curtain" data-curtain></div>
-		<div data-main-scroll>
-			<div data-barba="container" data-barba-namespace="front">
+		<div data-main-scroll >
+			<div data-barba="container" data-barba-namespace="page">
 				{% block content %}
           {% include './block/about.twig' %}
 					{% include './block/newsletter.twig' with {id: newsletter_id} %}
