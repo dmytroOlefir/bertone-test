@@ -12,4 +12,5 @@
  */
 
 $GLOBALS['timberContext'] = Timber::context();
+$menu = new Timber\Menu( 'primary' );
 ob_start();
