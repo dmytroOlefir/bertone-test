@@ -382,6 +382,8 @@ barba.init({
 			})
 
 			lineReveal()
+			revealFromRight()
+
 		}
 	}]
 });
