@@ -28,17 +28,17 @@ if (slider) {
 		slidesPerView: 'auto',
 		// spaceBetween: 30,
 		speed: 4000,
-		slideToClickedSlide: true,
+		slideToClickedSlide: false,
 		grabCursor: true,
 		// mousewheelControl: true,
 		// keyboardControl: true,
-		freeMode: {
-			enabled: true,
-			momentumBounceRatio: 0.03,
-			momentumVelocityRatio: 2,
-			minimumVelocity: 0.1,
-			momentumRatio: 0.3
-		},
+		// freeMode: {
+		// 	enabled: true,
+		// 	momentumBounceRatio: 0.03,
+		// 	momentumVelocityRatio: 2,
+		// 	minimumVelocity: 0.1,
+		// 	momentumRatio: 0.3
+		// },
 		autoplay: {
 			delay: 0,
 			disableOnInteraction: false,
