@@ -356,6 +356,8 @@ barba.init({
 		async afterEnter(data) {
 			// const lineTitle = document.querySelectorAll('[data-line-reveal], [data-line-reveal] > *');
 			const elements = document.querySelectorAll('[data-reveal-simple]');
+			const elementsFade = document.querySelectorAll('[data-reveal-fade]');
+			// const elements = document.querySelectorAll('[data-reveal-simple]');
 
 			gsap.fromTo(header, {
 				yPercent: -100,
@@ -380,8 +382,21 @@ barba.init({
 					opacity: 0,
 				}, `+=0.4`)
 			})
+			elementsFade.forEach((el, i) => {
+				let tl = gsap.timeline({
+					scrollTrigger: {
+						trigger: el,
+					}
+				});
+
+				tl.from(el, {
+					duration: 1,
+					opacity: 0,
+				}, `+=1.2`)
+			})
 
 			lineReveal()
+			revealImage()
 		}
 	}]
 });
