@@ -3616,6 +3616,8 @@ body.page-template-timeline {
     .intro .red-btn {
         position: absolute;
         right: 30px;
+        top: auto;
+        bottom: 110px;
     }
     .intro_text {
         margin-top: 200px;
