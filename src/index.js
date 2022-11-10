@@ -165,13 +165,8 @@ barba.init({
 			 const res = await delay(700);
 
 		},
-		afterLeave(data) {
+		beforeLeave(data) {
 			toggleMenu()
-			// lc.scrollTo('top', {
-			// 	'offset': 0,
-			// 	'duration': 0,
-			// 	'disableLerp': true
-			// })
 		},
 		enter(data) {
 			console.log('enter');
