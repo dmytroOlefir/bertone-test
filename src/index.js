@@ -173,8 +173,10 @@ barba.init({
 		 async leave(data) {
 			console.log('default');
 
-			gsap.to(curtain, {autoAlpha: 1, duration: 0.7, onComplete() {
-					lc.scrollTo("top")
+			gsap.to(curtain, {autoAlpha: 1, duration: 0.7, onComplete(){
+					lc.scrollTo("top", {
+						duration: 0
+					})
 			}})
 
 			 const res = await delay(700);
