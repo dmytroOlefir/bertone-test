@@ -277,6 +277,11 @@
     .frm_error_style {
       color: $orange;
       border: 1px solid $orange;
+      font-size: 12px;
+
+      @include minTablet {
+        font-size: 1vw;
+      }
     }
 
     .frm_primary_label.frm_visible {
@@ -292,6 +297,7 @@
     .frm_error {
       font-size: .8vw;
       color: $orange;
+      margin-top: calc(10);
       
       @include minTablet {
         font-size: 11px;
