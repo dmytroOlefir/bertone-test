@@ -171,6 +171,9 @@
 
       @include minMobile {
         width: 100%;
+        img {
+          width: 100%;
+        }
       }
 
       @include minTablet {
@@ -179,10 +182,6 @@
         &-wrap {
           height: 100%;
           display: flex;
-
-          img {
-            width: 100%;
-          }
         }
       }
 
