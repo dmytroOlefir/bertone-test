@@ -45,7 +45,6 @@ if (menuItems) {
 	for (const item of menuItems) {
 		item.addEventListener('click', () => {
 			const hasActive = document.querySelector('[js-menu] .menu-item.current-menu-item')
-			console.log('HERE -----------', item)
 			if (hasActive) hasActive.classList.remove('current-menu-item')
 			item.classList.add('current-menu-item')
 		})
@@ -179,7 +178,10 @@ barba.init({
 
 		},
 		beforeLeave(data) {
-			toggleMenu()
+			menu_btn.classList.remove('is-open')
+			menu.classList.remove('is-open')
+			menu_bkg.classList.remove('is-open')
+			isOpen = false
 		},
 		enter(data) {
 			console.log('enter');
