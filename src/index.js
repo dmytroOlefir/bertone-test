@@ -12,6 +12,33 @@ require('fslightbox');
 import Swiper, {Autoplay, FreeMode} from 'swiper'
 import 'swiper/css'
 
+// Menu ----------------------------------------------------
+const menu_btn = document.querySelector('[js-menu-btn]')
+const menu = document.querySelector('[js-menu]')
+const menu_bkg = document.querySelector('[js-menu-bkg]')
+let isOpen = false
+
+menu_btn.addEventListener('click', () => {
+	toggleMenu()
+})
+
+menu_bkg.addEventListener('click', () => {
+	toggleMenu()
+})
+
+function toggleMenu() {
+	if (isOpen) {
+		menu_btn.classList.remove('is-open')
+		menu.classList.remove('is-open')
+		menu_bkg.classList.remove('is-open')
+	} else {
+		menu.classList.add('is-open')
+		menu_btn.classList.add('is-open')
+		menu_bkg.classList.add('is-open')
+	}
+	isOpen = !isOpen
+}
+
 Swiper.use([Autoplay, FreeMode]);
 
 import {opening, tlOpening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp, yearReveal, captionReveal} from './scripts/modules/_animations'
@@ -139,6 +166,7 @@ barba.init({
 
 		},
 		afterLeave(data) {
+			toggleMenu()
 			// lc.scrollTo('top', {
 			// 	'offset': 0,
 			// 	'duration': 0,
@@ -403,28 +431,3 @@ barba.init({
 
 
 // MENU
-const menu_btn = document.querySelector('[js-menu-btn]')
-const menu = document.querySelector('[js-menu]')
-const menu_bkg = document.querySelector('[js-menu-bkg]')
-let isOpen = false
-
-menu_btn.addEventListener('click', () => {
-	toggleMenu()
-})
-
-menu_bkg.addEventListener('click', () => {
-	toggleMenu()
-})
-
-function toggleMenu() {
-	if (isOpen) {
-		menu_btn.classList.remove('is-open')
-		menu.classList.remove('is-open')
-		menu_bkg.classList.remove('is-open')
-	} else {
-		menu.classList.add('is-open')
-		menu_btn.classList.add('is-open')
-		menu_bkg.classList.add('is-open')
-	}
-	isOpen = !isOpen
-}

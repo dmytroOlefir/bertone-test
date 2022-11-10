@@ -25,11 +25,11 @@
   </div> #}
 
   <div class="about-bio">
-    <div class="about-wrap">
+    <div class="about-bio-wrap">
       <div class="about-bio-intro">
-        {# VALUES #}
-        <div class="about-values">
-          <div class="container">
+        <div class="container">
+          {# VALUES #}
+          <div class="about-values">
             <h2 class="tagline about-values-tag" data-reveal-simple>Their values</h2>
             <ul class="about-values-list" data-line-reveal>
               <li>Respect</li>
@@ -37,11 +37,9 @@
               <li>Ambition</li>
             </ul>
           </div>
-        </div>
 
-        {# Experience #}
-        <div class="about-experience">
-          <div class="container">
+          {# Experience #}
+          <div class="about-experience">
             <div class="about-experience-intro">
               <h2 class="color--red title" data-line-reveal>Their <br/>experience</h2>
               <p data-reveal-simple>38 years of experience in the global industry, with focus in technologies and land and air mobility.</p>
@@ -56,13 +54,9 @@
         </div>
       </div>
     </div>
-    <div class="about-bio-grid">
-      <div class="about-bio-left">
-        <div class="container">
-          <p data-reveal-simple>In 2012,with the acquisition of the German Style and R&D center Mercedes Benz Technologies from the German manufacturer Daimler, together with development and industrialization European teams, they were able to deliver turnkey vehicle projects</p>
-        </div>
-      </div>
-      <div class="about-bio-right">
+    <div class="container">
+      <div class="about-bio-description">
+        <p data-reveal-simple>In 2012,with the acquisition of the German Style and R&D center Mercedes Benz Technologies from the German manufacturer Daimler, together with development and industrialization European teams, they were able to deliver turnkey vehicle projects</p>
         <p data-reveal-simple>All these experiences gathered and directed by Mauro and Jean-Franck Ricci, have enabled them to deliver the most prestigious manufacturers around the world Daimler Volkswagen and all its brands like Stellantis, Renault, etc</p>
         <p data-reveal-simple>To achieve their success they make anintensive recruitment of the best engineers who share the same passion for performance.</p>
       </div>
@@ -73,8 +67,8 @@
   <div class="about-quote">
     <div class="container">
       <blockquote>
-        <p data-reveal-simple>Bertone must be <span class="color--red">THE HIGH PERFORMANCE</span> CAR,</p>
-        <p data-reveal-simple>history of the Bertone brand</p>
+        <p data-reveal-simple>Bertone must<br/> be THE<span class="color--red"> HIGH <br/>PERFORMANCE</span> CAR,</p>
+        <p data-reveal-simple>history of the <br/>Bertone brand</p>
       </blockquote>
     </div>
   </div>
@@ -83,7 +77,7 @@
     <div class="container">
       <div class="content">
         <div class="about-story-left">
-          <h2 class="color--red"><span data-reveal-simple>Today </span><span data-reveal-simple>a new story </span><span data-reveal-simple>begins</span></h2>
+          <h2 class=""><span data-reveal-simple>Today </span><span data-reveal-simple class="color--red">a new story </span><span data-reveal-simple class="color--red">begins</span></h2>
           <p data-reveal-simple>Mauro Ricci and Jean-Franck Ricci have decided to bring together all their experience in the rebirth of a famous firm Carrozzeria Bertone.</p>
           <p data-reveal-simple>For Mauro and Jean-Franck Ricci, Bertone must be THE HIGH PERFORMANCE CAR, history of the Bertone brand.</p>
         </div>
@@ -93,15 +87,21 @@
           <p data-reveal-simple>Bertone has marked the history of the automobile by designing mythical cars, likeLamborghini Miura and Countach, the Alfa Romeo Coupe Bertone.</p>
 
           <p data-reveal-simple>Bodybuilder on the one hand, Bertone had also become an automotive subcontractor by hosting in its premises production units for manufacturers, the company had even become a car manufacturer by marketing vehicles under its own brand.</p>
-
-          <div class="about-story-btn">
-            <a href="/" class="btn about-btn-history" data-reveal-simple>Discover Bertone’s history</a>
-          </div>
         </div>
       </div>
+       <div class="about-story-btn">
+          {# ROUND BTN #}
+          <a href="/" class="btn-round about-btn-history hoverable" data-reveal-simple>
+            <span>Discover Bertone’s history</span>
+            <svg width="246" height="246" viewBox="0 0 246 246" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="123" cy="123" r="122.5" stroke="#FF4409" stroke-opacity="0.5" stroke-dasharray="2 2"/>
+            </svg>
+          </a>
+          {# END ROUND BTN #}
+        </div>
     </div>
     <div class="about-story-image">
-      <img src="{{site.theme.link}}/public/about-story.jpg" alt="story image" data-reveal-fade />
+      <img src="{{site.theme.link}}/public/about-story.png" alt="story image" data-reveal-fade />
     </div>
   </div>
   {# more  #}

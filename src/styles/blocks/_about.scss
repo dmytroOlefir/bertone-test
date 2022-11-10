@@ -10,13 +10,6 @@
       padding: 20vw 0 10vh;
     }
 
-    // @include minTablet {
-    //   padding: 50vh 0 25vh;
-    // }
-    // @include minDesktop {
-    //   padding: 30vh 0 25vh;
-    // }
-
     h1 {
       position: relative;
       text-transform: uppercase;
@@ -29,6 +22,10 @@
       margin-left: calc(1 / 20 * 100vw);
       display: flex;
       flex-direction: column;
+
+      .color--red {
+        font-family: $fontTitle;
+      }
 
       span {
         &:last-child {
@@ -82,11 +79,6 @@
           display: none;
         }
       }
-
-      // @include mobile {
-      //   width: 130vw;
-      //   transform: translate(-20%, 20%);
-      // }
     }
   }
 
@@ -112,12 +104,14 @@
       font-size: rem(18);
       font-weight: 400;
       font-family: $font;
+      margin-bottom: rem(40);
 
       @include minTablet {
         font-size: 1.2vw;
       }
     }
-    .about-wrap {
+
+    &-wrap {
       display: flex;
       flex-direction: column;
 
@@ -188,88 +182,17 @@
       }
     }
 
-    &-grid {
-      margin-left: calc(1 / 20 * 100vw);
-      width: calc(18 / 20 * 100vw);
+    &-description {
+      margin-left: calc(2 / 23 * 100vw);
+      width: calc(18 / 23 * 100vw);
 
-      @include minMobile {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin: 0;
-        width: 100%;
-      }
-    }
-
-    &-left {
-      position: relative;
-
-      @include minMobile {
-        width: calc(50% - 38px);
-        p {
-          margin-left: calc(1 / 23 * 100vw);
-        }
-      }
-      
-      @include minTablet {
-        width: calc(50% - 46px);
-      }
-
-      @include minLaptop {
-        margin-left: calc(2 / 23 * 100vw);
-        width: calc(10 / 25 * 100vw);
-
-        p {
-          margin-left: 0;
-          width: calc(9 / 23 * 100vw);
-        }
-      }
-    }
-
-    &-right {
-      position: relative;
-
-      @include minMobile {
-        &:after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 1px;
-          height: 100% ;
-          background: white;
-          transform: translateX(-4.5vw);
-        }
+      p:last-child {
+        margin-bottom: rem(0);
       }
 
       @include minMobile {
-        width: calc(50% - 38px);
-      }
-    
-      @include minTablet {
-        width: calc(50% - 46px);
-      }
-    
-      @include minLaptop {
-        width: calc(50% - 56px);
-
-        p {
-          width: calc(9 / 23 * 100vw);
-        }
-      }
-    
-      @include minDesktop {
-        width: calc(50% - 70px);
-      }
-    }
-
-    &-right {
-      @include minMobile {
-        transform: translateY(-50%);
-      }
-
-      @include minDesktop {
-        transform: translateY(0);
+        column-count: 2;
+        column-gap: calc(2 / 23 * 100vw);
       }
     }
   }
@@ -328,36 +251,56 @@
     }
 
     blockquote {
+      position: relative;
       padding: 0;
       margin: 0;
-      margin-left: calc(1 / 20 * 100vw);
-      width: calc(18 / 20 * 100vw);
       padding: 0 calc(1 / 20 * 100vw);
-
-      @include minMobile {
-        margin-left: calc(2 / 20 * 100vw);
-        width: calc(16 / 20 * 100vw);
-      }
-
-      @include minLaptop {
-        margin-left: calc(3 / 23 * 100vw);
-        width: calc(17 / 23 * 100vw);
-      }
-
-      @include minDesktop {
-        margin-left: calc(4 / 23 * 100vw);
-        width: calc(15 / 23 * 100vw);
-      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
       p {
+        position: relative;
          text-transform: uppercase;
          font-size: rem(26);
          line-height: 1.6;
          margin: 0;
          font-family: $fontTitle;
-         max-width: 70vw;
+
+         &:first-child {
+          &:before {
+            content: "\"";
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: rem(48);
+            font-family: $font;
+            color: white;
+            transform: translate(-100%, -50%) translateX(-4vw) rotate(-25deg);
+        
+            @include minTablet {
+              font-size: 5vw;
+            }
+          }
+         }
+
+        //  max-width: 70vw;
           &:last-child {
             margin-left: 10%;
+            &:before {
+              content: "\"";
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              font-size: rem(48);
+              font-family: $font;
+              color: white;
+              transform: translate(100%, 50%) translateX(4vw) rotate(25deg);
+          
+              @include minTablet {
+                font-size: 5vw;
+              }
+            }
           }
 
          @include minMobile {
@@ -366,11 +309,11 @@
 
          @include minTablet {
           font-size: 4.2vw;
-          max-width: 45vw;
+          // max-width: 45vw;
           line-height: 1.2;
           &:last-child {
-              margin-left: 33%;
-            }
+            margin-left: 33%;
+          }
          }
          .color--red {
           font-family: $font;
@@ -416,10 +359,6 @@
 
       span {
         font-family: $fontTitle;
-
-        &:last-child {
-          margin-left: calc(1 / 23 * 100%);
-        }
 
         &:first-child {
           font-family: $font;
@@ -490,6 +429,7 @@
         width: calc(50% - 46px);
       }
     }
+
     &-right {
       position: relative;
 
@@ -503,6 +443,7 @@
           height: 100%;
           background: white;
           transform: translateX(-55px);
+          opacity: 0.3;
         }
 
         @include minLaptop {
@@ -527,26 +468,10 @@
     }
 
     &-btn {
-      display: flex;
-      flex-wrap: wrap;
-
-      @include minTablet {
-        margin-top: rem(50);
-      }
-
-      a.btn {
-        color: $orange;
-        border: 1px solid $orange;
-        padding: rem(20);
-        font-size: rem(18);
-        border-radius: rem(42);
-        text-decoration: none;
-        letter-spacing: 0.1em;
-
-        @include minTablet {
-          font-size: 1.2vw;
-        }
-      }
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: 9;
     }
 
     p {
@@ -554,6 +479,7 @@
       font-size: rem(18);
       font-weight: 400;
       font-family: $font;
+      margin-top: 0;
 
       @include minTablet {
         font-size: 1.2vw
@@ -657,5 +583,59 @@
         }
       }
     }
+  }
+}
+
+
+.btn-round {
+  width: 12vw;
+  height: 12vw;
+  font-size: 1.2vw;
+  background: $orange;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1vw;
+  text-decoration: none;
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: none;
+    z-index: 0;
+
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:hover {
+    svg {
+      animation: grow 2s linear infinite;
+    }
+  }
+}
+
+@keyframes grow {
+  0%{
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(2);
   }
 }

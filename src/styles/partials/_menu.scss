@@ -123,6 +123,10 @@
       text-decoration: none;
       color: white;
       font-family: $font;
+
+      @include minTablet {
+        font-size: 2.5vw;
+      }
     }
 
     .current-menu-item {
