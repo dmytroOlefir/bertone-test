@@ -122,15 +122,15 @@
     }
 
     &-wrap {
-      // display: flex;
-      // flex-direction: column;
+      display: flex;
+      flex-direction: column;
 
-      // @include minMobile {
-      //   flex-direction: row;
-      //   flex-wrap: wrap;
-      //   justify-content: space-between;
-      //   margin-bottom: 5vw;
-      // }
+      @include minMobile {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 5vw;
+      }
 
       // @include minTablet {
       //   width: 100%;
