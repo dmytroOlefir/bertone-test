@@ -723,7 +723,7 @@
     transform: translate(-50%, -50%);
     fill: none;
     z-index: 0;
-    transform: scale(0);
+    // transform: scale(0);
   }
 
   &:after {
@@ -756,21 +756,21 @@
 @keyframes grow {
   0%{
     opacity: 1;
-    transform: translate(-50%, -50%) scale(0);
-  }
-
-  50% {
-    opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
 
-  58% {
+  15% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.25);
   }
 
-  100% {
+  45% {
     opacity: 0;
     transform: translate(-50%, -50%) scale(2);
+  }
+
+  50% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
   }
 }
