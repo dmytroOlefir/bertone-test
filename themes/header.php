@@ -14,7 +14,7 @@
 $GLOBALS['timberContext'] = Timber::context();
 $menu = new Timber\Menu( 'primary' );
 $context['newsletter_id'] = get_field('id-newsletter', 'option');
-$context['instagram'] = get_field('instagram', 'option');
-$context['linkedin'] = get_field('linkedin', 'option');
+$instagram = get_field('instagram', 'option');
+$linkedin = get_field('linkedin', 'option');
 
 ob_start();

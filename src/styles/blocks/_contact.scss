@@ -222,6 +222,7 @@
           }
 
           span {
+            display: flex;
             color: white;
             padding-left: rem(30);
 
@@ -271,6 +272,40 @@
         top: 50%;
         right: 0;
       }
+    }
+
+    .frm_error_style {
+      color: $orange;
+      border: 1px solid $orange;
+      font-size: 12px;
+
+      @include minTablet {
+        font-size: 1vw;
+      }
+    }
+
+    .frm_primary_label.frm_visible {
+      font-size: .8vw;
+      color: white;
+      opacity: 0.5;
+
+      @include minTablet {
+        font-size: 11px;
+      }
+    }
+
+    .frm_error {
+      font-size: .8vw;
+      color: $orange;
+      margin-top: rem(10);
+      
+      @include minTablet {
+        font-size: 11px;
+      }
+    }
+
+    .frm_message p {
+      margin: 0;
     }
   }
 
