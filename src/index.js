@@ -169,6 +169,9 @@ let frontCount = 0;
 barba.init({
 	transitions: [{
 		name: 'default-transition',
+		beforeEnter() {
+			lc.scrollTo("top")
+		},
 		 async leave(data) {
 			console.log('default');
 
@@ -182,7 +185,6 @@ barba.init({
 			menu.classList.remove('is-open')
 			menu_bkg.classList.remove('is-open')
 			isOpen = false
-			lc.scrollTo("top")
 		},
 		enter(data) {
 			console.log('enter');
