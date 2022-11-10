@@ -165,13 +165,14 @@
     }
 
     &-image {
-      @include mobile {
+      @include tablet {
         order: -1;
       }
 
       @include minTablet {
         display: block;
-        width: calc(50% - 46px);
+        // width: calc(50% - 46px);
+
         &-wrap {
           height: 100%;
           display: flex;
