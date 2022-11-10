@@ -39,7 +39,7 @@ function toggleMenu() {
 	isOpen = !isOpen
 }
 
-const menuitems = document.querySelectorAll('[js-menu] .menu-item') 
+const menuItems = document.querySelectorAll('[js-menu] .menu-item') 
 
 if (menuItems) {
 	for (const item of menuItems) {
