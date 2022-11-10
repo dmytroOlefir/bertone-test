@@ -130,12 +130,11 @@
         flex-wrap: wrap;
         justify-content: space-between;
         margin-bottom: 5vw;
-        width: calc(50% - 38px);
       }
 
-      @include minTablet {
-        width: 100%;
-      }
+      // @include minTablet {
+      //   width: 100%;
+      // }
       
     }
 
@@ -143,9 +142,7 @@
       margin-left: calc(1 / 20 * 100vw);
       width: calc(18 / 20 * 100vw);
 
-      @include minMobile {
-        width: 100%;
-      }
+
       @include minTablet {
         margin-left: calc(1 / 23 * 100vw);
         width: calc(10 / 23 * 100vw);
@@ -168,25 +165,23 @@
     }
 
     &-image {
-      @include mobile {
+      @include tablet {
         order: -1;
       }
 
       @include minMobile {
-        display: none;
-        width: calc(50% - 38px);
+        width: 100%;
+        img {
+          width: 100%;
+        }
       }
 
       @include minTablet {
-        display: block;
         width: calc(50% - 46px);
+
         &-wrap {
           height: 100%;
           display: flex;
-
-          img {
-            width: 100%;
-          }
         }
       }
 
@@ -284,7 +279,7 @@
   }
 
   &-values {
-    @include mobile {
+    @include tablet {
       margin-top: 10vh;
     }
 
@@ -612,6 +607,10 @@
       width: calc(19 / 23 * 100vw);
     }
 
+    h2 {
+      font-weight: 300;
+    }
+
     &-content {
       padding: rem(66) rem(26);
 
@@ -695,63 +694,6 @@
   }
 }
 
-
-.btn-round {
-  position: relative;
-  width: rem(180);
-  height: rem(180);
-  font-size: rem(22);
-  border-radius: 50%;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1vw;
-  text-decoration: none;
-
-  @include minTablet {
-    width: 12vw;
-    height: 12vw;
-    font-size: 1.2vw;
-  }
-
-  svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    fill: none;
-    z-index: 0;
-    // transform: scale(0);
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
-    background: $orange;
-    border-radius: 50%;
-    transition: all .6s ease-out;
-  }
-
-  span {
-    position: relative;
-    z-index: 1;
-  }
-
-  &:hover {
-    svg {
-      animation: grow 2s linear infinite;
-    }
-    &:after {
-      transform: scale(1.2);
-    }
-  }
-}
 
 @keyframes grow {
   0%{

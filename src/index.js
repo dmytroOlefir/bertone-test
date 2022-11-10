@@ -45,7 +45,6 @@ if (menuItems) {
 	for (const item of menuItems) {
 		item.addEventListener('click', () => {
 			const hasActive = document.querySelector('[js-menu] .menu-item.current-menu-item')
-
 			if (hasActive) hasActive.classList.remove('current-menu-item')
 			item.classList.add('current-menu-item')
 		})
@@ -170,16 +169,26 @@ let frontCount = 0;
 barba.init({
 	transitions: [{
 		name: 'default-transition',
+
 		 async leave(data) {
 			console.log('default');
 
-			gsap.to(curtain, {autoAlpha: 1, duration: 0.7})
+			gsap.to(curtain, {autoAlpha: 1, duration: 0.7, onComplete(){
+					lc.scrollTo("top", {
+						duration: 0
+					})
+			}})
 
 			 const res = await delay(700);
+			 
 
 		},
 		beforeLeave(data) {
-			toggleMenu()
+
+			menu_btn.classList.remove('is-open')
+			menu.classList.remove('is-open')
+			menu_bkg.classList.remove('is-open')
+			isOpen = false
 		},
 		enter(data) {
 			console.log('enter');
