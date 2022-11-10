@@ -39,6 +39,19 @@ function toggleMenu() {
 	isOpen = !isOpen
 }
 
+const menuItems = document.querySelectorAll('[js-menu] .menu-item') 
+
+if (menuItems) {
+	for (const item of menuItems) {
+		item.addEventListener('click', () => {
+			const hasActive = document.querySelector('[js-menu] .menu-item.current-menu-item')
+
+			if (hasActive) hasActive.classList.remove('current-menu-item')
+			item.classList.add('current-menu-item')
+		})
+	}
+}
+
 Swiper.use([Autoplay, FreeMode]);
 
 import {opening, tlOpening, lineReveal, revealFromLeft, revealFromRight, revealSimple, revealImage, bgZoom, lineLeft, fadeUp, yearReveal, captionReveal} from './scripts/modules/_animations'
@@ -165,13 +178,8 @@ barba.init({
 			 const res = await delay(700);
 
 		},
-		afterLeave(data) {
+		beforeLeave(data) {
 			toggleMenu()
-			// lc.scrollTo('top', {
-			// 	'offset': 0,
-			// 	'duration': 0,
-			// 	'disableLerp': true
-			// })
 		},
 		enter(data) {
 			console.log('enter');
