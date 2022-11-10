@@ -114,7 +114,7 @@
     transition: all .3s ease-out;
 
     li {
-      margin: 5vh 0;
+      margin: 2vh 0;
     }
 
     a {
@@ -150,7 +150,7 @@
     text-decoration: none;
     color: white;
     border-top: 1px solid rgba(white, 0.3);
-    padding-top: 8vh;
+    padding-top: 2vh;
     opacity: 0;
     transform: translateY(40px);
     transition: all .3s ease-out;
@@ -166,6 +166,11 @@
       color: white;
       margin-right: 2vw;
       transition: all .3s ease-out;
+
+      @include minTablet {
+        width: 8vw;
+        height: 8vw;
+      }
 
       &:hover {
         transform: scale(1.2);
