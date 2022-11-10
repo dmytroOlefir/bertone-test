@@ -122,20 +122,19 @@
     }
 
     &-wrap {
-      display: flex;
-      flex-direction: column;
+      // display: flex;
+      // flex-direction: column;
 
-      @include minMobile {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-bottom: 5vw;
-        width: calc(50% - 38px);
-      }
+      // @include minMobile {
+      //   flex-direction: row;
+      //   flex-wrap: wrap;
+      //   justify-content: space-between;
+      //   margin-bottom: 5vw;
+      // }
 
-      @include minTablet {
-        width: 100%;
-      }
+      // @include minTablet {
+      //   width: 100%;
+      // }
       
     }
 
@@ -143,9 +142,7 @@
       margin-left: calc(1 / 20 * 100vw);
       width: calc(18 / 20 * 100vw);
 
-      @include minMobile {
-        width: 100%;
-      }
+
       @include minTablet {
         margin-left: calc(1 / 23 * 100vw);
         width: calc(10 / 23 * 100vw);
@@ -170,11 +167,6 @@
     &-image {
       @include mobile {
         order: -1;
-      }
-
-      @include minMobile {
-        display: none;
-        width: calc(50% - 38px);
       }
 
       @include minTablet {
