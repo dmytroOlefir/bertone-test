@@ -8,6 +8,7 @@ const opening = (count) => {
 		introText = document.querySelectorAll('[data-intro-text] span'),
 		introImg = document.querySelector('[data-intro-img]'),
 		introUp = document.querySelector('[data-intro-up]'),
+		introBtn = document.querySelector('[data-intro-btn]'),
 		introBar = document.querySelector('[data-intro-up] span'),
 		// filmBars = document.querySelectorAll('[data-film-bar]'),
 		banner = document.querySelector('#banner'),
@@ -56,6 +57,7 @@ const opening = (count) => {
 				})
 				.to(banner, {autoAlpha: 0, ease: "power3.Out", duration: 0.6 }, "+=0")
 				.from(introImg, {opacity: 0, x: -80, duration: 3}, "+=0.25")
+				.from(introBtn, {opacity: 0, y: 75, duration: 1}, "-=1.5")
 				.from(splitText.lines, {duration: 1, y: 75, opacity: 0, ease: "power3.out", stagger: 0.12}, "-=2.4")
 				.from(introUp, {duration: 1, y: -75, opacity: 0, ease: "power3.out"}, "-=1.5")
 				.from(header, {y: headerY, ease: "power3.Out", duration: 1.25}, "-=2")
