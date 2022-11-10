@@ -273,6 +273,30 @@
         right: 0;
       }
     }
+
+    .frm_error_style {
+      color: $orange;
+      border: 1px solid $orange;
+    }
+
+    .frm_primary_label.frm_visible {
+      font-size: .8vw;
+      color: white;
+      opacity: 0.5;
+
+      @include minTablet {
+        font-size: 11px;
+      }
+    }
+
+    .frm_error {
+      font-size: .8vw;
+      color: $orange;
+      
+      @include minTablet {
+        font-size: 11px;
+      }
+    }
   }
 
   &-infos {
