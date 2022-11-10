@@ -342,7 +342,7 @@
       position: relative;
       padding: 0;
       margin: 0;
-      padding: 0 calc(1 / 20 * 100vw);
+      padding: 0 calc(1 / 20 * 100vw) 0 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -400,7 +400,7 @@
           // max-width: 45vw;
           line-height: 1.2;
           &:last-child {
-            margin-left: 33%;
+            margin-left: 20%;
           }
          }
          .color--red {
