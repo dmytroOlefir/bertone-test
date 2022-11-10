@@ -46,8 +46,8 @@ if (menuItems) {
 		item.addEventListener('click', () => {
 			const hasActive = document.querySelector('[js-menu] .menu-item.current-menu-item')
 
-			if (hasActive) hasActive.classList.remove('.current-menu-item')
-			item.classList.add('.current-menu-item')
+			if (hasActive) hasActive.classList.remove('current-menu-item')
+			item.classList.add('current-menu-item')
 		})
 	}
 }
