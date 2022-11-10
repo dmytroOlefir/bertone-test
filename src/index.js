@@ -169,18 +169,20 @@ let frontCount = 0;
 barba.init({
 	transitions: [{
 		name: 'default-transition',
-		beforeEnter() {
-			lc.scrollTo("top")
-		},
+
 		 async leave(data) {
 			console.log('default');
 
-			gsap.to(curtain, {autoAlpha: 1, duration: 0.7})
+			gsap.to(curtain, {autoAlpha: 1, duration: 0.7, onComplete() {
+					lc.scrollTo("top")
+			}})
 
 			 const res = await delay(700);
+			 
 
 		},
 		beforeLeave(data) {
+
 			menu_btn.classList.remove('is-open')
 			menu.classList.remove('is-open')
 			menu_bkg.classList.remove('is-open')
