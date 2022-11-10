@@ -10,13 +10,6 @@
       padding: 20vw 0 10vh;
     }
 
-    // @include minTablet {
-    //   padding: 50vh 0 25vh;
-    // }
-    // @include minDesktop {
-    //   padding: 30vh 0 25vh;
-    // }
-
     h1 {
       position: relative;
       text-transform: uppercase;
@@ -29,6 +22,10 @@
       margin-left: calc(1 / 20 * 100vw);
       display: flex;
       flex-direction: column;
+
+      .color--red {
+        font-family: $fontTitle;
+      }
 
       span {
         &:last-child {
@@ -82,11 +79,6 @@
           display: none;
         }
       }
-
-      // @include mobile {
-      //   width: 130vw;
-      //   transform: translate(-20%, 20%);
-      // }
     }
   }
 
@@ -105,6 +97,13 @@
   &-bio {
     @include minMobile {
       margin-top: 10vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    @include minTablet {
+      display: block;
     }
 
     p {
@@ -113,11 +112,16 @@
       font-weight: 400;
       font-family: $font;
 
+      &:not(:last-child) {
+        margin-bottom: rem(40);
+      }
+
       @include minTablet {
         font-size: 1.2vw;
       }
     }
-    .about-wrap {
+
+    &-wrap {
       display: flex;
       flex-direction: column;
 
@@ -125,7 +129,14 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin-bottom: 5vw;
+        width: calc(50% - 38px);
       }
+
+      @include minTablet {
+        width: 100%;
+      }
+      
     }
 
     &-intro {
@@ -133,7 +144,11 @@
       width: calc(18 / 20 * 100vw);
 
       @include minMobile {
-        width: calc(50% - 38px);
+        width: 100%;
+      }
+      @include minTablet {
+        margin-left: calc(1 / 23 * 100vw);
+        width: calc(10 / 23 * 100vw);
       }
 
       @include minLaptop {
@@ -158,118 +173,112 @@
       }
 
       @include minMobile {
+        display: none;
         width: calc(50% - 38px);
-        
-        &-wrap {
-          height: 60%;
-          display: flex;
-        }
       }
 
       @include minTablet {
+        display: block;
         width: calc(50% - 46px);
-      }
-
-      @include minLaptop {
-        width: calc(50% - 56px);
-
         &-wrap {
-          display: block;
-          height: auto;
+          height: 100%;
+          display: flex;
 
           img {
-            width: 100%;;
+            width: 100%;
           }
         }
       }
 
-      @include minDesktop {
-        width: calc(50% - 70px);
-      }
-    }
-
-    &-grid {
-      margin-left: calc(1 / 20 * 100vw);
-      width: calc(18 / 20 * 100vw);
-
-      @include minMobile {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin: 0;
-        width: 100%;
-      }
-    }
-
-    &-left {
-      position: relative;
-
-      @include minMobile {
-        width: calc(50% - 38px);
-        p {
-          margin-left: calc(1 / 23 * 100vw);
-        }
-      }
-      
-      @include minTablet {
-        width: calc(50% - 46px);
-      }
-
-      @include minLaptop {
-        margin-left: calc(2 / 23 * 100vw);
-        width: calc(10 / 25 * 100vw);
-
-        p {
-          margin-left: 0;
-          width: calc(9 / 23 * 100vw);
-        }
-      }
-    }
-
-    &-right {
-      position: relative;
-
-      @include minMobile {
-        &:after {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 1px;
-          height: 100% ;
-          background: white;
-          transform: translateX(-4.5vw);
-        }
-      }
-
-      @include minMobile {
-        width: calc(50% - 38px);
-      }
-    
-      @include minTablet {
-        width: calc(50% - 46px);
-      }
-    
       @include minLaptop {
         width: calc(50% - 56px);
-
-        p {
-          width: calc(9 / 23 * 100vw);
-        }
       }
-    
+
       @include minDesktop {
         width: calc(50% - 70px);
       }
     }
 
-    &-right {
-      @include minMobile {
-        transform: translateY(-50%);
+    &-description {
+      position: relative;
+      margin-left: calc(1 / 23 * 100vw);
+      width: calc(18 / 23 * 100vw);
+
+      .container {
+        position: relative;
+        @include minMobile {
+          padding-left: 0;
+
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: calc(-1 / 23 * 100vw - 2vw);
+            height: 100%;
+            width: 1px;
+            background: white;
+            opacity: 0.3;
+          }
+        }
+
+        @include minTablet {
+          padding-left: 2vw;
+          column-count: 2;
+          column-gap: calc(2 / 23 * 100vw);
+          margin-left: calc(1 / 23 * 100vw);
+          width: calc(19 / 23 * 100vw);
+
+          &:after {
+            left: 050%;
+            transform: translateX(-50%);
+          }
+        }
+
+        @include minDesktop {
+          width: calc(19 / 23 * 100vw);
+        }
       }
 
-      @include minDesktop {
-        transform: translateY(0);
+      p:last-child {
+        margin-bottom: rem(0);
+      }
+
+      @include minMobile {
+        width: calc(50% - 38px);
+        margin-left: 0
+      }
+
+      @include minTablet {
+        width: calc(18 / 23 * 100vw + 2vw);
+        margin-left: calc(1 / 23 * 100vw);
+
+      //   &:after {
+      //     content: "";
+      //     position: absolute;
+      //     top: 0%;
+      //     left: 050%;
+      //     transform: translateX(-50%);
+      //     height: 100%;
+      //     width: 1px;
+      //     background: white;
+      //     opacity: 0.3;
+      //   }
+      }
+
+      // @include minDesktop {
+      //   width: calc(18 / 23 * 100vw + 2vw);
+      // }
+    }
+
+    &-image-mobile {
+      display: none;
+      margin-bottom: rem(20);
+
+      @include minMobile {
+        display: block;
+      }
+      @include minTablet {
+        display: none;
       }
     }
   }
@@ -321,6 +330,8 @@
   }
 
   &-quote {
+    position: relative;
+    z-index: 2;
     margin: 10vh 0 0;
 
     @include minLaptop {
@@ -328,36 +339,56 @@
     }
 
     blockquote {
+      position: relative;
       padding: 0;
       margin: 0;
-      margin-left: calc(1 / 20 * 100vw);
-      width: calc(18 / 20 * 100vw);
       padding: 0 calc(1 / 20 * 100vw);
-
-      @include minMobile {
-        margin-left: calc(2 / 20 * 100vw);
-        width: calc(16 / 20 * 100vw);
-      }
-
-      @include minLaptop {
-        margin-left: calc(3 / 23 * 100vw);
-        width: calc(17 / 23 * 100vw);
-      }
-
-      @include minDesktop {
-        margin-left: calc(4 / 23 * 100vw);
-        width: calc(15 / 23 * 100vw);
-      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
       p {
+        position: relative;
          text-transform: uppercase;
          font-size: rem(26);
          line-height: 1.6;
          margin: 0;
          font-family: $fontTitle;
-         max-width: 70vw;
+
+         &:first-child {
+          &:before {
+            content: "\"";
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: rem(48);
+            font-family: $fontTitle;
+            color: white;
+            transform: translate(-100%, -20%) translateX(-1vw) rotate(-25deg);
+        
+            @include minTablet {
+              font-size: 5vw;
+            }
+          }
+         }
+
+        //  max-width: 70vw;
           &:last-child {
             margin-left: 10%;
+            &:before {
+              content: "\"";
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              font-size: rem(48);
+              font-family: $fontTitle;
+              color: white;
+              transform: translate(100%, 50%) translateX(1vw) rotate(25deg);
+          
+              @include minTablet {
+                font-size: 5vw;
+              }
+            }
           }
 
          @include minMobile {
@@ -366,11 +397,11 @@
 
          @include minTablet {
           font-size: 4.2vw;
-          max-width: 45vw;
+          // max-width: 45vw;
           line-height: 1.2;
           &:last-child {
-              margin-left: 33%;
-            }
+            margin-left: 33%;
+          }
          }
          .color--red {
           font-family: $font;
@@ -399,9 +430,11 @@
     position: relative;
     padding-top: 35vh;
     margin-bottom: 10vh;
+    z-index: 1;
 
     @include minTablet {
       padding-top: 50vh;
+      padding-bottom: 0;
     }
 
     @include minDesktop {
@@ -413,13 +446,10 @@
       flex-direction: column;
       font-family: $fontTitle;
       font-weight: 300;
+      margin-bottom: rem(40);
 
       span {
         font-family: $fontTitle;
-
-        &:last-child {
-          margin-left: calc(1 / 23 * 100%);
-        }
 
         &:first-child {
           font-family: $font;
@@ -441,8 +471,12 @@
       top: 0;
       left: 50%;
       width: 200vw;
-      transform: translateX(-50%);
+      transform: translate(-50%, -0%);
       opacity: 0.8;
+
+      @include minMobile {
+        transform: translate(-50%, -15%);
+      }
 
       @include minTablet {
         width: 100%;
@@ -460,6 +494,7 @@
       z-index: 2;
       margin-left: calc(1 / 20 * 100vw);
       width: calc(18 / 20 * 100vw);
+      padding-bottom: rem(180);
 
       @include minMobile {
         display: flex;
@@ -467,10 +502,14 @@
         justify-content: space-between;
       }
 
+      @include minTablet {
+        padding-bottom: 12vw;
+      }
 
       @include minLaptop {
         margin-left: calc(6 / 23 * 100%);
         width: calc(17 / 23 * 100%);
+        padding-bottom: 0;
       }
     }
 
@@ -490,6 +529,7 @@
         width: calc(50% - 46px);
       }
     }
+
     &-right {
       position: relative;
 
@@ -503,6 +543,7 @@
           height: 100%;
           background: white;
           transform: translateX(-55px);
+          opacity: 0.3;
         }
 
         @include minLaptop {
@@ -527,25 +568,15 @@
     }
 
     &-btn {
-      display: flex;
-      flex-wrap: wrap;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      z-index: 9;
+      transform: translate(-50%, 25%);
 
-      @include minTablet {
-        margin-top: rem(50);
-      }
-
-      a.btn {
-        color: $orange;
-        border: 1px solid $orange;
-        padding: rem(20);
-        font-size: rem(18);
-        border-radius: rem(42);
-        text-decoration: none;
-        letter-spacing: 0.1em;
-
-        @include minTablet {
-          font-size: 1.2vw;
-        }
+      @include minLaptop {
+        left: calc(2 / 23 * 100vw);
+        transform: translateY(-50%);
       }
     }
 
@@ -554,6 +585,7 @@
       font-size: rem(18);
       font-weight: 400;
       font-family: $font;
+      margin-top: 0;
 
       @include minTablet {
         font-size: 1.2vw
@@ -617,6 +649,7 @@
 
       @include minMobile {
         transform: translateX(25%);
+        
       }
 
       @include minLaptop {
@@ -635,6 +668,8 @@
     &-btn {
       display: flex;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 5;
 
       a.btn {
         padding: rem(20);
@@ -657,5 +692,85 @@
         }
       }
     }
+  }
+}
+
+
+.btn-round {
+  position: relative;
+  width: rem(180);
+  height: rem(180);
+  font-size: rem(22);
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1vw;
+  text-decoration: none;
+
+  @include minTablet {
+    width: 12vw;
+    height: 12vw;
+    font-size: 1.2vw;
+  }
+
+  svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: none;
+    z-index: 0;
+    transform: scale(0);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: $orange;
+    border-radius: 50%;
+    transition: all .6s ease-out;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:hover {
+    svg {
+      animation: grow 2s linear infinite;
+    }
+    &:after {
+      transform: scale(1.2);
+    }
+  }
+}
+
+@keyframes grow {
+  0%{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  58% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.25);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2);
   }
 }
