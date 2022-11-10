@@ -90,18 +90,18 @@
     }
 
     @include minMobile {
-      max-width: calc(12 / 20 * 100vw);
+      max-width: calc(14 / 20 * 100vw);
       padding: calc(1 / 20 * 100vw);
     }
     @include minTablet {
-      max-width: calc(12 / 23 * 100vw);
+      max-width: calc(14 / 23 * 100vw);
       padding: calc(1 / 23 * 100vw);
     }
     @include minLaptop {
-      max-width: calc(9 / 23 * 100vw);
+      max-width: calc(12 / 23 * 100vw);
     }
     @include minDesktop {
-      max-width: calc(8 / 23 * 100vw);
+      max-width: calc(10 / 23 * 100vw);
     }
   }
 
