@@ -3550,7 +3550,7 @@ body.page-template-timeline {
 }
 
 .red-btn svg {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     fill: transparent;
     pointer-events: none;
@@ -3577,6 +3577,23 @@ body.page-template-timeline {
     pointer-events: none;
 }
 
+.red-btn span:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #FF4409;
+    z-index: -1;
+    border-radius: 50%;
+    transition: transform 0.4s ease-out;
+}
+
+.red-btn:hover span:after {
+    transform: scale(1.15);
+}
+
 .intro .red-btn {
     position: absolute;
     z-index: 5;
@@ -3588,6 +3605,16 @@ body.page-template-timeline {
     position: absolute;
     z-index: 1;
     bottom: 0;
+}
+
+@media(min-width: 769px) {
+    .red-btn {
+        width: 15vw;
+        height: 15vw;
+    }
+    .red-btn span {
+        font-size: 1.1vw;
+    }
 }
 
 @media(max-width: 768px) {
