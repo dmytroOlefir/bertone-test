@@ -425,6 +425,19 @@ barba.init({
 
 			lineReveal()
 			revealImage()
+		},
+		afterLeave(data) {
+			header.classList.remove('show')
+
+			ScrollTrigger.getAll().forEach(t => t.kill())
+
+			ScrollTrigger.defaults({
+				scroller: scroller,
+				horizontal: false
+			});
+
+			ScrollTrigger.addEventListener('refresh', () => lc.update())
+			ScrollTrigger.refresh()
 		}
 	}]
 });
