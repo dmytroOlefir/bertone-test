@@ -182,10 +182,7 @@ barba.init({
 			menu.classList.remove('is-open')
 			menu_bkg.classList.remove('is-open')
 			isOpen = false
-			window.scrollTo({
-				left: 0,
-				top: 0,s
-			})
+			lc.scrollTo("top")
 		},
 		enter(data) {
 			console.log('enter');
