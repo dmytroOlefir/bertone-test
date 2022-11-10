@@ -184,8 +184,7 @@ barba.init({
 			isOpen = false
 			window.scrollTo({
 				left: 0,
-				top: 0,
-				behavior: 'smooth'
+				top: 0,s
 			})
 		},
 		enter(data) {
