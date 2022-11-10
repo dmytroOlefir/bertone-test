@@ -597,7 +597,7 @@ img {
     }
 }
 
-@media(min-width: 769px) {
+@media(min-width: 768px) {
     .intro_text {
         display: flex;
         margin-top: 15vw;
@@ -649,7 +649,7 @@ img {
 	}
 }
 
-@media(min-width: 769px) {
+@media(min-width: 768px) {
     .intro_bkg {
         width: 100%;
         left: 0;
@@ -674,7 +674,7 @@ img {
     }
 }
 
-@media(min-width: 769px) {
+@media(min-width: 768px) {
     .intro_line {
         top: 65%;
         left: 100px
@@ -696,6 +696,12 @@ img {
     transform-origin: bottom;
     transform: scaleY(0.1);
     background: #ff4409
+}
+
+@media(min-width: 493px) and (max-width: 768px) {
+    .intro_line {
+        left: 65px;
+    }
 }
 
 .story {
@@ -761,6 +767,7 @@ img {
     top: -3vw;
     left: 0;
     width: 5vw;
+    min-width: 40px;
     height: 1px;
     background: #fff
 }
@@ -1086,7 +1093,11 @@ img {
 @media(min-width: 493px) and (max-width: 768px) {
 .vision_text {
   	    width: 340%;
+    left: 30vw;
   }
+    .vision_diapo .red-btn {
+        left: 18vw;
+    }
 }
 
 
@@ -1360,7 +1371,7 @@ img {
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
-    margin: 0px 5vw
+    margin: 0px 5vw 200px;
 }
 
 @media(min-width: 493px) {
@@ -1580,7 +1591,7 @@ img {
 
 .encart {
     position: relative;
-    padding: 60px 0;
+    padding: 60px 0 0;
     background: #000;
     color: #fff
 }
@@ -1639,7 +1650,7 @@ img {
     z-index: 0;
     min-width: 600px;
     text-align: right;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .encart_bkg img {
@@ -1656,14 +1667,15 @@ img {
 	.encart_bkg {
 		position: relative;
 	    min-width: 0;
-	    padding-bottom: 48vw
+	    padding-bottom: 320px
 	}
 	.encart_bkg img {
-       width: 135vw;
+       width: 100%;
 	    max-width: none;
 	    max-height: none;
 	    position: absolute;
-	    right: -7%;
+	    right: 0;
+        object-fit: cover;
 	}
 }
 
@@ -3575,6 +3587,42 @@ body.page-template-timeline {
     position: absolute;
     z-index: 1;
     bottom: 0;
+}
+
+@media(max-width: 768px) {
+    .intro .red-btn {
+        position: relative;
+        top: -60px;
+        right: auto;
+        margin-top: 50px;
+    }
+
+    .red-btn {
+        max-width: 200px;
+    }
+
+    .red-btn span {
+        font-size: 15px;
+    }
+}
+
+@media(max-width: 640px) {
+    .vision_diapo .red-btn {
+        bottom: -100%;
+    }
+}
+
+@media(min-width: 493px) and (max-width: 768px) {
+    .intro .red-btn {
+        position: absolute;
+        right: 30px;
+    }
+    .intro_text {
+        margin-top: 200px;
+    }
+    .story_description {
+        text-align: left;
+    }
 }
 
 /*# sourceMappingURL=main.css.map*/
