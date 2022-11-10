@@ -97,6 +97,13 @@
   &-bio {
     @include minMobile {
       margin-top: 10vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    @include minTablet {
+      display: block;
     }
 
     p {
@@ -104,7 +111,10 @@
       font-size: rem(18);
       font-weight: 400;
       font-family: $font;
-      margin-bottom: rem(40);
+
+      &:not(:last-child) {
+        margin-bottom: rem(40);
+      }
 
       @include minTablet {
         font-size: 1.2vw;
@@ -119,7 +129,14 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin-bottom: 5vw;
+        width: calc(50% - 38px);
       }
+
+      @include minTablet {
+        width: 100%;
+      }
+      
     }
 
     &-intro {
@@ -127,7 +144,11 @@
       width: calc(18 / 20 * 100vw);
 
       @include minMobile {
-        width: calc(50% - 38px);
+        width: 100%;
+      }
+      @include minTablet {
+        margin-left: calc(1 / 23 * 100vw);
+        width: calc(10 / 23 * 100vw);
       }
 
       @include minLaptop {
@@ -152,29 +173,25 @@
       }
 
       @include minMobile {
+        display: none;
         width: calc(50% - 38px);
-        
-        &-wrap {
-          height: 60%;
-          display: flex;
-        }
       }
 
       @include minTablet {
+        display: block;
         width: calc(50% - 46px);
+        &-wrap {
+          height: 100%;
+          display: flex;
+
+          img {
+            width: 100%;
+          }
+        }
       }
 
       @include minLaptop {
         width: calc(50% - 56px);
-
-        &-wrap {
-          display: block;
-          height: auto;
-
-          img {
-            width: 100%;;
-          }
-        }
       }
 
       @include minDesktop {
@@ -183,16 +200,85 @@
     }
 
     &-description {
-      margin-left: calc(2 / 23 * 100vw);
+      position: relative;
+      margin-left: calc(1 / 23 * 100vw);
       width: calc(18 / 23 * 100vw);
+
+      .container {
+        position: relative;
+        @include minMobile {
+          padding-left: 0;
+
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: calc(-1 / 23 * 100vw - 2vw);
+            height: 100%;
+            width: 1px;
+            background: white;
+            opacity: 0.3;
+          }
+        }
+
+        @include minTablet {
+          padding-left: 2vw;
+          column-count: 2;
+          column-gap: calc(2 / 23 * 100vw);
+          margin-left: calc(1 / 23 * 100vw);
+          width: calc(19 / 23 * 100vw);
+
+          &:after {
+            left: 050%;
+            transform: translateX(-50%);
+          }
+        }
+
+        @include minDesktop {
+          width: calc(19 / 23 * 100vw);
+        }
+      }
 
       p:last-child {
         margin-bottom: rem(0);
       }
 
       @include minMobile {
-        column-count: 2;
-        column-gap: calc(2 / 23 * 100vw);
+        width: calc(50% - 38px);
+        margin-left: 0
+      }
+
+      @include minTablet {
+        width: calc(18 / 23 * 100vw + 2vw);
+        margin-left: calc(1 / 23 * 100vw);
+
+      //   &:after {
+      //     content: "";
+      //     position: absolute;
+      //     top: 0%;
+      //     left: 050%;
+      //     transform: translateX(-50%);
+      //     height: 100%;
+      //     width: 1px;
+      //     background: white;
+      //     opacity: 0.3;
+      //   }
+      }
+
+      // @include minDesktop {
+      //   width: calc(18 / 23 * 100vw + 2vw);
+      // }
+    }
+
+    &-image-mobile {
+      display: none;
+      margin-bottom: rem(20);
+
+      @include minMobile {
+        display: block;
+      }
+      @include minTablet {
+        display: none;
       }
     }
   }
@@ -244,6 +330,8 @@
   }
 
   &-quote {
+    position: relative;
+    z-index: 2;
     margin: 10vh 0 0;
 
     @include minLaptop {
@@ -342,9 +430,11 @@
     position: relative;
     padding-top: 35vh;
     margin-bottom: 10vh;
+    z-index: 1;
 
     @include minTablet {
       padding-top: 50vh;
+      padding-bottom: 0;
     }
 
     @include minDesktop {
@@ -356,6 +446,7 @@
       flex-direction: column;
       font-family: $fontTitle;
       font-weight: 300;
+      margin-bottom: rem(40);
 
       span {
         font-family: $fontTitle;
@@ -380,8 +471,12 @@
       top: 0;
       left: 50%;
       width: 200vw;
-      transform: translateX(-50%);
+      transform: translate(-50%, -0%);
       opacity: 0.8;
+
+      @include minMobile {
+        transform: translate(-50%, -15%);
+      }
 
       @include minTablet {
         width: 100%;
@@ -399,6 +494,7 @@
       z-index: 2;
       margin-left: calc(1 / 20 * 100vw);
       width: calc(18 / 20 * 100vw);
+      padding-bottom: rem(180);
 
       @include minMobile {
         display: flex;
@@ -406,10 +502,14 @@
         justify-content: space-between;
       }
 
+      @include minTablet {
+        padding-bottom: 12vw;
+      }
 
       @include minLaptop {
         margin-left: calc(6 / 23 * 100%);
         width: calc(17 / 23 * 100%);
+        padding-bottom: 0;
       }
     }
 
@@ -470,9 +570,14 @@
     &-btn {
       position: absolute;
       bottom: 0;
-      left: calc(2 / 23 * 100vw);
+      left: 50%;
       z-index: 9;
-      transform: translateY(-50%);
+      transform: translate(-50%, 25%);
+
+      @include minLaptop {
+        left: calc(2 / 23 * 100vw);
+        transform: translateY(-50%);
+      }
     }
 
     p {
@@ -544,6 +649,7 @@
 
       @include minMobile {
         transform: translateX(25%);
+        
       }
 
       @include minLaptop {
@@ -592,9 +698,9 @@
 
 .btn-round {
   position: relative;
-  width: 12vw;
-  height: 12vw;
-  font-size: 1.2vw;
+  width: rem(180);
+  height: rem(180);
+  font-size: rem(22);
   border-radius: 50%;
   color: white;
   display: flex;
@@ -603,6 +709,12 @@
   text-align: center;
   padding: 1vw;
   text-decoration: none;
+
+  @include minTablet {
+    width: 12vw;
+    height: 12vw;
+    font-size: 1.2vw;
+  }
 
   svg {
     position: absolute;
