@@ -45,7 +45,7 @@ if (menuItems) {
 	for (const item of menuItems) {
 		item.addEventListener('click', () => {
 			const hasActive = document.querySelector('[js-menu] .menu-item.current-menu-item')
-
+			console.log('HERE -----------', item)
 			if (hasActive) hasActive.classList.remove('current-menu-item')
 			item.classList.add('current-menu-item')
 		})
