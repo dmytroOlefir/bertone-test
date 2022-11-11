@@ -293,6 +293,14 @@
         font-size: 11px;
       }
     }
+    .frm_primary_label {
+      font-size: 1rem !important;
+      color: white !important;
+
+      @include minTablet {
+        font-size: 1vw !important; 
+      }
+    }
 
     .frm_error {
       font-size: .8vw;
