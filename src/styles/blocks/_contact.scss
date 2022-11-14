@@ -178,6 +178,8 @@
         &:focus{
           background-color: transparent !important;
           color: white !important;
+          box-shadow: none !important;
+          border-color: white !important;
         }
       }
 
@@ -243,13 +245,14 @@
               height: rem(8);
               position: absolute;
               background: white;
-              top: rem(7);
+              top: rem(11);
               left: rem(7);
               transform: scale(0);
               transition: all .3s ease-out;
               opacity: 0;
             }
           }
+
           input[type="checkbox"]:checked+span {
             &:before {
               transform: translateY(-50%) scale(1);

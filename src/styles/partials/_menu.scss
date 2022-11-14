@@ -33,15 +33,17 @@
       transition: all .3s ease;
     }
 
-    &:not(.is-open):hover {
-      span {
-        animation: roll 3s ease-out infinite;
+    @include minLaptop {
+      &:not(.is-open):hover {
+        span {
+          animation: roll 3s ease-out infinite;
 
-        &:nth-child(2) {
-          animation-delay: .1s;
-        }
-        &:nth-child(3) {
-          animation-delay: .2s;
+          &:nth-child(2) {
+            animation-delay: .1s;
+          }
+          &:nth-child(3) {
+            animation-delay: .2s;
+          }
         }
       }
     }
