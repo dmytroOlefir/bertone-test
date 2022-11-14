@@ -183,6 +183,10 @@
         }
       }
 
+      select option {
+        color: black;
+      }
+
       textarea {
         height: rem(180);
         padding-top: rem(10);
@@ -245,7 +249,7 @@
               height: rem(8);
               position: absolute;
               background: white;
-              top: rem(11);
+              top: rem(10);
               left: rem(7);
               transform: scale(0);
               transition: all .3s ease-out;
