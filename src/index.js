@@ -249,6 +249,8 @@ barba.init({
 
 			opening(frontCount)
 			frontCount++
+			refreshFsLightbox()
+			console.log('refresh')
 
 			// //Temp Fix, need to be updated
 			// setTimeout(() => {
