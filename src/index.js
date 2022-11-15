@@ -172,16 +172,19 @@ barba.init({
 
 		 async leave(data) {
 			console.log('default');
-
-			gsap.to(curtain, {autoAlpha: 1, duration: 0.7, onComplete(){
-					lc.scrollTo("top", {
-						duration: 0
-					})
-			}})
-
 			 const res = await delay(700);
 			 
 
+		},
+		beforeEnter() {
+			gsap.to(curtain, {
+				autoAlpha: 1, duration: 0.7, onComplete() {
+					lc.scrollTo("top", {
+						duration: 0
+					})
+				}
+			})
+			if (fsLightbox) console.log(fsLightboxInstances["video"].props)
 		},
 		beforeLeave(data) {
 
@@ -189,6 +192,16 @@ barba.init({
 			menu.classList.remove('is-open')
 			menu_bkg.classList.remove('is-open')
 			isOpen = false
+		},
+		afterLeave() {
+			gsap.to(curtain, {
+				autoAlpha: 1, duration: 0.7, onComplete() {
+					lc.scrollTo("top", {
+						duration: 0,
+						smooth: false
+					})
+				}
+			})
 		},
 		enter(data) {
 			console.log('enter');
@@ -265,6 +278,14 @@ barba.init({
 		},
 		afterLeave(data) {
 			header.classList.remove('show')
+			gsap.to(curtain, {
+				autoAlpha: 1, duration: 0.7, onComplete() {
+					lc.scrollTo("top", {
+						duration: 0,
+						smooth: false
+					})
+				}
+			})
 
 			ScrollTrigger.getAll().forEach(t => t.kill())
 
@@ -280,6 +301,13 @@ barba.init({
 		namespace: 'timeline',
 		beforeEnter(data) {
 			customCursor()
+			gsap.to(curtain, {
+				autoAlpha: 1, duration: 0.7, onComplete() {
+					lc.scrollTo("top", {
+						duration: 0
+					})
+				}
+			})
 
 			ScrollTrigger.getAll().forEach(t => t.kill())
 
@@ -357,6 +385,14 @@ barba.init({
 			captionReveal()
 		},
 		afterLeave(data) {
+			gsap.to(curtain, {
+				autoAlpha: 1, duration: 0.7, onComplete() {
+					lc.scrollTo("top", {
+						duration: 0,
+						smooth: false
+					})
+				}
+			})
 			ScrollTrigger.getAll().forEach(t => t.kill())
 
 			ScrollTrigger.defaults({
@@ -370,8 +406,15 @@ barba.init({
 
 	}, {
 		namespace: 'page',
-		beforeEnter(data) {
+		beforeEnter() {
 			customCursor()
+			gsap.to(curtain, {
+				autoAlpha: 1, duration: 0.7, onComplete() {
+					lc.scrollTo("top", {
+						duration: 0
+					})
+				}
+			})
 			lc.on('scroll', ScrollTrigger.update)
 
 			ScrollTrigger.scrollerProxy(scroller, {
@@ -446,6 +489,14 @@ barba.init({
 		afterLeave(data) {
 			header.classList.remove('show')
 
+			gsap.to(curtain, {
+				autoAlpha: 1, duration: 0.7, onComplete() {
+					lc.scrollTo("top", {
+						duration: 0,
+						smooth: false
+					})
+				}
+			})
 			ScrollTrigger.getAll().forEach(t => t.kill())
 
 			ScrollTrigger.defaults({

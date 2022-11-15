@@ -12,6 +12,7 @@
   box-shadow: none;
 }
 
-#mc_embed_signup .mc-field-group select option {
-  color: black;
+#mc_embed_signup .mc-field-group select option{
+  color: black !important;
+  background: white !important;
 }
