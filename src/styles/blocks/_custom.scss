@@ -1,5 +1,5 @@
 
-#mc_embed_signup .button {
+.newsletter #mc_embed_signup .button {
   background-color: #ff4409;
   border: 0;
   border-radius: 1.5625rem;
@@ -12,6 +12,7 @@
   box-shadow: none;
 }
 
-#mc_embed_signup .mc-field-group select option {
-  color: black;
+#mc_embed_signup .mc-field-group select option{
+  color: black !important;
+  background: white !important;
 }
