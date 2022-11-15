@@ -179,7 +179,7 @@ img {
 
 @media(min-width: 769px) {
     .footer_top img {
-        width: 12vw;
+        width: 14vw;
     }
 }
 
@@ -200,7 +200,7 @@ img {
 @media(min-width: 769px) {
 
 	.footer_nav  p, .footer_nav  a  {
-	    font-size: 20px;
+	    font-size: 18px;
 	}
 
 }
