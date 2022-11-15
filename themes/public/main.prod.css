@@ -374,6 +374,7 @@ img {
 
 @media(max-width: 492px) {
     .banner h1 {
+        margin: -120px auto 0;
         padding-left: 40px;
         font-size: 35px
     }
@@ -521,6 +522,15 @@ img {
     width: 100%
 }
 
+#form_newsletter-form input:-webkit-autofill,
+#form_newsletter-form input:-webkit-autofill:hover,
+#form_newsletter-form input:-webkit-autofill:focus,
+#form_newsletter-form input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s !important;
+    -webkit-box-shadow: 0 0 0 30px #ffffff00 inset !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
 #form_newsletter-form input[type=email]::-moz-placeholder,
 #form_newsletter-form input[type=text]::-moz-placeholder {
     color: #fff
@@ -566,6 +576,10 @@ img {
     overflow: hidden;
     padding: 16vw 0 0;
     z-index: 3
+}
+
+.intro iframe {
+    display: none;
 }
 
 @media(max-width: 492px) {
@@ -2129,13 +2143,13 @@ img {
 .timeline_content {
     position: relative;
     z-index: 2;
-    padding-top: 40px;
+    padding: 40px 20px 0;
     margin-bottom: 300px
 }
 
 @media(min-width: 769px) {
     .timeline_content {
-        padding-top: 0;
+        padding: 0;
         width: 35vw;
         margin-left: 10vw;
         margin-bottom: 0
@@ -3675,6 +3689,10 @@ body.page-template-timeline {
 #mc_embed_signup .mc-field-group select {
     width: 100% !important;
     text-indent: 1%;
+}
+
+#mc_embed_signup .mc-field-group select option {
+    background: rgb(0, 0, 0);
 }
 
 .home #mc_embed_signup .button {

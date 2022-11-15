@@ -122,7 +122,7 @@ if (window.screen.width >= 1201) {
 	lc = new LocomotiveScroll({
 		el: scroller,
 		smooth: true,
-		lerp: 0.09,
+		lerp: 0.07,
 		multiplier: 0.8,
 		smartphone: {
 			smooth: true
