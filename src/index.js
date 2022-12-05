@@ -39,7 +39,7 @@ function initGallery() {
 	const allCar = document.querySelectorAll('.models-slide_inner')
 	const gallery = document.querySelector('[js-gallery-lightbox]')
 	const galleryClose = document.querySelector('[js-gallery-close]')
-
+	console.log('HERE ------------>', allCar)
 	if (allCar) {
 		for (const car of allCar) {
 			car.addEventListener('click', (e) => {
@@ -47,6 +47,7 @@ function initGallery() {
 				const url = car.href
 				const image = document.createElement('img')
 				image.src = url 
+				gallery.querySelector('.js-inner-gallery').innerHTML = ''
 				gallery.querySelector('.js-inner-gallery').append(image)
 				gallery.classList.add('is-active')
 
