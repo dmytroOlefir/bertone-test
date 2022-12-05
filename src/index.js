@@ -14,8 +14,7 @@ import 'swiper/css'
 
 // TRAILER 
 // MENU
-initTrailer()
-initGallery()
+
 function initTrailer() {
 	const btnTrailer = document.querySelector('[js-iframe-trailer-btn]')
 	const trailer = document.querySelector('[js-iframe-trailer]')
