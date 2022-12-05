@@ -14,24 +14,54 @@ import 'swiper/css'
 
 // TRAILER 
 // MENU
+initTrailer()
+initGallery()
+function initTrailer() {
+	const btnTrailer = document.querySelector('[js-iframe-trailer-btn]')
+	const trailer = document.querySelector('[js-iframe-trailer]')
+	const closeTrailer = document.querySelector('[js-iframe-trailer-close]')
+	if (trailer) {
+		const url = trailer.querySelector('iframe').src
+		btnTrailer.addEventListener('click', (e) => {
+			trailer.querySelector('iframe').src = `${url}?autoplay=1`
+			trailer.classList.add('is-active')
+		})
 
-const btnTrailer = document.querySelector('[js-iframe-trailer-btn]')
-const trailer = document.querySelector('[js-iframe-trailer]')
-const closeTrailer = document.querySelector('[js-iframe-trailer-close]')
-if (trailer) {
-	const url = trailer.querySelector('iframe').src
-	btnTrailer.addEventListener('click', (e) => {
-		trailer.querySelector('iframe').src = `${url}?autoplay=1`
-		trailer.classList.add('is-active')
-	})
+		if (closeTrailer) {
+			closeTrailer.addEventListener('click', (e) => {
+				trailer.querySelector('iframe').src = url
+				trailer.classList.remove('is-active')
+			})
+		}
+	}
+}
 
-	if (closeTrailer) {
-		closeTrailer.addEventListener('click', (e) => {
-			trailer.querySelector('iframe').src = url
-			trailer.classList.remove('is-active')
+function initGallery() {
+	const allCar = document.querySelectorAll('.models-slide_inner')
+	const gallery = document.querySelector('[js-gallery-lightbox]')
+	const galleryClose = document.querySelector('[js-gallery-close]')
+
+	if (allCar) {
+		for (const car of allCar) {
+			car.addEventListener('click', (e) => {
+				e.preventDefault()
+				const url = car.href
+				const image = document.createElement('img')
+				image.src = url 
+				gallery.querySelector('.js-inner-gallery').innerHTML = image
+				gallery.classList.add('is-active')
+
+				return false;
+			})
+		}
+
+		galleryClose.addEventListener('click', () => {
+			gallery.classList.remove('is-active')
+			gallery.querySelector('.js-inner-gallery').innerHTML = ''
 		})
 	}
 }
+
 
 // Menu ----------------------------------------------------
 const menu_btn = document.querySelector('[js-menu-btn]')
@@ -233,6 +263,8 @@ barba.init({
 
 			ScrollTrigger.addEventListener('refresh', () => lc.update())
 			ScrollTrigger.refresh()
+			initTrailer()
+			initGallery()
 
 			// const header = document.querySelector('.header');
 			//
