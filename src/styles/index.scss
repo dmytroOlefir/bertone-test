@@ -58,6 +58,14 @@
   }
 }
 
+.intro {
+  .js-iframe-trailer {
+    iframe {
+      display: block;
+    }
+  }
+}
+
 .btn-close-trailer {
   position: absolute;
   top: 0;
