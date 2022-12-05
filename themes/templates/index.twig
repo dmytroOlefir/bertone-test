@@ -14,10 +14,5 @@
 	{% include './block/timeline.twig' with {site: 'site'}%}
 
 	{% include './block/newsletter.twig' with {id: newsletter_id} %}
-	<div js-iframe-trailer class="js-iframe-trailer">
-  <button type="button" class="btn-close-trailer" js-iframe-trailer-close>
-    <span class="sr-only">Close trailer</span>
-  </button>
-  <iframe src="https://player.vimeo.com/video/769813130" id="vimeo" width="1920px" height="1080px" frameBorder="0" allow="autoplay; fullscreen" allowFullScreen></iframe>
-</div>
+
 {% endblock %}
