@@ -48,7 +48,7 @@ function initGallery() {
 				const url = car.href
 				const image = document.createElement('img')
 				image.src = url 
-				gallery.querySelector('.js-inner-gallery').innerHTML = image
+				gallery.querySelector('.js-inner-gallery').append(image)
 				gallery.classList.add('is-active')
 
 				return false;
