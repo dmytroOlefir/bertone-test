@@ -21,7 +21,7 @@ const closeTrailer = document.querySelector('[js-iframe-trailer-close]')
 if (trailer) {
 	const url = trailer.querySelector('iframe').src
 	btnTrailer.addEventListener('click', (e) => {
-		trailer.querySelector('iframe').src = `${url}&autoplay=1`
+		trailer.querySelector('iframe').src = `${url}?autoplay=1`
 		trailer.classList.add('is-active')
 	})
 
