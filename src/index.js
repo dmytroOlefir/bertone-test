@@ -7,10 +7,24 @@ import {SplitText} from './scripts/inc/_SplitText'
 import {customCursor} from "./scripts/modules/_cursor"
 import CSSPlugin from './scripts/inc/_CSSPlugin'
 
-require('fslightbox');
 
 import Swiper, {Autoplay, FreeMode} from 'swiper'
 import 'swiper/css'
+
+
+// TRAILER 
+// MENU
+const btnTrailer = document.querySelector('[js-iframe-trailer-btn]')
+const trailer = document.querySelector('[js-iframe-trailer]')
+const closeTrailer = document.querySelector('[js-iframe-trailer-close]')
+
+btnTrailer.addEventListener('click', (e) => {
+	trailer.classList.add('is-active')
+})
+
+closeTrailer.addEventListener('click', (e) => {
+	trailer.classList.remove('is-active')
+})
 
 // Menu ----------------------------------------------------
 const menu_btn = document.querySelector('[js-menu-btn]')
@@ -236,24 +250,7 @@ barba.init({
 
 			opening(frontCount)
 			frontCount++
-<<<<<<< HEAD
-			refreshFsLightbox()
-			console.log('refresh')
 
-			// //Temp Fix, need to be updated
-			// setTimeout(() => {
-			// 	lineReveal()
-			// }, 200)
-			//
-			// revealFromLeft()
-			// revealFromRight()
-			// revealSimple()
-			// revealImage()
-			// bgZoom()
-			// lineLeft()
-			// fadeUp()
-=======
->>>>>>> d437f5a (Update Scroll)
 		},
 		afterLeave(data) {
 			header.classList.remove('show')
@@ -461,4 +458,3 @@ barba.init({
 });
 
 
-// MENU
