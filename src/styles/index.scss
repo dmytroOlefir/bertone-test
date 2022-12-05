@@ -69,8 +69,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   background: black;
   border: 0;
 
@@ -94,7 +94,7 @@
     height: 18px;
     border-radius: 2px;
     background: white;
-    transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
   }
 }
 

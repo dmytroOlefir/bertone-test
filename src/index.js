@@ -18,14 +18,16 @@ import 'swiper/css'
 const btnTrailer = document.querySelector('[js-iframe-trailer-btn]')
 const trailer = document.querySelector('[js-iframe-trailer]')
 const closeTrailer = document.querySelector('[js-iframe-trailer-close]')
-console.log('TRAILER', btnTrailer, trailer, closeTrailer)
 if (trailer) {
+	const url = trailer.querySelector('iframe').src
 	btnTrailer.addEventListener('click', (e) => {
+		trailer.querySelector('iframe').src = `${url}&autoplay=1`
 		trailer.classList.add('is-active')
 	})
 
 	if (closeTrailer) {
 		closeTrailer.addEventListener('click', (e) => {
+			trailer.querySelector('iframe').src = url
 			trailer.classList.remove('is-active')
 		})
 	}
