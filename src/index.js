@@ -15,21 +15,19 @@ import 'swiper/css'
 // TRAILER 
 // MENU
 
-function initTrailer() {
-	const btnTrailer = document.querySelector('[js-iframe-trailer-btn]')
-	const trailer = document.querySelector('[js-iframe-trailer]')
-	const closeTrailer = document.querySelector('[js-iframe-trailer-close]')
-	console.log('TRAILER', trailer, btnTrailer)
-	if (trailer) {
-		btnTrailer.addEventListener('click', (e) => {
-			trailer.classList.add('is-active')
-		})
+const btnTrailer = document.querySelector('[js-iframe-trailer-btn]')
+const trailer = document.querySelector('[js-iframe-trailer]')
+const closeTrailer = document.querySelector('[js-iframe-trailer-close]')
+console.log('TRAILER', btnTrailer, trailer, closeTrailer)
+if (trailer) {
+	btnTrailer.addEventListener('click', (e) => {
+		trailer.classList.add('is-active')
+	})
 
-		if (closeTrailer) {
-			closeTrailer.addEventListener('click', (e) => {
-				trailer.classList.remove('is-active')
-			})
-		}
+	if (closeTrailer) {
+		closeTrailer.addEventListener('click', (e) => {
+			trailer.classList.remove('is-active')
+		})
 	}
 }
 
@@ -200,9 +198,6 @@ barba.init({
 			menu.classList.remove('is-open')
 			menu_bkg.classList.remove('is-open')
 			isOpen = false
-		},
-		beforeEnter() {
-			initTrailer()
 		},
 	}],
 	views: [{
