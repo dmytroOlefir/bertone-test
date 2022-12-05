@@ -34,7 +34,11 @@
 
 
 // IFRAME
-[js-iframe-trailer] {
+.js-iframe-trailer-btn {
+  background: none;
+  border: 0;
+}
+.js-iframe-trailer {
   position: fixed;
   top: 0;
   left: 0;
@@ -73,7 +77,7 @@
     background: white;
     transform: translate(-50%, -50%) rorate(45deg);
   }
-  &:before {
+  &:after {
     content: "";
     position: absolute;
     top: 50%;
