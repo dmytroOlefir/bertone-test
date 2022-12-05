@@ -26,6 +26,3 @@ jobs:
       
       - name: Deploy THEMES with rsync
         run: rsync -avz ./themes/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/data/sites/web/devatelierdesignbe/www/BERTONE/wp-content/themes/bertone
-      
-      - name: Deploy PLUGINS with rsync
-        run: rsync -avz ./plugins/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/data/sites/web/devatelierdesignbe/www/BERTONE/wp-content/plugins
