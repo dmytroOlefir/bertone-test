@@ -17,14 +17,17 @@ import 'swiper/css'
 const btnTrailer = document.querySelector('[js-iframe-trailer-btn]')
 const trailer = document.querySelector('[js-iframe-trailer]')
 const closeTrailer = document.querySelector('[js-iframe-trailer-close]')
+if (trailer) {
+	btnTrailer.addEventListener('click', (e) => {
+		trailer.classList.add('is-active')
+	})
 
-btnTrailer.addEventListener('click', (e) => {
-	trailer.classList.add('is-active')
-})
-
-closeTrailer.addEventListener('click', (e) => {
-	trailer.classList.remove('is-active')
-})
+	if (closeTrailer) {
+		closeTrailer.addEventListener('click', (e) => {
+			trailer.classList.remove('is-active')
+		})
+	}
+}
 
 // Menu ----------------------------------------------------
 const menu_btn = document.querySelector('[js-menu-btn]')
