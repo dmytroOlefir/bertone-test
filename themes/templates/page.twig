@@ -1,8 +1,7 @@
 {% block html_head_container %}
-
+	<title>Carrozzeria Bertone | Meet the founders</title>
+	<meta name="description" content="Mauro Ricci and Jean-Franck Ricci have decided to bring together all of their experience for the momentous rebirth of the renowned automotive firm, La Carrozzeria Bertone.">
   {% include 'html-header.twig' %}
-	<title>Carrozzeria Bertone | I The Timeless Icon is reborn</title>
-	<meta name="description" content="Since 1912, the ingenuity and attention to detail of Bertone's artisanal engineers have made it a cornerstone of automotive history. Now under new ownership, it embodies an excitingly modern vision while still maintaining the values upon which its rich and respected history has been built.">
 	{% block head %}
 	{% endblock %}
 	</head>
@@ -12,12 +11,11 @@
 </div>
 	<body class="{{body_class}}" data-template="base.twig" data-barba="wrapper">
 		{% include '/header.twig' %}
-		{% include '/banner.twig' %}
 		<div class="curtain" data-curtain></div>
-		<div data-main-scroll>
-			<div data-barba="container" data-barba-namespace="front">
+		<div data-main-scroll >
+			<div data-barba="container" data-barba-namespace="page">
 				{% block content %}
-					Sorry, no content
+          <h1>{{ post.title }}</h1>
 				{% endblock %}
 				{% block footer %}
 					{% include 'footer.twig' %}
