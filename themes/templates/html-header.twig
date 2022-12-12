@@ -3,15 +3,16 @@
 <!--[if IE 9]><html class="no-js no-svg ie ie9 lt-ie9 lt-ie8" {{ site.language_attributes }}> <![endif]-->
 <!--[if gt IE 9]><!--><html class="no-js no-svg" {{ site.language_attributes }}> <!--<![endif]-->
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K0C02SWG25"></script>
+	 <!-- Google tag (gtag.js) -->
+    {# <script async src="https://www.googletagmanager.com/gtag/js?id=G-K0C02SWG25"></script>
     <script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-		gtag('config', 'G-K0C02SWG25');
-    </script>
+      gtag('config', 'G-K0C02SWG25');
+    </script> #}
+
     <meta charset="{{ site.charset }}" />
     <meta name="description" content="{{ site.description }}">
     <link rel="stylesheet" href="{{ site.theme.link }}/public/fonts/fonts.css" type="text/css" media="screen" />
@@ -28,7 +29,4 @@
     <link rel="manifest" href="{{ site.theme.link }}/public/site.webmanifest" crossorigin="use-credentials">
     {{function('wp_head')}}
 
-    <!-- Start cookieyes banner -->
-    <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/8f4a10ffeddff8f91e543e3f/script.js"></script>
-    <!-- End cookieyes banner -->
-{#    <script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=wpjru4uz8jgh4opdivqggq" async="true"></script>#}
+
