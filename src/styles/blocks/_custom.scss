@@ -16,3 +16,107 @@
   color: black !important;
   background: white !important;
 }
+
+
+.template-page {
+  background: black;
+  padding: rem(120) rem(20) rem(60);
+  color: white;
+  max-width: rem(1180);
+  margin: 0 auto;
+
+  @include minTablet {
+    min-height: 100vh;
+    padding: rem(200) rem(20) rem(100);
+  }
+
+  h1 {
+    position: relative;
+    z-index: 2;
+    font-size: 35px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    font-family: $font;
+    color: white;
+    
+    
+    @include minMobile {
+      font-size: 42px;
+      line-height: 1;
+    }
+    
+    @include minTablet {
+      font-size: 4.6vw;
+    }
+  }
+
+  .content {
+    h3 {
+      margin-top: rem(20);
+      font-size: rem(18);
+
+      @include minTablet {
+        margin-top: 2vw;
+        font-size: 1.5vw;
+      }
+    }
+
+    h2 {
+      position: relative;
+      z-index: 2;
+      font-size: 22px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      font-family: $font;
+      color: white;
+      margin-top: rem(40);
+      margin-bottom: rem(30);
+      padding-left: rem(30);
+    
+      @include minMobile {
+        font-size: 28px;
+      }
+    
+      @include minTablet {
+        font-size: 2.2vw;
+        padding-left: rem(60);
+        margin-top: 4vw;
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: rem(14);
+        left: 0;
+        width: rem(20);
+        height: 1px;
+        background-color: #fff;
+
+        @include minTablet {
+          top: rem(16);
+        }
+
+        @include minTablet {
+          top: 1.3vw;
+          width: rem(50);
+        }
+      }
+    }
+
+    p, li {
+      margin-top: 2vw;
+      margin-bottom: 0;
+      position: relative;
+      font-size: 15px;
+      line-height: 1.5;
+ 
+      @include minDesktop {
+        font-size: 1vw;
+      }
+    }
+
+    a {
+      color: $orange;
+    }
+  }
+}

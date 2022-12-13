@@ -20,6 +20,7 @@ require_once(__DIR__ . '/inc/remove-default-wp-links.php');
 require_once(__DIR__ . '/inc/rest-api.php');
 require_once(__DIR__ . '/inc/custom-breadcrumbs.php');
 require_once(__DIR__ . '/inc/custom-shortcode.php');
+require_once(__DIR__ . '/inc/custom-full-wysiwyg.php');
 
 
 $timber = new \Timber\Timber();

@@ -232,9 +232,13 @@
           }
 
           span {
-            display: flex;
+            display: block;
             color: white;
             padding-left: rem(30);
+
+            a {
+              color: $orange;
+            }
 
             &:after {
               content: "";
@@ -253,7 +257,7 @@
               height: rem(8);
               position: absolute;
               background: white;
-              top: rem(7);
+              top: rem(11);
               left: rem(7);
               transform: scale(0);
               transition: all .3s ease-out;

@@ -1,6 +1,6 @@
 {% block html_head_container %}
-	<title>Carrozzeria Bertone | Meet the founders</title>
-	<meta name="description" content="Mauro Ricci and Jean-Franck Ricci have decided to bring together all of their experience for the momentous rebirth of the renowned automotive firm, La Carrozzeria Bertone.">
+	<title>Carrozzeria Bertone | {{ post.meta_title }}</title>
+	<meta name="description" content="{{ post.meta_description }}">
   {% include 'html-header.twig' %}
 	{% block head %}
 	{% endblock %}
@@ -15,7 +15,17 @@
 		<div data-main-scroll >
 			<div data-barba="container" data-barba-namespace="page">
 				{% block content %}
-          <h1>{{ post.title }}</h1>
+          <div class="page template-page">
+						<div class="container">
+							<h1 data-scroll data-scroll-speed="0.5">
+								<span class="color--red" data-reveal-simple="0.5">{{ post.title }}</span>
+							</h1>
+
+							<div class="content">
+								{{ post.acf_content }}
+							</div>
+						</div>
+					</div>
 				{% endblock %}
 				{% block footer %}
 					{% include 'footer.twig' %}

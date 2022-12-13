@@ -7,61 +7,10 @@ import {SplitText} from './scripts/inc/_SplitText'
 import {customCursor} from "./scripts/modules/_cursor"
 import CSSPlugin from './scripts/inc/_CSSPlugin'
 
+require('fslightbox');
 
 import Swiper, {Autoplay, FreeMode} from 'swiper'
 import 'swiper/css'
-
-
-// TRAILER 
-// MENU
-
-function initTrailer() {
-	const btnTrailer = document.querySelector('[js-iframe-trailer-btn]')
-	const trailer = document.querySelector('[js-iframe-trailer]')
-	const closeTrailer = document.querySelector('[js-iframe-trailer-close]')
-	if (trailer) {
-		const url = trailer.querySelector('iframe').src
-		btnTrailer.addEventListener('click', (e) => {
-			trailer.querySelector('iframe').src = `${url}?autoplay=1`
-			trailer.classList.add('is-active')
-		})
-
-		if (closeTrailer) {
-			closeTrailer.addEventListener('click', (e) => {
-				trailer.querySelector('iframe').src = url
-				trailer.classList.remove('is-active')
-			})
-		}
-	}
-}
-
-function initGallery() {
-	const allCar = document.querySelectorAll('.models-slide_inner')
-	const gallery = document.querySelector('[js-gallery-lightbox]')
-	const galleryClose = document.querySelector('[js-gallery-close]')
-	console.log('HERE ------------>', allCar)
-	if (allCar) {
-		for (const car of allCar) {
-			car.addEventListener('click', (e) => {
-				e.preventDefault()
-				const url = car.href
-				const image = document.createElement('img')
-				image.src = url 
-				gallery.querySelector('.js-inner-gallery').innerHTML = ''
-				gallery.querySelector('.js-inner-gallery').append(image)
-				gallery.classList.add('is-active')
-
-				return false;
-			})
-		}
-
-		galleryClose.addEventListener('click', () => {
-			gallery.classList.remove('is-active')
-			gallery.querySelector('.js-inner-gallery').innerHTML = ''
-		})
-	}
-}
-
 
 // Menu ----------------------------------------------------
 const menu_btn = document.querySelector('[js-menu-btn]')
@@ -263,8 +212,6 @@ barba.init({
 
 			ScrollTrigger.addEventListener('refresh', () => lc.update())
 			ScrollTrigger.refresh()
-			initTrailer()
-			initGallery()
 
 			// const header = document.querySelector('.header');
 			//
@@ -289,7 +236,7 @@ barba.init({
 
 			opening(frontCount)
 			frontCount++
-
+			refreshFsLightbox()
 		},
 		afterLeave(data) {
 			header.classList.remove('show')
@@ -497,3 +444,4 @@ barba.init({
 });
 
 
+// MENU
