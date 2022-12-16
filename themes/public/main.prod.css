@@ -3714,4 +3714,51 @@ body.page-template-timeline {
     transform: scale(0.8);
 }
 
+.intro_btns {
+    position: absolute;
+    z-index: 5;
+    right: 21vw;
+    top: 19vw;
+    display: flex;
+    flex-direction: column;
+}
+
+@media(max-width: 640px) {
+    .intro_btns {
+        position: static;
+        margin-top: 25px;
+        margin-left: 5vw;
+        max-width: 240px;
+    }
+}
+
+.intro_btns a {
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 1.2vw;
+    padding: 1vw 0.85vw;
+    font-size: 1.2vw;
+    border: 1px solid #FF4B23;
+    border-radius: 2vw;
+    color: #FF4B23;
+}
+
+@media(max-width: 640px) {
+    .intro_btns a {
+        margin-bottom: 15px;
+        padding: 6px 8px;
+        font-size: 16px;
+    }
+}
+
+.intro_btns a.btn-full {
+    background-color: #FF4B23;
+    color: #ffffff;
+    transition: background-color 0.3s ease-out;
+}
+
+.intro_btns a.btn-full:hover {
+    background-color: rgba(255, 68, 9, 0.7);
+}
+
 /*# sourceMappingURL=main.css.map*/
